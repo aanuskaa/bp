@@ -1,0 +1,97 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 19, 2016, 11:21:58 AM
+    Author     : anuska
+*/
+
+
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+body{
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    background-color: #fafafa;
+}
+#main-container{
+    min-height: 100%;
+    position: relative;
+    height:100%;
+}
+
+.container{
+    max-width: 1150px;
+    margin: auto;
+}
+
+.header{
+    background-color: #f5eded;
+    position: fixed;
+    width: 100%;
+    height: 68px;
+    top: 0;
+    z-index: 1;
+}
+
+.header h1{
+    //font-weight: 100;
+    font-size: 23px;
+    color: #082146;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px 0 0 5px;
+}
+.header h1 span#orange{
+    color: #e79318;
+}
+.header span.icon{
+    display: inline-block;
+    height: 55px;
+    vertical-align: middle;
+    margin: 5px 0 0 0;
+}
+
+span.icon img{
+    max-height: 100%;
+    width: auto;
+}
+
+.content{
+    padding-top: 65px;
+    padding-bottom: 50px;
+}
+
+.footer{
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:50px;   /* Height of the footer */
+   background: #fff;
+   border-top: 2px solid #f5eded;
+   color: #e79318;
+}
+
+.footer .container{
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 13px;
+}
+
+.footer .container span{
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.mt{
+    margin-top: 15px;
+}
+
+nav{
+    padding-top: 60px;
+}
