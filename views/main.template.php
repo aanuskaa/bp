@@ -13,6 +13,7 @@
     <head>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
         <link rel="stylesheet" href="<?php echo ROOT_URL . 'style/main.css'?>"/>
+        <script type="text/javascript" src="<?php echo ROOT_URL . 'js/jquery-2.2.1.min.js'?>"></script>
     </head>
     <body>
         <div id="main-container">
@@ -25,19 +26,18 @@
                 </div>
             </div>
             <nav class="container">
-                <a href="<?php echo ENTRY_SCRIPT_URL . 'petrinet/listall'?>">Vytvor case</a> |
-                <a href="/css/">CSS</a> |
-                <a href="/js/">JavaScript</a> |
-                <a href="/jquery/">jQuery</a>
+                <a href="<?php echo ENTRY_SCRIPT_URL . 'petrinet/listAll'?>">Vytvor case</a>
+                <a href="<?php echo ENTRY_SCRIPT_URL . 'task/listAvailable'?>">Vsetky tasky na zobratie</a>
+                <a href="<?php echo ENTRY_SCRIPT_URL . 'task/listAll'?>">Uzivatelove tasky</a>
             </nav>
             <div class="content container">
                 <?php echo $content; ?>
             </div>
-            <div class="footer">
+            <!-- <div class="footer">
                 <div class="container">
                     <span>© Anna Demeterová</span>
                 </div>
-            </div>
+            </div> -->
         </div>
     </body>
 </html>

@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use flow\AbstractModel;
+
 
 /**
  * @todo write description
@@ -16,7 +18,7 @@ namespace app\models;
  * @property int id_pn
  * @property int id_in_xml
  */
-class TransitionModel extends \flow\AbstractModel{
+class TransitionModel extends AbstractModel{
     
     /**
      * @inheritdoc
@@ -43,9 +45,9 @@ class TransitionModel extends \flow\AbstractModel{
      * Zisti, ci prechod v danom case je v danom case spustitelny
      * @return boolean
      */
-    public function isEnabled($case,  $transition){
-        $arcs = ArcModel::model()->findAll('arcs.`to` = ' . $transition->id);
-        $places = ArcModel::model()->findAll('arcs.`to` = ' . $transition->id . ' AND case_marking.id_case = ' . $case->id, 'case_marking.`id`, case_marking.`id_place`, case_marking.`marking`', 'LEFT JOIN case_marking ON arcs.`from` = case_marking.id_place');
+    public function isEnabled($case_id,  $transition_id){
+        $arcs = ArcModel::model()->findAll('arcs.`to` = ' . $transition_id);
+        $places = ArcModel::model()->findAll('arcs.`to` = ' . $transition_id . ' AND case_marking.id_case = ' . $case_id, 'case_marking.`id`, case_marking.`id_place`, case_marking.`marking`', 'LEFT JOIN case_marking ON arcs.`from` = case_marking.id_place');
         //TODO: odkonzultava spravnost SELECTU (vyzera ze funguje)
         $place = new Case_MarkingModel();
         
@@ -56,7 +58,7 @@ class TransitionModel extends \flow\AbstractModel{
             $placesArr[$p->id_place]->marking = $p->marking;
         }
         
-        //TODO: Dorobit logiku inhibitor a reset hran!
+        //TODO: Dorobit logiku inhibitor hran!
         foreach ($arcs as $arc){
             switch($arc->type){
                 case 'PT':
@@ -130,14 +132,38 @@ class TransitionModel extends \flow\AbstractModel{
      * @param type $transition_id
      * @param type $case_id
      */
-    public function fireStart($transition_id, $case_id){
-        $arcs = ArcModel::model()->findAll('arcs.`to` = ' . $transition_id, 'arcs.`from`, arcs.`weight`, arcs.`type`');
+    public function fireStart($case_id, $transition_id){
+        $arcs = ArcModel::model()->findAll('arcs.`to` = ' . (int)$transition_id, 'arcs.`from`, arcs.`weight`, arcs.`type`');
         foreach ($arcs as $arc){
             switch($arc->type){
                 case 'PT':
-                    $pl = Case_MarkingModel::model()->findOne('id_case =' . $case_id . ' AND id_place =' . $arc->from);
+                    $pl = Case_MarkingModel::model()->findOne('id_case =' . (int)$case_id . ' AND id_place =' . $arc->from);
+                    var_dump((int)$transition_id);
+                    var_dump((int)$case_id);
+                    var_dump($arc->from);
+                    var_dump($pl);
                     $pl->marking -= $arc->weight;
                     var_dump($pl->save(TRUE));
+                    break;
+                case 'inhibitor':
+                case 'reset':
+                    $pl = Case_MarkingModel::model()->findOne('id_case =' . $case_id . ' AND id_place =' . $arc->from);
+                    $pl->marking = 0;
+                    var_dump($pl->save(TRUE));
+                    break;
+                
+            }
+        }
+    }
+    
+    public function returnTokens($case_id, $transition_id){
+        $arcs = ArcModel::model()->findAll('arcs.`to` = ' . (int)$transition_id, 'arcs.`from`, arcs.`weight`, arcs.`type`');
+        foreach ($arcs as $arc){
+            switch($arc->type){
+                case 'PT':
+                    $pl = Case_MarkingModel::model()->findOne('id_case =' . (int)$case_id . ' AND id_place =' . $arc->from);
+                    $pl->marking += $arc->weight;
+                    $pl->save(TRUE);
                     break;
                 case 'inhibitor':
                 case 'reset':

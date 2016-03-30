@@ -6,7 +6,6 @@ use app\models\Case_MarkingModel;
 use app\models\CaseModel;
 use app\models\Petri_NetModel;
 use app\models\PlaceModel;
-use app\models\TransitionModel;
 use flow\AbstractController;
 use flow\Flow;
 
@@ -26,19 +25,19 @@ class CaseController extends AbstractController{
      */
     protected function accessRules(){
         return [
-            'logged_in' => ['create'],
+            'logged_in' => ['create', 'viewAllActive', 'viewAllFinished'],
         ];
     }
     
     /**
      * Funkcia na vytvorenie noveho case, ulozenie do DB a zaznacenie pociatocneho znackovania do DB
-     * TODO: Dorobit hlasenia neuspesneho ulozenia!
      */
     protected function create(){
         
         $case = new CaseModel();
         $case->name = $_POST['name'];
         $case->id_pn = $_POST['pn'];
+        $case->firm = $_POST['firm'];
         
         if((Petri_NetModel::model()->findOne('id = ' . $case->id_pn)) == NULL){
             echo 'error';
@@ -60,9 +59,23 @@ class CaseController extends AbstractController{
             $cm->marking = $p->initial_marking;
             $cm->save(TRUE);
         }
+        //header('Location:' . ENTRY_SCRIPT_URL . 'petrinet/listAll', TRUE, 301);
+    }
+
+    /**
+     * Najde a vylistuje vsetky case-y, ktore este neboli ukoncene, tzn. su stale aktivne
+     */
+    public function viewAllActive(){
+        $cases = CaseModel::model()->findAll('timestamp_stop IS NULL');
+        $this->render('listallactive', ['cases' => $cases]);
+
     }
     
-    public function test(){
-        TransitionModel::model()->fireStop(9,2);
+    /**
+     * Najde a vylistuje vsetky case-y, ktore uz boli ukoncene, tzn. su neaktivne
+     */
+    public function viewAllFinished(){
+        $cases = CaseModel::model()->findAll('timestamp_stop IS NOT NULL');
+        $this->render('listallfinished', ['cases' => $cases]);
     }
 }

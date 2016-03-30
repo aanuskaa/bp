@@ -93,5 +93,16 @@ span.icon img{
 }
 
 nav{
-    padding-top: 60px;
+    padding-top: 80px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-right: none;
+    border-left: none;
+    border-collapse: collapse;
+}
+
+td{
+    padding: 10px;
 }

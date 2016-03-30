@@ -276,7 +276,7 @@ abstract class AbstractModel {
         if ($condition != '') {
             $query .= "WHERE {$condition}";
         }
-        var_dump($query);
+        //var_dump($query);
         $result = Flow::app()->pdo->query($query)->fetchAll(PDO::FETCH_OBJ);
         $empty_object = new $this;
         $empty_object->setIsNewRecord(FALSE);
@@ -311,7 +311,7 @@ abstract class AbstractModel {
         foreach ($this->attributes as $attr => $value) {
             if (isset($rules['required']) && preg_match('/\b' . $attr . '\b/', $rules['required']) != false) {
                 if ($this->primaryKey !== $attr && !in_array($attr, $this->columnsWithDefValue) && strlen($value)==0) {
-                    $this->validationErrors[$attr] = Flow::translate('{FIELD} is required field', ['{FIELD}' => ucfirst(isset($labels[$attr]) ? $labels[$attr] : $attr)]);
+                    $this->validationErrors[$attr] = Flow::t('{FIELD} is required field', ['{FIELD}' => ucfirst(isset($labels[$attr]) ? $labels[$attr] : $attr)]);
                 }
             }
             if (isset($rules['unique']) && preg_match('/\b' . $attr . '\b/', $rules['unique']) != false && !is_null($value)) {
@@ -320,10 +320,10 @@ abstract class AbstractModel {
                 } else {
                     $query = "SELECT t.{$attr} as toCheck from {$this->table()} t WHERE t.{$attr} = '{$value}' AND t.id <> {$this->id};";
                 }
-                var_dump($query);
+                //var_dump($query);
                 $result = Flow::app()->pdo->query($query)->fetchAll(PDO::FETCH_OBJ);
                 if (!empty($result)) {
-                    $this->validationErrors[$attr] = Flow::translate('Value in the field {FIELD} is already in use', ['{FIELD}' => ( isset($labels[$attr]) ? $labels[$attr] : $attr)]) ;
+                    $this->validationErrors[$attr] = Flow::t('Value in the field {FIELD} is already in use', ['{FIELD}' => ( isset($labels[$attr]) ? $labels[$attr] : $attr)]) ;
                 }
             }
         }

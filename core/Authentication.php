@@ -180,11 +180,11 @@ class Authentication {
     public function getTextLoginFailureReason() {
         
         $err = [
-            self::INVALID_CREDENTIALS => Flow::translate('Invalid credentials.'),
-            self::BANNED => Flow::translate('Your account is banned.'),
-            self::INACTIVE => Flow::translate('Your account is no longer active'),
-            self::NOUSER => Flow::translate('Sorry, you are not logged in.'),
-            self::SESSION_EXPIRED => Flow::translate('Sorry, your session has expired')
+            self::INVALID_CREDENTIALS => Flow::t('Invalid credentials.'),
+            self::BANNED => Flow::t('Your account is banned.'),
+            self::INACTIVE => Flow::t('Your account is no longer active'),
+            self::NOUSER => Flow::t('Sorry, you are not logged in.'),
+            self::SESSION_EXPIRED => Flow::t('Sorry, your session has expired')
         ];       
         
         if( array_key_exists( $this->loginFailureReason, $err ) ){

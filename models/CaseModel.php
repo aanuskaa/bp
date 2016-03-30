@@ -18,6 +18,8 @@ namespace app\models;
  * @property int started_by
  */
 class CaseModel extends \flow\AbstractModel {
+    
+    public $tasks;
     /**
      * @inheritdoc
      */
