@@ -66,6 +66,8 @@ class PdoConnection extends PDO{
         $vals = trim($vals, ",");
         
         $query = "INSERT INTO `{$table}` ({$fields}) VALUES ({$vals})";
+        
+        //var_dump($query);
         $this->query($query);
         
         return true;

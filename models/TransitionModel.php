@@ -47,8 +47,9 @@ class TransitionModel extends AbstractModel{
      */
     public function isEnabled($case_id,  $transition_id){
         $arcs = ArcModel::model()->findAll('arcs.`to` = ' . $transition_id);
-        $places = ArcModel::model()->findAll('arcs.`to` = ' . $transition_id . ' AND case_marking.id_case = ' . $case_id, 'case_marking.`id`, case_marking.`id_place`, case_marking.`marking`', 'LEFT JOIN case_marking ON arcs.`from` = case_marking.id_place');
-        //TODO: odkonzultava spravnost SELECTU (vyzera ze funguje)
+        $places = ArcModel::model()->findAll('arcs.`to` = ' . $transition_id . ' AND case_marking.id_case = ' . $case_id, 
+                'case_marking.`id`, case_marking.`id_place`, case_marking.`marking`', 
+                'LEFT JOIN case_marking ON arcs.`from` = case_marking.id_place');
         $place = new Case_MarkingModel();
         
         $placesArr = [];
@@ -62,6 +63,9 @@ class TransitionModel extends AbstractModel{
         foreach ($arcs as $arc){
             switch($arc->type){
                 case 'PT':
+                    if(!isset($placesArr[$arc->from])){
+                        var_dump($places);
+                    }
                     if( ($placesArr[$arc->from]->marking - $arc->weight) < 0 ){
                         return false;
                     }

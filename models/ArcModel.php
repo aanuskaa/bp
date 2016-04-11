@@ -39,7 +39,6 @@ class ArcModel extends AbstractModel{
                 {$joins}
                 WHERE {$condition}";
                 
-        //var_dump($query);
         return Flow::app()->pdo->query($query)->fetchAll();
     }
 }

@@ -14,11 +14,12 @@
 <table>
     <thead>
         <tr>
-            <th>Nazov case</th>
+            <th>Case</th>
             <th>Task</th>
-            <th>Zacate</th>
-            <th>Ukoncit</th>
-            <th>Opust task</th>
+            <th>Začaté</th>
+            <th>Formulár</th>
+            <th>Ukončiť</th>
+            <th>Opusť task</th>
         </tr>
     </thead>
     <tbody>
@@ -27,9 +28,10 @@
             echo '<tr><td>' . $task->case_name . '</td>',
                 '<td>' . $task->transition_name . '</td>',
                 '<td>' . $task->timestamp_start . '</td>',
+                '<td><button>Zobraz</button></td>',
                     '<td>',
                     '<form action="' . ENTRY_SCRIPT_URL. 'task/finish" method="POST">',
-                    '<button type="submit">Dokonci</button>',
+                    '<button type="submit">Dokonči</button>',
                     '<input type="hidden" name="task" value="' .  $task->id . ',' . $task->id_case . ',' . $task->id_transition . '"/>',
                     '</form>',
                     '</td>',

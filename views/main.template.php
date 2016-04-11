@@ -26,18 +26,13 @@
                 </div>
             </div>
             <nav class="container">
-                <a href="<?php echo ENTRY_SCRIPT_URL . 'petrinet/listAll'?>">Vytvor case</a>
+                <a href="<?php echo ENTRY_SCRIPT_URL . 'petrinet/filter'?>">Vytvor case</a>
                 <a href="<?php echo ENTRY_SCRIPT_URL . 'task/listAvailable'?>">Vsetky tasky na zobratie</a>
                 <a href="<?php echo ENTRY_SCRIPT_URL . 'task/listAll'?>">Uzivatelove tasky</a>
             </nav>
             <div class="content container">
                 <?php echo $content; ?>
             </div>
-            <!-- <div class="footer">
-                <div class="container">
-                    <span>© Anna Demeterová</span>
-                </div>
-            </div> -->
         </div>
     </body>
 </html>

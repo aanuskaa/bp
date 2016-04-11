@@ -8,7 +8,7 @@
  * @link       http://workflow.com/
  * @version    1.0.0
  */
-//var_dump($data->cases);
+//var_dump($data->firm_cases);
 
 
 
@@ -16,25 +16,41 @@
 <table>
     <thead>
         <tr>
-            <th>ID Case</th>
-            <th>Case name</th>
+            <th>Referencia</th>
+            <th>Firma</th>
+            <th>Case</th>
             <th>Task</th>
+            <th>Rola</th>
             <th>Vezmi</th>
         </tr>
     </thead>
     <tbody>
         <?php 
-        foreach ($data->cases as $case){
-            foreach ($case->tasks as $task){
-                echo '<tr><td>' . $case->id . '</td>',
-                    '<td>' . $case->name . '</td>',
-                    '<td>' . $task->name . '</td>',
-                        '<td>',
-                        '<form action="' . ENTRY_SCRIPT_URL. 'task/take" method="POST">',
-                        '<button type="submit">Vezmi task</button>',
-                        '<input type="hidden" name="task" value="' . $case->id . ',' . $task->id . '"/>',
-                        '</form>',
-                        '</td></tr>';
+        foreach ($data->firm_cases as $id_firm => $firm){
+            foreach ($firm['cases'] as $id_case => $case){
+                foreach ($case['tasks'] as $id_task => $task){
+                    if($task['reference'] != NULL){
+                        echo '<tr><td>!</td>';
+                    }
+                    else{
+                        echo '<tr><td>&nbsp;</td>';
+                    }
+                    echo '<td>' . $firm['name'] . '</td>',
+                        '<td>' . $case['name'] . '</td>',
+                        '<td>' . $task['name'] . '</td>';
+                    if(isset($task['role_name'])){
+                        echo '<td>' . $task['role_name'] . '</td>';
+                    }
+                    else{
+                        echo '<td>Bez naväzujúcej role</td>';
+                    }
+                    echo '<td>',
+                    '<form action="' . ENTRY_SCRIPT_URL. 'task/take" method="POST">',
+                    '<button type="submit">Vezmi task</button>',
+                    '<input type="hidden" name="task" value="'  .$id_case . ',' . $id_task . '"/>',
+                    '</form>',
+                    '</td></tr>';
+                }
             }
         }
         ?>

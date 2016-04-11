@@ -59,7 +59,7 @@ class CaseController extends AbstractController{
             $cm->marking = $p->initial_marking;
             $cm->save(TRUE);
         }
-        //header('Location:' . ENTRY_SCRIPT_URL . 'petrinet/listAll', TRUE, 301);
+        header('Location:' . ENTRY_SCRIPT_URL . 'petrinet/filter', TRUE, 301);
     }
 
     /**

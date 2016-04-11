@@ -30,16 +30,11 @@ class UserController extends \flow\AbstractController{
             Flow::app()->auth->postAuthenticate($_POST['UserModel']['email'], $_POST['UserModel']['password']);
         }
         if (Flow::app()->auth->isLoggedIn()) { //prihlaseny
-            //TODO: presmerovat po vstupe
-            echo 'logged in!';
+            header('Location:' . ENTRY_SCRIPT_URL . 'petrinet/filter', TRUE, 301);
         }
         else {
             //zobrazit prihlacovaci formular znova
             $this->render('login');
         }
-    }
-    
-    public function test(){
-        
     }
 }
