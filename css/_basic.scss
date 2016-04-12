@@ -1,0 +1,56 @@
+body{
+  color: $gray;
+  font-size: $textSize;
+}
+
+.left{
+  float: left;
+}
+
+.right:after{
+  clear:both;
+}
+
+.right{
+  float:right;
+}
+
+.right:after{
+  clear:both;
+}
+
+// farby
+
+.blue{
+  color: $blue;
+}
+
+.purple{
+  color: $purple;
+}
+///////////////////////////////// VYMAZAT POTOM TOTO
+.tip-text{
+  float: left;
+}
+.banner-td{
+  float: left;
+}
+.logo img{
+  width: 150px;
+  height: auto;
+}
+
+.login-register{
+  float: right;
+}
+
+.login-register div{
+  float: left;
+}
+
+.carousel-middle{
+  background: #000;
+  color: $white;
+}
+
+

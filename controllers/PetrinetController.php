@@ -43,7 +43,6 @@ class PetrinetController extends AbstractController{
             }
             $arr[$r->firm_id]['nets'][$r->pn_id] = $r->name; 
         }
-        var_dump($arr);
         $this->render('listall', ['nets' => $arr]);
     }
     

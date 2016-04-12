@@ -13,6 +13,8 @@
 
 <form method="POST" action="<?php echo ENTRY_SCRIPT_URL . 'case/create' ?>"><?php 
 ?>
+    <label>Názov pre case: <input type="text" name="name" class="input-full"></label>
+    <br />
     <select id="firms" name="firm" class="mt">
         <option>Vyberte firmu</option>
         <?php foreach($data->nets as $id => $net){
@@ -24,15 +26,13 @@
          <option>Vyberte proces</option>
     </select>
     <br />
-    <label>Názov pre case: <input type="text" name="name" class="mt"></label>
-    <br />
-    <button type="submit">Vytvor case</button>
+    <button type="submit"  class="button-blue button-blue-full">Vytvoriť case</button>
 </form>
 <script>
     var firms = JSON.parse('<?php echo json_encode($data->nets)?>');
     $(document).on("change", "#firms", function(){
         var nets = firms[$(this).val()].nets;
-        var html="<option>Vyberte firmu</option>";
+        var html="<option>Vyberte proces</option>";
         for(var key in nets) {
             html += "<option value=\"" + key  + "\">" + nets[key] + "</option>";
         }

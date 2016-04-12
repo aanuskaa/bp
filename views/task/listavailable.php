@@ -30,7 +30,7 @@
             foreach ($firm['cases'] as $id_case => $case){
                 foreach ($case['tasks'] as $id_task => $task){
                     if($task['reference'] != NULL){
-                        echo '<tr><td>!</td>';
+                        echo '<tr><td id="reference_check"><i class="icon  icon-tick"></i></td>';
                     }
                     else{
                         echo '<tr><td>&nbsp;</td>';
@@ -46,7 +46,7 @@
                     }
                     echo '<td>',
                     '<form action="' . ENTRY_SCRIPT_URL. 'task/take" method="POST">',
-                    '<button type="submit">Vezmi task</button>',
+                    '<button type="submit" class="button-blue button-grey-full">Vezmi task</button>',
                     '<input type="hidden" name="task" value="'  .$id_case . ',' . $id_task . '"/>',
                     '</form>',
                     '</td></tr>';

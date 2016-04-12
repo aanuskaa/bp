@@ -1,0 +1,94 @@
+
+label{
+  line-height: 2.5;
+  vertical-align: center;
+  margin-left: 10px;
+}
+
+label:after{
+  content:"\A"; 
+  white-space:pre;
+}
+
+.baseinput{
+  display: inline-block;
+  font-size: 13px;
+  border-radius: $border-radius;
+}
+
+// sive buttony
+.button-grey{
+  @extend .baseinput;
+  @include martin-button(inherit,12px,40px,1px solid $grey-border,$grey-button,inherit,$box-shadow);
+}
+
+.button-grey:hover{
+  background-color: #f00;
+}
+
+.button-grey-full{
+  @extend .baseinput;
+  @include martin-button(100%,12px,0,1px solid $grey-border,$grey-button,inherit,$box-shadow);
+}
+
+.button-grey-full:hover{
+  background-color: #f00;
+}
+
+
+// modre buttony
+.button-blue{
+  @extend .baseinput;
+  @include martin-button(inherit,12px,40px,none,$blue,$white);
+}
+
+.button-blue:hover{
+  background-color: $blue2;
+}
+
+.button-blue-full{
+  @extend .baseinput;
+  @include martin-button(100%,12px,0,none,$blue,$white);
+}
+
+.button-blue-full:hover{
+  background-color: $blue2;
+}
+
+
+// fialove buttony
+.button-purple{
+  @extend .baseinput;
+  @include martin-button(inherit,12px,40px,none,$purple,$white);
+}
+
+.button-purple:hover{
+  background-color: $purple2;
+}
+
+.button-purple-full{
+  @extend .baseinput;
+  @include martin-button(100%,12px,0,none,$purple,$white);
+}
+
+.button-purple-full:hover{
+  background-color: $purple2;
+}
+
+
+// inputy
+.input{
+  @extend .baseinput;
+  @include martin-input(inherit);
+}
+
+.input-full{
+  @extend .baseinput;
+  @include martin-input(100%);
+}
+
+.input-half{
+  @extend .baseinput;
+  @include martin-input(50%);
+}
+

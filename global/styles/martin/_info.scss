@@ -1,0 +1,13 @@
+.team-member{
+  margin-top: 30px;
+  text-align: justify;
+  
+  &.first{
+    margin-top: 0;
+  }
+}
+
+#map{
+  width: 100%;
+  height: 250px;
+}

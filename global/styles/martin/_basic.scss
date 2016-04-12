@@ -1,0 +1,55 @@
+html{
+  background: $gray2;
+}
+
+body{
+  color: $gray;
+  font-size: $textSize;
+}
+
+section{
+  padding: 40px 0;
+  min-height: 350px;
+  background: $white;
+}
+
+// rozloženia
+.left{
+  float: left;
+}
+
+.right:after{
+  clear:both;
+}
+
+.right{
+  float:right;
+}
+
+.right:after{
+  clear:both;
+}
+
+// farby
+.blue{
+  color: $blue;
+}
+
+.purple{
+  color: $purple;
+}
+
+
+///////////////////////////////// VYMAZAT POTOM TOTO
+.tip-text{
+  float: left;
+}
+.banner-td{
+  float: left;
+}
+.logo img{
+  width: 150px;
+  height: auto;
+}
+
+

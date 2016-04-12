@@ -12,7 +12,7 @@
 ?>
 
 <form action="<?php echo ENTRY_SCRIPT_URL . 'user/login/'?>" method="POST">
-    <input type="text" name="UserModel[email]"/>
-    <input type="password" name="UserModel[password]"/>
-    <button type="submit">Login</button>
+    <input type="text" name="UserModel[email]" class="input"/>
+    <input type="password" name="UserModel[password]" class="input" />
+    <button type="submit" class="button-blue button-grey-full">Login</button>
 </form>

@@ -1,0 +1,67 @@
+ul{
+  list-style-type: none;
+  padding: 0;
+}
+
+.filter-h{
+  float: left;
+  li{
+    float: left;
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px solid $grey-border;
+  }
+  
+  li:last-child, li:first-child{
+    padding-right: 0px;
+    border-right: none;
+  }
+}
+
+.menu-horizontal{
+  margin: 0 0 30px 0;
+  
+  h3{
+    line-height: 1.5;
+  }
+  
+  .icon{
+    vertical-align: inherit;
+  }
+  
+}
+
+.menu-h{
+  @extend .menu-horizontal;
+  line-height: 2.5;
+}
+
+.menu-h-lowered{
+  @extend .menu-horizontal;
+  line-height: 1.7;
+}
+
+.pagination{
+  float:right;
+  
+  li{
+    margin: 0 0 0 10px;
+    padding: 10px 15px;
+    float: left;
+    background: $white;
+    border: 1px solid $grey-border;
+    border-radius: $border-radius;
+    box-shadow: 1px 1px 1px $grey-border;
+    
+    a{
+      margin: -10px -15px;
+      padding: 10px 15px;
+    }
+    
+    a:hover{
+      background: $grey-button;
+    }
+    
+  }
+  
+}

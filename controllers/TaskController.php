@@ -75,7 +75,17 @@ class TaskController extends AbstractController{
                         unset($data[$firm_id]['cases'][$case_id]['tasks'][$task_id]);
                     }
                     elseif($task['reference'] != NULL){
-                        $this->resolveReferences($firm_id, $case_id, $task_id, $task['reference']);
+                        $ref = $this->resolveReferences($firm_id, $case_id, $task_id, $task['reference']);
+                        switch ($ref){
+                            case [FALSE, FALSE]:
+                                unset($data[$firm_id]['cases'][$case_id]['tasks'][$task_id]);
+                                break;
+                            case [TRUE, FALSE]:
+                                $data[$firm_id]['cases'][$case_id]['tasks'][$task_id]['reference'] = NULL;
+                                break;
+                            case [TRUE, TRUE]:
+                                break;
+                        }
                     }
                 }
                 if(empty($data[$firm_id]['cases'][$case_id]['tasks'])){
@@ -195,18 +205,78 @@ class TaskController extends AbstractController{
      * Funkcia riesi referencie na predosle prechody.
      * Kontroluje, ci predosly prechod bol spusteny
      * Ak bol spusteny, zisti, ci ho spustil dany pouzivatel, ak nebol, zisti, ci ho prihlaseny pouzivatel moze spustit
+     * @param type $firm_id
+     * @param type $case_id
+     * @param type $transition_id
+     * @param type $referencedtransition_id
+     * @return array [boolean, boolean]  prva hodnota urcuje, ci pouzivatel moze spustit dany prechod
+     *                                   druha ci ho spusta na zaklade platnej referencie na neho
      */
     private function resolveReferences($firm_id, $case_id, $transition_id, $referencedtransition_id){
+        $user_id = Flow::app()->auth->getUserId();
         $referencedTask = Case_ProgressModel::model()->findOne('id_case=' . $case_id .
                 ' AND id_transition=' . $referencedtransition_id);
-        var_dump(empty($referencedTask));
+        /*Referencovany prechod nebol spusteny*/
         if(empty($referencedTask)){
-            
+            $query = 'SELECT * FROM TRANSITIONS_X_ROLE WHERE id_prechod = ' . $transition_id;
+            $role_check = Flow::app()->pdo->query($query)->fetchAll(PDO::FETCH_OBJ);
+                /*Prechod nema naviazanu rolu*/
+                if(empty($role_check)){
+                    return[TRUE, FALSE];
+                }
+                /*Prechod ma naviazanu rolu*/
+                else{
+                    $query = 'SELECT * FROM USERS_X_ROLE WHERE user_id = '
+                            . $user_id . ' AND firm_id = ' . $firm_id . ' AND role_id = ' . $role_check[0]->id_role . ';';
+                    $role_check = Flow::app()->pdo->query($query)->fetchAll(PDO::FETCH_OBJ);
+                    /*Pouzivatel v danej firme nema danu rolu*/
+                    if(empty($role_check)){
+                        return [FALSE, FALSE];
+                    }
+                    /*Pouzivatel v danej firme ma danu rolu*/
+                    else{
+                        return [TRUE, FALSE];
+                    }
+                }
         }
+        /*Referencovany prechod bol spusteny*/
         else{
-            
+            /*Pouzivatel spustil referencovany prechod*/
+            if($referencedTask->started_by == $user_id){
+                return [TRUE, TRUE];
+            }
+            /*Pouzivatel nespustil dany prechod*/
+            else{
+                $query = 'SELECT * FROM USERS_X_FIRM WHERE user_id = ' . $referencedTask->started_by . ' AND firm_id = ' . $firm_id . ';';
+                $user_firm_check = Flow::app()->pdo->query($query)->fetchAll(PDO::FETCH_OBJ);
+                /*Pouzivatel, ktory referencovany prechod spustil uz nie je vo firme*/
+                if(empty($user_firm_check)){
+                    $query = 'SELECT * FROM TRANSITIONS_X_ROLE WHERE id_prechod = ' . $transition_id;
+                    $role_check = Flow::app()->pdo->query($query)->fetchAll(PDO::FETCH_OBJ);
+                    /*Prechod nema naviazanu rolu*/
+                    if(empty($role_check)){
+                        return[TRUE, FALSE];
+                    }
+                    /*Prechod ma naviazanu rolu*/
+                    else{
+                        $query = 'SELECT * FROM USERS_X_ROLE WHERE user_id = '
+                                . $user_id . ' AND firm_id = ' . $firm_id . ' AND role_id = ' . $role_check[0]->id_role . ';';
+                        $role_check = Flow::app()->pdo->query($query)->fetchAll(PDO::FETCH_OBJ);
+                        /*Pouzivatel v danej firme nema danu rolu*/
+                        if(empty($role_check)){
+                            return [FALSE, FALSE];
+                        }
+                        /*Pouzivatel v danej firme ma danu rolu*/
+                        else{
+                            return [TRUE, FALSE];
+                        }
+                    }
+                }
+                /*Pouzivatel, ktory referencovany prechod spustil je stale vo firme*/
+                else{
+                    return [FALSE, FALSE];
+                }
+            }
         }
-        return true;
     }
-    
 }
