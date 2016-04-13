@@ -3,16 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/anuska/NetBeansProjects/workflow/global/modules/header.php</file>
             <file>file:/home/anuska/NetBeansProjects/workflow/views/task/listavailable.php</file>
             <file>file:/home/anuska/NetBeansProjects/workflow/views/petrinet/listall.php</file>
             <file>file:/home/anuska/NetBeansProjects/workflow/style/main.css</file>
-            <file>file:/home/anuska/NetBeansProjects/workflow/global/modules/footer.php</file>
-            <file>file:/home/anuska/NetBeansProjects/workflow/views/user/login.php</file>
-            <file>file:/home/anuska/NetBeansProjects/workflow/style/custom.css</file>
-            <file>file:/home/anuska/NetBeansProjects/workflow/views/main.template.php</file>
-            <file>file:/home/anuska/NetBeansProjects/workflow/controllers/PetrinetController.php</file>
-            <file>file:/home/anuska/NetBeansProjects/workflow/views/task/listall.php</file>
         </group>
     </open-files>
 </project-private>

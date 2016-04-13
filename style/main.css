@@ -66,6 +66,9 @@
 .icon-ellipses:before {
   content: "\f110"; }
 
+.icon-exclamation_circle:before {
+  content: "\f06a"; }
+
 .icon-facebook:before {
   content: "\f111"; }
 

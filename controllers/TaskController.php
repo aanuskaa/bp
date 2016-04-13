@@ -25,13 +25,22 @@ class TaskController extends AbstractController{
      */
     protected function accessRules(){
         return [
-            'logged_in' => ['take', 'listAll', 'listAvailable', 'finish', 'cancel'],
+            'logged_in' => ['take', 'listAll', 'listAvailable', 'finish', 'cancel', 'finished'],
         ];
     }
     /**
      * Vylistuje vsetky tasky, ktore si moze pouzivatel vziat
      */
     protected function listAvailable(){
+        $firm_query = 'SELECT 
+                            USERS_X_FIRM.firm_id, FIRM.firm_name
+                        FROM
+                            USERS_X_FIRM
+                                LEFT JOIN
+                            FIRM ON USERS_X_FIRM.firm_id = FIRM.firm_id
+                        WHERE
+                            user_id = ' . Flow::app()->auth->getUserId() . ';';
+        $firms =  Flow::app()->pdo->query($firm_query)->fetchAll(PDO::FETCH_OBJ);
         $query = 'SELECT DISTINCT
                     USERS_X_FIRM.firm_id,
                     FIRM.firm_name,
@@ -96,7 +105,7 @@ class TaskController extends AbstractController{
                 unset($data[$firm_id]);
             }
         }
-        $this->render('listavailable', ['firm_cases' => $data]);
+        $this->render('listavailable', ['firm_cases' => $data, 'firms' => $firms]);
     }
     
     /**
@@ -278,5 +287,32 @@ class TaskController extends AbstractController{
                 }
             }
         }
+    }
+    /**
+     * Funkcia vyfiltruje z DB tasky pouzivatela, ktore uz dokoncil
+     */
+    public function finished(){
+        $query = 'SELECT 
+                    `case_progress`.id_case,
+                    `case_progress`.id_transition,
+                    transition.`name` AS task_name,
+                    `case_progress`.timestamp_start,
+                    `case_progress`.timestamp_stop,
+                    `case`.`name` AS case_name,
+                    `case`.firm,
+                    FIRM.`firm_name` AS firm_name
+                FROM
+                    workflow2.case_progress
+                        LEFT JOIN
+                    `case` ON case_progress.id_case = `case`.id
+                        LEFT JOIN
+                    `FIRM` ON `case`.firm = FIRM.firm_id
+                        LEFT JOIN
+                    `transition` ON `case_progress`.id_transition = transition.id
+                WHERE
+                    case_progress.started_by = ' . Flow::app()->auth->getUserId() . '
+                        AND case_progress.timestamp_stop IS NOT NULL;';
+        $data= Flow::app()->pdo->query($query)->fetchAll(PDO::FETCH_OBJ);
+        $this->render('viewFinished', ['tasks' => $data]);
     }
 }

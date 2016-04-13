@@ -27,8 +27,9 @@
                     <nav>
                         <ul class="menu-h">
                             <li><a href="<?php echo ENTRY_SCRIPT_URL . 'petrinet/filter'?>">Vytvor case</a></li>
-                            <li><a href="<?php echo ENTRY_SCRIPT_URL . 'task/listAvailable'?>">Vezmi task</a></li>
-                            <li><a href="<?php echo ENTRY_SCRIPT_URL . 'task/listAll'?>">Moje tasky</a></li>
+                            <li><a href="<?php echo ENTRY_SCRIPT_URL . 'task/listAvailable'?>">Vezmi úlohu</a></li>
+                            <li><a href="<?php echo ENTRY_SCRIPT_URL . 'task/listAll'?>">Moje úlohy</a></li>
+                            <li><a href="<?php echo ENTRY_SCRIPT_URL . 'task/finished'?>">História úloh</a></li>
                         </ul>
                     </nav>
                 </div>
