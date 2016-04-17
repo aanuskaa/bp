@@ -19,7 +19,6 @@ namespace app\models;
  */
 class CaseModel extends \flow\AbstractModel {
     
-    public $tasks;
     /**
      * @inheritdoc
      */

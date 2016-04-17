@@ -12,7 +12,7 @@ namespace app\models;
  */
 class Case_MarkingModel extends \flow\AbstractModel{
     
-    private $testMarking;
+    //private $testMarking;
 
     /**
      * @inheritdoc

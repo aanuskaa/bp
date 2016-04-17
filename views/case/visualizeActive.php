@@ -29,7 +29,7 @@
                 . '<td>' . $case->timestamp_start . '</td>'
                 . '<td>' . $case->first_name . ' ' .  $case->last_name .  '</td>'
                 . '<td>' . $case->firm_name . '</td>'
-                . '<td><form method="POST" action="' . ENTRY_SCRIPT_URL . 'case/visualize">'
+                . '<td><form method="POST" action="' . ENTRY_SCRIPT_URL . 'case/visualizeOne">'
                     . '<input type="hidden" name="case_id" value="' . $case->id . '">'
                     . '<button type="submit" class="button-blue button-blue-full"><i class="icon icon-informations"></i></button>'
                 . '</form></td>'

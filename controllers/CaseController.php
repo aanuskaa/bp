@@ -129,6 +129,14 @@ class CaseController extends AbstractController{
         $result = Flow::app()->pdo->query($query)->fetchAll(PDO::FETCH_OBJ);
         
         $this->render('visualizeActive', ['cases' => $result]);
-        
+    }
+    
+    public function visualizeOne(){
+        $id_case = $_POST['case_id'];
+        $case = CaseModel::model()->findOne('id = ' . $id_case);
+        $pn = Petri_NetModel::model()->findOne('id = ' . $case->id_pn);
+        $xml_data = $pn->xml_file;
+        $case_progress = Case_MarkingModel::model()->findAll('id_case = ' . $id_case);
+        var_dump($case_progress);
     }
 }
