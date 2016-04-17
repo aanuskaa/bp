@@ -8,6 +8,7 @@ use app\models\Petri_NetModel;
 use app\models\PlaceModel;
 use flow\AbstractController;
 use flow\Flow;
+use PDO;
 
 
 /**
@@ -25,7 +26,7 @@ class CaseController extends AbstractController{
      */
     protected function accessRules(){
         return [
-            'logged_in' => ['create', 'viewAllActive', 'viewAllFinished'],
+            'logged_in' => ['create', 'viewActive', 'viewFinished'],
         ];
     }
     
@@ -63,19 +64,71 @@ class CaseController extends AbstractController{
     }
 
     /**
-     * Najde a vylistuje vsetky case-y, ktore este neboli ukoncene, tzn. su stale aktivne
+     * Najde a vylistuje vsetky case-y, ktore uz boli ukoncene, tzn. su neaktivne
      */
-    public function viewAllActive(){
-        $cases = CaseModel::model()->findAll('timestamp_stop IS NULL');
-        $this->render('listallactive', ['cases' => $cases]);
+    public function viewFinished(){
+        $query = 'SELECT 
+                    `case`.id,
+                    `case`.name,
+                    `case`.id_pn,
+                    `case`.timestamp_start,
+                    `case`.timestamp_stop,
+                    `case`.`started_by`,
+                    `case`.firm,
+                    FIRM.firm_name,
+                    USERS.first_name,
+                    USERS.last_name
+                FROM
+                    `case`
+                        LEFT JOIN
+                    FIRM ON FIRM.firm_id = `case`.firm
+                                LEFT JOIN
+                        USERS ON `case`.started_by = USERS.id
+                WHERE
+                    `case`.firm IN (SELECT 
+                            firm_id
+                        FROM
+                            USERS_X_FIRM
+                        WHERE
+                            USERS_X_FIRM.user_id = 1)
+                        AND timestamp_stop IS NOT NULL;';
+        $result = Flow::app()->pdo->query($query)->fetchAll(PDO::FETCH_OBJ);
 
+        $this->render('listallfinished', ['cases' => $result]);
     }
     
     /**
-     * Najde a vylistuje vsetky case-y, ktore uz boli ukoncene, tzn. su neaktivne
+     * Funkcia vyfiltruje z DB vsetky case-y firiem, v ktorych je pouzivatel, ktore este nie su ukoncene
      */
-    public function viewAllFinished(){
-        $cases = CaseModel::model()->findAll('timestamp_stop IS NOT NULL');
-        $this->render('listallfinished', ['cases' => $cases]);
+    public function viewActive(){
+        $query = 'SELECT 
+                    `case`.id,
+                    `case`.name,
+                    `case`.id_pn,
+                    `case`.timestamp_start,
+                    `case`.`started_by`,
+                    `case`.firm,
+                    FIRM.firm_name,
+                    USERS.first_name,
+                    USERS.last_name
+                FROM
+                    `case`
+                        LEFT JOIN
+                    FIRM ON FIRM.firm_id = `case`.firm
+                                LEFT JOIN
+                        USERS ON `case`.started_by = USERS.id
+                WHERE
+                    `case`.firm IN (SELECT 
+                            firm_id
+                        FROM
+                            USERS_X_FIRM
+                        WHERE
+                            USERS_X_FIRM.user_id = 1)
+                        AND timestamp_stop IS NULL;';
+
+        $result = Flow::app()->pdo->query($query)->fetchAll(PDO::FETCH_OBJ);
+        
+        $this->render('visualizeActive', ['cases' => $result]);
+        
     }
 }

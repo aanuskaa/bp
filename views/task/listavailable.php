@@ -37,7 +37,7 @@ $arr = json_encode($arr);
             foreach ($firm['cases'] as $id_case => $case){
                 foreach ($case['tasks'] as $id_task => $task){
                     if($task['reference'] != NULL){
-                        $all_firms .= '<tr><td id="reference_check"><i class="icon icon-tick"></i></td>';
+                        $all_firms .= '<tr><td id="reference_check"><i class="icon icon-warning"></i></td>';
                     }
                     else{
                         $all_firms .= '<tr><td>&nbsp;</td>';

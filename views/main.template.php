@@ -30,6 +30,8 @@
                             <li><a href="<?php echo ENTRY_SCRIPT_URL . 'task/listAvailable'?>">Vezmi úlohu</a></li>
                             <li><a href="<?php echo ENTRY_SCRIPT_URL . 'task/listAll'?>">Moje úlohy</a></li>
                             <li><a href="<?php echo ENTRY_SCRIPT_URL . 'task/finished'?>">História úloh</a></li>
+                            <li><a href="<?php echo ENTRY_SCRIPT_URL . 'case/viewFinished'?>">História case-ov</a></li>
+                            <li><a href="<?php echo ENTRY_SCRIPT_URL . 'case/viewActive'?>">Aktuálne case-y</a></li>
                         </ul>
                     </nav>
                 </div>
