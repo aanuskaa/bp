@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @todo write description
+ * Zobrazi vsetky aktualne ulohy pouzivatela
  *
  * @package    
  * @author     Anna Demeterova

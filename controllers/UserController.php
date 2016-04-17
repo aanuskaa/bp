@@ -5,7 +5,7 @@ namespace app\controllers;
 use flow\Flow;
 
 /**
- * @todo write description
+ * Controller pre pracu s userom
  *
  * @package    
  * @author     Anna Demeterova

@@ -26,6 +26,10 @@ class Case_ProgressModel extends \flow\AbstractModel{
         return 'case_progress';
     }
     
+    /**
+     * @inheritdoc
+     * @return Case_ProgressModel
+     */
     public static function model($className = __CLASS__) {
         return parent::model($className);
     }

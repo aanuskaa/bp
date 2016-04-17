@@ -35,7 +35,10 @@ class CaseModel extends \flow\AbstractModel {
     public function table() {
         return 'case';
     }
-    
+    /**
+     * @inheritdoc
+     * @return CaseModel
+     */
     public static function model($className = __CLASS__) {
         return parent::model($className);
     }

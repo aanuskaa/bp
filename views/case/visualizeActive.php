@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @todo write description
+ * Zobrazi neukoncene case-y s preklikom na ich aktualnu vizualizaciu
  *
  * @package    
  * @author     Anna Demeterova

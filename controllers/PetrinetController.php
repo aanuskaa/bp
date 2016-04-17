@@ -7,7 +7,7 @@ use flow\Flow;
 use PDO;
 
 /**
- * @todo write description
+ * Controller pre pracu s petrinet
  *
  * @package    
  * @author     Anna Demeterova
@@ -16,8 +16,13 @@ use PDO;
  */
 class PetrinetController extends AbstractController{
     
-    public function create(){
-        $this->render('petrinet');
+    /**
+     * @inheritdoc 
+     */
+    protected function accessRules(){
+        return [
+            'logged_in' => ['filter'],
+        ];
     }
     
     /**

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @todo write description
+ * Zobrazi vsetky ukoncene case - y v zavislosti na pouzivatelovi a jeho firmach
  *
  * @package    
  * @author     Anna Demeterova

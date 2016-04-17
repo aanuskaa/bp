@@ -34,6 +34,10 @@ class Arc_TPModel extends \flow\AbstractModel{
         ];
     }
     
+    /**
+     * @inheritdoc
+     * @return Arc_TPModel
+     */
     public static function model($className = __CLASS__) {
         return parent::model($className);
     }

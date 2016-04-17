@@ -14,4 +14,5 @@
     foreach ($data->nets as $net){
         echo '<input type="radio" name="pn" value="' . $net->id .  '">'. $net->name .'<br>';
     }
-    ?></form>
+    ?>
+</form>

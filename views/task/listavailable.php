@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @todo write description
+ * Zobrazi vsetky ulohy, ktore si pouzivatel moze vziat. Doraz na prechody, ktore su referencovane na neho
  *
  * @package    
  * @author     Anna Demeterova

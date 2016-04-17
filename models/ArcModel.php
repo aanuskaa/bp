@@ -6,7 +6,7 @@ use flow\AbstractModel;
 use flow\Flow;
 
 /**
- * @todo write description
+ * Vseobecny model hrany
  *
  * @package    
  * @author     Anna Demeterova
@@ -23,10 +23,22 @@ class ArcModel extends AbstractModel{
         return '';
     }
     
+    /**
+     * @inheritdoc
+     * @return ArcModel
+     */
     public static function model($className = __CLASS__) {
         return parent::model($className);
     }
     
+    /**
+     * Funkcia vyselectuje hrany, ktore vchadzaju do prechodu
+     * @param type $condition
+     * @param type $columns
+     * @param type $joins
+     * @param type $index
+     * @return type
+     */
     public function findAll($condition = '', $columns = '*', $joins = '', $index = '') {
         
         $query = 

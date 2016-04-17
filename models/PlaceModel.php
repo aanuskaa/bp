@@ -3,7 +3,7 @@
 namespace app\models;
 
 /**
- * @todo write description
+ * Model miesta
  *
  * @package    
  * @author     Anna Demeterova

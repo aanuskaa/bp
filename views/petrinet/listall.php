@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @todo write description
+ * Vylistuje vsetky procesy, z ktorych moze pouzivatel vytvorit case
  *
  * @package    
  * @author     Anna Demeterova

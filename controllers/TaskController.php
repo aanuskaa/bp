@@ -11,7 +11,7 @@ use PDO;
 use const ENTRY_SCRIPT_URL;
 
 /**
- * @todo write description
+ * Controller pre pracu s ulohami
  *
  * @package    
  * @author     Anna Demeterova
@@ -28,6 +28,7 @@ class TaskController extends AbstractController{
             'logged_in' => ['take', 'listAll', 'listAvailable', 'finish', 'cancel', 'finished'],
         ];
     }
+    
     /**
      * Vylistuje vsetky tasky, ktore si moze pouzivatel vziat
      */
@@ -130,14 +131,17 @@ class TaskController extends AbstractController{
     protected function take(){
         $temp = explode(',', $_POST['task']);
         if(TransitionModel::model()->isEnabled($temp[0], $temp[1])){
-            TransitionModel::model()->fireStart($temp[0], $temp[1]);
+            $reset = TransitionModel::model()->fireStart($temp[0], $temp[1]);
             $caseProgress = new Case_ProgressModel;
             $caseProgress->id_case = $temp[0];
             $caseProgress->id_transition = $temp[1];
             $caseProgress->started_by = Flow::app()->auth->getUserId();
             $caseProgress->timestamp_start=  date("Y-m-d H:i:s");
-            $caseProgress->save(TRUE);
             
+            if($reset[0] != FALSE){
+                $caseProgress->consumed_tokens = $reset[1];
+            }
+            $caseProgress->save(TRUE);
         }
         else{
             echo 'Task uz nie je k dispozicii';
@@ -150,10 +154,9 @@ class TaskController extends AbstractController{
      */
     protected function cancel(){
         $temp = explode(',', $_POST['cancel']);
-        //var_dump($temp);
-        TransitionModel::model()->returnTokens($temp[1], $temp[2]);
         $caseProgress = Case_ProgressModel::model()->findOne('id = ' .  $temp[0]);
-        var_dump($caseProgress->delete());
+        TransitionModel::model()->returnTokens($temp[1], $temp[2], $caseProgress->consumed_tokens);
+        $caseProgress->delete();
         header('Location:' . ENTRY_SCRIPT_URL . 'task/listAll', TRUE, 301);
     }
     

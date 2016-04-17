@@ -3,7 +3,7 @@
 namespace app\models;
 
 /**
- * @todo write description
+ * Model usera
  *
  * @package    
  * @author     Anna Demeterova
@@ -19,8 +19,6 @@ class UserModel extends \flow\AbstractModel{
     }
 
     public function table() {
-        
+        return 'USERS';
     }
-
-//put your code here
 }

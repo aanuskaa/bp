@@ -3,7 +3,7 @@
 namespace app\models;
 
 /**
- * @todo write description
+ * Model petriho siete
  *
  * @package    
  * @author     Anna Demeterova

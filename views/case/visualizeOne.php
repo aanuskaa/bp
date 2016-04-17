@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @todo write description
+ * Zobrazi svg aktualneho stavu case-u
  *
  * @package    
  * @author     Anna Demeterova

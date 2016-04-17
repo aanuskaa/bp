@@ -13,7 +13,7 @@ use flow\AbstractController;
 use flow\Flow;
 
 /**
- * @todo write description
+ * Controller sluzi na komunikaciu s pn editorom
  *
  * @package    
  * @author     Anna Demeterova
@@ -23,7 +23,16 @@ use flow\Flow;
 class ApiController extends AbstractController{
     
     /**
-     * 
+     * @inheritdoc 
+     */
+    protected function accessRules(){
+        return [
+            'logged_in' => ['petrinetPost', 'saveArcs'],
+        ];
+    }
+    
+    /**
+     * Ulozenie PN do db pre potreby wf enginu
      */
     public function petrinetPost(){
         $teststr = '{"places":[{"id_in_xml":0,"name":"m1","initial_marking":1},{"id_in_xml":1,"name":"m2","initial_marking":0},{"id_in_xml":2,"name":"m3","initial_marking":0},{"id_in_xml":3,"name":"m4","initial_marking":0},{"id_in_xml":4,"name":"m5","initial_marking":0},{"id_in_xml":5,"name":"m6","initial_marking":0},{"id_in_xml":6,"name":"m7","initial_marking":0},{"id_in_xml":7,"name":"m8","initial_marking":0}],"transitions":[{"id_in_xml":8,"name":"p1"},{"id_in_xml":9,"name":"p2"},{"id_in_xml":10,"name":"p3"},{"id_in_xml":11,"name":"p4"},{"id_in_xml":12,"name":"p5"},{"id_in_xml":13,"name":"p6"},{"id_in_xml":14,"name":"p7"}],"arcs":[{"id_in_xml":15,"type":"regular","sourceId":0,"destinationId":8,"weight":1},{"id_in_xml":16,"type":"regular","sourceId":8,"destinationId":1,"weight":1},{"id_in_xml":17,"type":"regular","sourceId":1,"destinationId":9,"weight":1},{"id_in_xml":18,"type":"regular","sourceId":9,"destinationId":2,"weight":2},{"id_in_xml":19,"type":"regular","sourceId":2,"destinationId":10,"weight":1},{"id_in_xml":20,"type":"regular","sourceId":2,"destinationId":11,"weight":1},{"id_in_xml":21,"type":"regular","sourceId":10,"destinationId":3,"weight":1},{"id_in_xml":22,"type":"regular","sourceId":11,"destinationId":4,"weight":1},{"id_in_xml":23,"type":"regular","sourceId":3,"destinationId":12,"weight":1},{"id_in_xml":24,"type":"regular","sourceId":4,"destinationId":13,"weight":1},{"id_in_xml":25,"type":"regular","sourceId":13,"destinationId":6,"weight":1},{"id_in_xml":26,"type":"regular","sourceId":12,"destinationId":5,"weight":1},{"id_in_xml":27,"type":"regular","sourceId":5,"destinationId":14,"weight":1},{"id_in_xml":28,"type":"regular","sourceId":6,"destinationId":14,"weight":1},{"id_in_xml":29,"type":"regular","sourceId":14,"destinationId":7,"weight":1}],"xml_name":"sietka.xml"}';

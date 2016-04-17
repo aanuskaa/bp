@@ -6,7 +6,7 @@ use flow\AbstractModel;
 
 
 /**
- * @todo write description
+ * Model prechodu
  *
  * @package    
  * @author     Anna Demeterova
@@ -137,6 +137,7 @@ class TransitionModel extends AbstractModel{
      * @param type $case_id
      */
     public function fireStart($case_id, $transition_id){
+        $reset = [FALSE, 0];
         $arcs = ArcModel::model()->findAll('arcs.`to` = ' . (int)$transition_id, 'arcs.`from`, arcs.`weight`, arcs.`type`');
         foreach ($arcs as $arc){
             switch($arc->type){
@@ -147,20 +148,27 @@ class TransitionModel extends AbstractModel{
                     var_dump($arc->from);
                     var_dump($pl);
                     $pl->marking -= $arc->weight;
-                    var_dump($pl->save(TRUE));
+                    $pl->save(TRUE);
                     break;
                 case 'inhibitor':
                 case 'reset':
                     $pl = Case_MarkingModel::model()->findOne('id_case =' . $case_id . ' AND id_place =' . $arc->from);
+                    $reset = [TRUE, $pl->marking];
                     $pl->marking = 0;
-                    var_dump($pl->save(TRUE));
+                    $pl->save(TRUE);
                     break;
                 
             }
         }
+        return $reset;
     }
     
-    public function returnTokens($case_id, $transition_id){
+    /**
+     * Pri cancel vrati tokeny do predchadzajuceho miesta
+     * @param type $case_id
+     * @param type $transition_id
+     */
+    public function returnTokens($case_id, $transition_id, $reset){
         $arcs = ArcModel::model()->findAll('arcs.`to` = ' . (int)$transition_id, 'arcs.`from`, arcs.`weight`, arcs.`type`');
         foreach ($arcs as $arc){
             switch($arc->type){
@@ -172,8 +180,8 @@ class TransitionModel extends AbstractModel{
                 case 'inhibitor':
                 case 'reset':
                     $pl = Case_MarkingModel::model()->findOne('id_case =' . $case_id . ' AND id_place =' . $arc->from);
-                    $pl->marking = 0;
-                    var_dump($pl->save(TRUE));
+                    $pl->marking = $reset;
+                    $pl->save(TRUE);
                     break;
                 
             }
