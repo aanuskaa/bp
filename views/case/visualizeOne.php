@@ -12,25 +12,40 @@
 ?>
   
 <script>
-    function addProgress(idTransition){
+    function addProgress(idTransition, username){
         var x = $("#" + (idTransition-1)).attr("x");
         var y = $("#" + (idTransition-1)).attr("y");
         var width = $("#" + (idTransition-1)).attr("width") -10;
         var height = $("#" + (idTransition-1)).attr("height") -10;
         var svg = document.getElementsByTagName('svg')[0];
+        var link = 'http://www.w3.org/2000/svg';
         
-        var icon = document.createElementNS("http://www.w3.org/2000/svg", 'image');
+        var text_id = 'transition-name' + (idTransition-1);
+        console.log(text_id);
         
-        icon.setAttributeNS('http://www.w3.org/2000/svg','height',height+11);
-        icon.setAttributeNS('http://www.w3.org/2000/svg','width',width+10);
-        icon.setAttributeNS('http://www.w3.org/2000/svg','x',x);
-        icon.setAttributeNS('http://www.w3.org/2000/svg','y',y);
-        icon.setAttributeNS('http://www.w3.org/2000/svg','visibility', 'visible')+ 5;
-        icon.setAttributeNS('http://www.w3.org/1999/xlink','href','<?php echo ROOT_URL?>style/tool.png');
-        icon.setAttributeNS('http://www.w3.org/2000/svg','class','transition-icon');
-        console.log($("#" + (idTransition-1)).parent());
+        var icon = document.createElementNS(link, 'image');
+        var set = document.createElementNS(link, 'set');
+        var title = document.createElementNS(link, 'title');
+        
+        icon.setAttributeNS(link,'height',height+11);
+        icon.setAttributeNS(link,'width',width+10);
+        icon.setAttributeNS(link,'x',x);
+        icon.setAttributeNS(link,'y',y);
+        icon.setAttributeNS(link,'visibility', 'visible')+ 5;
+        icon.setAttributeNS('http://www.w3.org/1999/xlink','href','<?php echo ROOT_URL?>style/tool.gif');
+        icon.setAttributeNS(link,'id','transition-icon' + (idTransition-1));
+        
+        set.setAttributeNS(link,'attributeName','fill-opacity');
+        set.setAttributeNS(link,'to','0.9');
+        set.setAttributeNS(link,'begin',(idTransition-1) + ".mouseover");
+        set.setAttributeNS(link,'end', (idTransition-1) + ".mouseout");
+        
+        title.textContent = 'Vykonáva: ' + username;
         
         svg.appendChild(icon);
+        
+        icon.appendChild(title);
+        
         $(svg).html($(svg).html());
     }
     
@@ -39,10 +54,9 @@
 <?php
 echo $data->svg;
 
-var_dump($data->progress);
-
 foreach ($data->progress as $p){
-    echo '<script>addProgress(' . $p->id_in_xml . ');</script>';
+    $user_name = $p->last_name . ' ' . $p->first_name;
+    echo '<script>addProgress(' . $p->id_in_xml . ', "' . $user_name . '");</script>';
 }
 
 
