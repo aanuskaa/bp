@@ -72,12 +72,16 @@ class Flow {
         
         $this->storeObject('\flow\PdoConnection', 'pdo'); //pripojenie s databazou
         $this->pdo->newConnection($config['db']['dns'],$config['db']['user'],$config['db']['pass']);
+
+        self::$objects['alertmanager'] = new AlertManager();
         
         self::$objects['auth'] = new Authentication();
         self::$objects['auth']->checkForAuthentication();
-        
+
         self::$objects['router'] = new Router(); // smeruje požiadavku
         self::$objects['router']->resolve(); 
+        
+        //** Operacie registrovane za tymto riadkom sa neprejavia !!
     }
     
     /**

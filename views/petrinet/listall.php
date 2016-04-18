@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col-lg-4 col-lg-offset-2">
             <select id="firms" name="firm" class="mt">
-                <option>Vyberte firmu</option>
+                <option value="">Vyberte firmu</option>
                 <?php foreach($data->nets as $id => $net){
                     echo '<option name="firm" value="' . $id . '">' . $net['name'] . '</option>';
                 }?>
@@ -24,7 +24,7 @@
         </div>
         <div class="col-lg-4">
             <select id="nets"  name="pn" class="mt">
-                 <option>Vyberte proces</option>
+                 <option value="">Vyberte proces</option>
             </select>
         </div>
         <div class="col-lg-8 col-lg-offset-2">
@@ -39,7 +39,7 @@
     var firms = JSON.parse('<?php echo json_encode($data->nets)?>');
     $(document).on("change", "#firms", function(){
         var nets = firms[$(this).val()].nets;
-        var html="<option>Vyberte proces</option>";
+        var html="<option value=\"\">Vyberte proces</option>";
         for(var key in nets) {
             html += "<option value=\"" + key  + "\">" + nets[key] + "</option>";
         }

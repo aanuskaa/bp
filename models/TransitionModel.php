@@ -64,7 +64,7 @@ class TransitionModel extends AbstractModel{
             switch($arc->type){
                 case 'PT':
                     if(!isset($placesArr[$arc->from])){
-                        var_dump($places);
+                        //var_dump($places);
                     }
                     if( ($placesArr[$arc->from]->marking - $arc->weight) < 0 ){
                         return false;

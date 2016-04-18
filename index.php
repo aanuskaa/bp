@@ -9,7 +9,7 @@
  */
 
 error_reporting( E_ALL );       //typ error 
-ini_set('display_errors', 1);   //zobrazenie errorov
+ini_set('display_errors', 0);   //zobrazenie errorov
 
 define('APP_PATH', __DIR__ . '/');
 

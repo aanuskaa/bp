@@ -1,5 +1,7 @@
 <?php
 
+use flow\Flow;
+
 /**
  * @todo write description
  *
@@ -37,6 +39,7 @@
                 </div>
                 <div class="col-lg-10">
                     <div class="content">
+                        <?php echo Flow::app()->alertmanager->displayAlerts(); ?>
                         <?php echo $content; ?>
                     </div>
                 </div>

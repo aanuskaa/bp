@@ -144,7 +144,8 @@ class TaskController extends AbstractController{
             $caseProgress->save(TRUE);
         }
         else{
-            echo 'Task uz nie je k dispozicii';
+            Flow::app()->alertmanager->setAlert('task-error', 'alert-danger', 'Task uz nie je k dispozicii');
+            
         }
         header('Location:' . ENTRY_SCRIPT_URL . 'task/listAvailable', TRUE, 301);
     }

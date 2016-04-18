@@ -41,27 +41,46 @@ class CaseController extends AbstractController{
         $case->id_pn = $_POST['pn'];
         $case->firm = $_POST['firm'];
         
+        var_dump($case);
+        
+        if(empty($case->id_pn)){
+            Flow::app()->alertmanager->setAlert('case-error', 'alert-danger', 'Case sa nevytvoril, vyberte proces!');
+            header('Location:' . ENTRY_SCRIPT_URL . 'petrinet/filter', TRUE, 301);
+        }
+        if(empty($case->firm)){
+            Flow::app()->alertmanager->setAlert('case-error', 'alert-danger', 'Case sa nevytvoril, vyberte firmu!');
+            header('Location:' . ENTRY_SCRIPT_URL . 'petrinet/filter', TRUE, 301);
+        }
+        if(empty($case->name)){
+            Flow::app()->alertmanager->setAlert('case-error', 'alert-danger', 'Case sa nevytvoril, zadajte názov case-u!');
+            header('Location:' . ENTRY_SCRIPT_URL . 'petrinet/filter', TRUE, 301);
+        }
+        
         if((Petri_NetModel::model()->findOne('id = ' . $case->id_pn)) == NULL){
-            echo 'error';
-            return;
+            Flow::app()->alertmanager->setAlert('case-error', 'alert-danger', 'Case sa nevytvoril, proces v DB neexistuje');
+            header('Location:' . ENTRY_SCRIPT_URL . 'petrinet/filter', TRUE, 301);
         }
         
         $case->timestamp_start = date("Y-m-d H:i:s");
         $case->started_by = Flow::app()->auth->getUserId();
-        var_dump($case->save(TRUE));
-        var_dump($case->getValidationErrors());
-
+        if($case->save(TRUE)){
         /*Zaznaci pociatocne znackovanie pre case*/
-        $caseMarking = new Case_MarkingModel();
-        $allPlacesMarking = PlaceModel::model()->findAll('id_pn = ' . $case->id_pn, 'id, initial_marking');
-        foreach ($allPlacesMarking as $p){
-            $cm = clone($caseMarking);
-            $cm->id_case = $case->id;
-            $cm->id_place = $p->id;
-            $cm->marking = $p->initial_marking;
-            $cm->save(TRUE);
+            $caseMarking = new Case_MarkingModel();
+            $allPlacesMarking = PlaceModel::model()->findAll('id_pn = ' . $case->id_pn, 'id, initial_marking');
+            foreach ($allPlacesMarking as $p){
+                $cm = clone($caseMarking);
+                $cm->id_case = $case->id;
+                $cm->id_place = $p->id;
+                $cm->marking = $p->initial_marking;
+                $cm->save(TRUE);
+            }
+            header('Location:' . ENTRY_SCRIPT_URL . 'task/listAvailable', TRUE, 301);
         }
-        header('Location:' . ENTRY_SCRIPT_URL . 'task/listAll', TRUE, 301);
+        else{
+            Flow::app()->alertmanager->setAlert('case-error', 'alert-danger', 'Case sa nevytvoril, niekde nastala chyba');
+            header('Location:' . ENTRY_SCRIPT_URL . 'petrinet/filter', TRUE, 301);
+        }
+        
     }
 
     /**
