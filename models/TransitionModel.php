@@ -59,7 +59,6 @@ class TransitionModel extends AbstractModel{
             $placesArr[$p->id_place]->marking = $p->marking;
         }
         
-        //TODO: Dorobit logiku inhibitor hran!
         foreach ($arcs as $arc){
             switch($arc->type){
                 case 'PT':
@@ -71,11 +70,11 @@ class TransitionModel extends AbstractModel{
                     }
                     break;
                 case 'reset':
+                    break;
+                case 'inhibitor':
                     if( ($placesArr[$arc->from]->marking >= $arc->weight)){
                         return false;
                     }
-                    break;
-                case 'inhibitor':
                     break;
             }
         }

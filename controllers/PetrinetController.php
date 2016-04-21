@@ -34,7 +34,7 @@ class PetrinetController extends AbstractController{
                         FROM FIRM 
                         LEFT JOIN USERS_X_FIRM 
                         ON FIRM.firm_id = USERS_X_FIRM.firm_id 
-                        WHERE USERS_X_FIRM.user_id = 1) AS t
+                        WHERE USERS_X_FIRM.user_id = ' . Flow::app()->auth->getUserId() . ') AS t
                     LEFT JOIN PN_X_FIRM on t.firm_id = PN_X_FIRM.firm_id
                     LEFT JOIN petri_net on PN_X_FIRM.pn_id = petri_net.id
                     WHERE PN_X_FIRM.pn_id IS NOT NULL;';
