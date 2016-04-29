@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="215"
+   height="174"
+   id="netDrawArea"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="inhibitor_reset.svg"
+   inkscape:export-filename="/media/data-hdd/Škola/BP/BP latex/bp/images/inhibitor_reset.png"
+   inkscape:export-xdpi="179"
+   inkscape:export-ydpi="179">
+  <metadata
+     id="metadata85">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs83" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1059"
+     id="namedview81"
+     showgrid="false"
+     inkscape:zoom="1.1841325"
+     inkscape:cx="48.417324"
+     inkscape:cy="114.30929"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="netDrawArea" />
+  <rect
+     x="115.5"
+     y="53"
+     opacity="0.6"
+     stroke-width="1"
+     fill="white"
+     width="2"
+     height="0"
+     id="rect11" />
+  <text
+     font-family="verdana"
+     font-weight="bold"
+     font-size="12"
+     x="116.5"
+     y="50"
+     id="text13" />
+  <g
+     id="g4268">
+    <rect
+       stroke-width="2"
+       stroke="black"
+       class="transition"
+       fill="white"
+       height="40"
+       width="40"
+       y="34"
+       x="173"
+       id="2" />
+    <polyline
+       id="polyline5"
+       stroke="white"
+       stroke-width="4"
+       fill="none"
+       points="60,54  163,54" />
+    <polyline
+       id="polyline7"
+       stroke="black"
+       stroke-width="2"
+       fill="none"
+       points="60,54  163,54" />
+    <circle
+       id="circle9"
+       stroke-width="2"
+       stroke="black"
+       fill="white"
+       r="5"
+       cy="54"
+       cx="167" />
+    <circle
+       class="place"
+       stroke-width="2"
+       stroke="black"
+       fill="white"
+       r="20"
+       cy="54"
+       cx="40"
+       id="0" />
+    <circle
+       id="circle16"
+       fill="white"
+       r="4"
+       cy="45"
+       cx="31" />
+    <circle
+       id="circle18"
+       fill="white"
+       r="4"
+       cy="45"
+       cx="40" />
+    <circle
+       id="circle20"
+       fill="white"
+       r="4"
+       cy="45"
+       cx="49" />
+    <circle
+       id="circle22"
+       fill="white"
+       r="4"
+       cy="54"
+       cx="31" />
+    <circle
+       id="circle24"
+       fill="white"
+       r="4"
+       cy="54"
+       cx="40" />
+    <circle
+       id="circle26"
+       fill="white"
+       r="4"
+       cy="54"
+       cx="49" />
+    <circle
+       id="circle28"
+       fill="white"
+       r="4"
+       cy="63"
+       cx="31" />
+    <circle
+       id="circle30"
+       fill="white"
+       r="4"
+       cy="63"
+       cx="40" />
+    <circle
+       id="circle32"
+       fill="white"
+       r="4"
+       cy="63"
+       cx="49" />
+  </g>
+  <text
+     x="56"
+     y="55"
+     font-family="verdana"
+     font-weight="bold"
+     font-size="12"
+     fill="black"
+     id="text34" />
+  <rect
+     x="113.5"
+     y="130.99999997848852"
+     opacity="0.6"
+     stroke-width="1"
+     fill="white"
+     width="2"
+     height="0"
+     id="rect42" />
+  <text
+     font-family="verdana"
+     font-weight="bold"
+     font-size="12"
+     x="114.5"
+     y="127.99999997848852"
+     id="text44" />
+  <g
+     id="g4252"
+     transform="translate(250.80372,-78)">
+    <rect
+       class="transition"
+       height="40"
+       width="40"
+       y="112"
+       x="171"
+       id="3"
+       style="fill:#ffffff;stroke:#000000;stroke-width:2" />
+    <polyline
+       id="polyline36"
+       points="58,131.99999996260092  151,131.99999998875217"
+       style="fill:none;stroke:#ffffff;stroke-width:4" />
+    <polyline
+       id="polyline38"
+       points="58,131.99999996260092  151,131.99999998875217"
+       style="fill:none;stroke:#000000;stroke-width:2" />
+    <polygon
+       id="polygon40"
+       points="161,137 171,132 161,127 161,132 151,127 151,127 151,137 161,132 "
+       style="fill:#000000;stroke:#000000" />
+    <circle
+       class="place"
+       r="20"
+       cy="132"
+       cx="38"
+       id="1"
+       style="fill:#ffffff;stroke:#000000;stroke-width:2" />
+    <circle
+       id="circle47"
+       r="4"
+       cy="123"
+       cx="29"
+       style="fill:#ffffff" />
+    <circle
+       id="circle49"
+       r="4"
+       cy="123"
+       cx="38"
+       style="fill:#ffffff" />
+    <circle
+       id="circle51"
+       r="4"
+       cy="123"
+       cx="47"
+       style="fill:#ffffff" />
+    <circle
+       id="circle53"
+       r="4"
+       cy="132"
+       cx="29"
+       style="fill:#ffffff" />
+    <circle
+       id="circle55"
+       r="4"
+       cy="132"
+       cx="38"
+       style="fill:#ffffff" />
+    <circle
+       id="circle57"
+       r="4"
+       cy="132"
+       cx="47"
+       style="fill:#ffffff" />
+    <circle
+       id="circle59"
+       r="4"
+       cy="141"
+       cx="29"
+       style="fill:#ffffff" />
+    <circle
+       id="circle61"
+       r="4"
+       cy="141"
+       cx="38"
+       style="fill:#ffffff" />
+    <circle
+       id="circle63"
+       r="4"
+       cy="141"
+       cx="47"
+       style="fill:#ffffff" />
+  </g>
+  <text
+     x="50"
+     y="159"
+     font-family="verdana"
+     font-weight="bold"
+     font-size="12"
+     fill="black"
+     id="text65" />
+  <rect
+     x="192"
+     y="75"
+     stroke-width="1"
+     fill-opacity="0.6"
+     fill="white"
+     id="rect67" />
+  <text
+     id="label_2"
+     y="86"
+     x="193"
+     font-family="verdana"
+     font-weight="bold"
+     font-size="12" />
+  <rect
+     x="190"
+     y="153"
+     stroke-width="1"
+     fill-opacity="0.6"
+     fill="white"
+     id="rect70" />
+  <text
+     id="label_3"
+     y="164"
+     x="191"
+     font-family="verdana"
+     font-weight="bold"
+     font-size="12" />
+  <rect
+     x="39"
+     y="75"
+     stroke-width="1"
+     fill-opacity="0.6"
+     fill="white"
+     id="rect73" />
+  <text
+     y="86"
+     x="40"
+     font-family="verdana"
+     font-weight="bold"
+     font-size="12"
+     id="text75" />
+  <rect
+     x="37"
+     y="153"
+     stroke-width="1"
+     fill-opacity="0.6"
+     fill="white"
+     id="rect77" />
+  <text
+     y="164"
+     x="38"
+     font-family="verdana"
+     font-weight="bold"
+     font-size="12"
+     id="text79" />
+  <flowRoot
+     xml:space="preserve"
+     id="flowRoot4284"
+     style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+       id="flowRegion4286"><rect
+         id="rect4288"
+         width="135.55344"
+         height="52.549351"
+         x="14.331641"
+         y="93.981667" /></flowRegion><flowPara
+       id="flowPara4290"></flowPara></flowRoot>  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="47.674316"
+     y="102.3418"
+     id="text4292"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4294"
+       x="47.674316"
+       y="102.3418"
+       style="font-size:15px">inhibítorová hrana</tspan></text>
+  <text
+     sodipodi:linespacing="125%"
+     id="text4296"
+     y="102.3418"
+     x="322.09448"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     xml:space="preserve"><tspan
+       style="font-size:15px"
+       y="102.3418"
+       x="322.09448"
+       id="tspan4298"
+       sodipodi:role="line">reset hrana</tspan></text>
+</svg>

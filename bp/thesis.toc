@@ -1,0 +1,61 @@
+\select@language {slovak}
+\contentsline {section}{\numberline {0}\'Uvod}{8}
+\contentsline {section}{\numberline {1}Anal\'yza probl\'emu}{9}
+\contentsline {subsection}{\numberline {1.1}Workflow mana\v zment syst\'emy}{9}
+\contentsline {subsubsection}{\numberline {1.1.1}Pr\IeC {\'\i }pad pou\v zitia - case}{9}
+\contentsline {subsubsection}{\numberline {1.1.2}\'Uloha - task}{10}
+\contentsline {subsubsection}{\numberline {1.1.3}Workflow rozmery}{10}
+\contentsline {subsection}{\numberline {1.2}Petriho siete}{10}
+\contentsline {subsubsection}{\numberline {1.2.1}Hist\'oria}{10}
+\contentsline {subsubsection}{\numberline {1.2.2}Klasick\'e Petriho siete}{11}
+\contentsline {subsubsection}{\numberline {1.2.3}Spustite\v lnos\v t a spustenie prechodu}{11}
+\contentsline {subsubsection}{\numberline {1.2.4}Grafick\'e zn\'azornenie}{12}
+\contentsline {subsubsection}{\numberline {1.2.5}Inhib\IeC {\'\i }torov\'e a reset hrany}{12}
+\contentsline {subsection}{\numberline {1.3}WFMS zalo\v zen\'e na Petriho sie\v tach}{13}
+\contentsline {subsubsection}{\numberline {1.3.1}Modelovanie smerovania}{14}
+\contentsline {subsubsection}{\numberline {1.3.2}Anal\'yza modelu procesu}{16}
+\contentsline {subsubsection}{\numberline {1.3.3}??Spo\v lahlivos\v t?? - Soundness}{16}
+\contentsline {subsection}{\numberline {1.4}Pou\v zit\'e technol\'ogie}{17}
+\contentsline {subsubsection}{\numberline {1.4.1}HTML, HTML5}{17}
+\contentsline {subsubsection}{\numberline {1.4.2}PHP}{18}
+\contentsline {subsubsection}{\numberline {1.4.3}SQL, MySQL}{19}
+\contentsline {subsubsection}{\numberline {1.4.4}AJAX}{19}
+\contentsline {subsubsection}{\numberline {1.4.5}XML, SVG}{20}
+\contentsline {subsubsection}{\numberline {1.4.6}JSON}{20}
+\contentsline {subsection}{\numberline {1.5}Pou\v zit\'e n\'avrhov\'e vzory}{20}
+\contentsline {subsubsection}{\numberline {1.5.1}Model-View-Controller (MVC)}{20}
+\contentsline {subsubsection}{\numberline {1.5.2}Registry - Register}{21}
+\contentsline {subsubsection}{\numberline {1.5.3}Singleton}{22}
+\contentsline {section}{\numberline {2}Opis rie\v senia - WFMS}{23}
+\contentsline {subsection}{\numberline {2.1}Procesn\'y port\'al}{23}
+\contentsline {subsection}{\numberline {2.2}Procesn\'y editor}{23}
+\contentsline {subsection}{\numberline {2.3}Editor mana\v zmentu rol\IeC {\'\i } a organiza\v cnej \v strukt\'ury}{24}
+\contentsline {subsection}{\numberline {2.4}Editor formul\'arov a d\'atov\'eho modelu}{24}
+\contentsline {subsection}{\numberline {2.5}Procesn\'y server}{24}
+\contentsline {subsection}{\numberline {2.6}Server mana\v zmentu rol\IeC {\'\i } a pou\v z\IeC {\'\i }vate\v lov}{25}
+\contentsline {subsection}{\numberline {2.7}Server formul\'arov a d\'atov\'eho modelu}{25}
+\contentsline {section}{\numberline {3}Opis rie\v senia - Procesn\'y server}{26}
+\contentsline {subsection}{\numberline {3.1}V\'yber technol\'ogi\IeC {\'\i }}{26}
+\contentsline {subsection}{\numberline {3.2}V\'yber n\'avrhov\'ych vzorov, n\'avrh syst\'emu}{27}
+\contentsline {subsection}{\numberline {3.3}Jadro syst\'emu}{28}
+\contentsline {subsubsection}{\numberline {3.3.1}Register}{29}
+\contentsline {subsubsection}{\numberline {3.3.2}Smerova\v c}{29}
+\contentsline {subsubsection}{\numberline {3.3.3}Objekt pre pr\IeC {\'\i }stup k datab\'aze}{30}
+\contentsline {subsubsection}{\numberline {3.3.4}Objekt pre autentifik\'aciu}{30}
+\contentsline {subsubsection}{\numberline {3.3.5}Mana\v z\'er upozornen\IeC {\'\i }}{30}
+\contentsline {subsubsection}{\numberline {3.3.6}Autoloader}{30}
+\contentsline {subsection}{\numberline {3.4}Modely}{30}
+\contentsline {subsection}{\numberline {3.5}Ovl\'ada\v ce}{31}
+\contentsline {subsection}{\numberline {3.6}N\'ah\v lady}{31}
+\contentsline {subsection}{\numberline {3.7}Datab\'aza}{31}
+\contentsline {subsection}{\numberline {3.8}Implement\'acia biznis logiky}{31}
+\contentsline {subsubsection}{\numberline {3.8.1}Ulo\v zenie Petriho siete do datab\'azy}{31}
+\contentsline {subsubsection}{\numberline {3.8.2}Vytvorenie pr\IeC {\'\i }padu}{32}
+\contentsline {subsubsection}{\numberline {3.8.3}Spr\'ava workflow pr\IeC {\'\i }padu}{33}
+\contentsline {subsubsection}{\numberline {3.8.4}Funkcia vr\'atenia \'ulohy}{36}
+\contentsline {subsubsection}{\numberline {3.8.5}Uchov\'avanie hist\'orie}{36}
+\contentsline {subsubsection}{\numberline {3.8.6}Vizualiz\'acia pr\IeC {\'\i }padu}{36}
+\contentsline {subsection}{\numberline {3.9}Pr\IeC {\'\i }klad}{36}
+\contentsline {subsection}{\numberline {3.10}Use case diagramy}{36}
+\contentsline {subsection}{\numberline {3.11}Mo\v zn\'e roz\v s\IeC {\'\i }renia}{36}
+\contentsline {section}{\numberline {4}Z\'aver}{37}

@@ -1,0 +1,664 @@
+\documentclass[a4paper, 12pt]{article}
+\title{Workflow manament systém - procesnı server}
+\author{Anna Demeterová}
+\usepackage[slovak]{babel} %language
+\usepackage[cp1250]{inputenc} %encoding
+\usepackage[T1]{fontenc} %specify which font encoding is used
+\usepackage[pdftex]{graphicx}
+\usepackage{eurosym} %euro symbol
+
+\usepackage{indentfirst} %paragraph indent
+\setlength{\parindent}{0.5in}
+
+\usepackage{enumitem} %itemize
+\usepackage{tikz} % plus minus symbol
+
+\usepackage{mathtools} %math formulas
+\usepackage{amsmath,amssymb,latexsym}
+
+\usepackage{amsthm}
+\usepackage[toc,page]{appendix}
+
+\usepackage[left=3.5cm,top=2.5cm,bottom=2.5cm,right=2cm]{geometry}%page margin
+
+\usepackage{float} %images positionning
+\usepackage{fancyvrb}%formating pieces of code
+
+\usepackage{fancyhdr} %headers
+\pagestyle{fancy}
+
+\linespread{1.4} %line spacing
+% B E G I N   OF   D O C U M E N T
+\begin{document}
+\thispagestyle{empty} % hide page number
+\setcounter{page}{1} %start of numbering
+\section*{Prehlásenie autora}
+\vspace{10mm}
+Èestne prehlasujem, e táto bakalárska práca je mojim pôvodnım autorskım dielom, na ktorom som pracovala samostatne na základe vlastnıch teoretickıch a praktickıch poznatkov získanıch poèas štúdia a informácií z dostupnej literatúry. Všetky zdroje, literatúru a pramene, ktoré som pri vypracovaní pouila, riadne citujem s uvedením plného odkazu na príslušnı zdroj. Uvedenú prácu som vypracovala pod vedením prof. RNDr. Gabriela Juhása, PhD..\\
+\vspace{10mm}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}} c} % l r text align left right 
+    Bratislava, dòa 20. 05. 2016 & \\
+    & . . . . . . . . . . . . . . . . . . . .  \\
+    & Anna Demeterová\\
+  \end{tabular*}
+\end{table}
+
+\newpage
+
+\thispagestyle{empty}
+\section*{Poïakovanie}
+\vspace{10mm}
+Ïakujem rodine, priate¾ovi Matúšovi, vedúcemu práce prof. RNDr. Gabrielovi Juhásovi, PhD. a ïalším študentom, ktorí sa podie¾ali na tvorbe komplexného Workflow manament systému, ktorého je táto práca súèasou.
+
+\newpage
+\thispagestyle{empty}
+\section*{Abstrakt}
+\noindent Univerzita: Slovenská technická univerzita v Bratislave\\
+Fakulta: Fakulta elektrotechniky a informatiky\\
+Študijnı program: Aplikovaná informatika\\
+Školiace pracovisko: Ústav informatiky a matematiky\\
+Autor: Anna Demeterová\\
+Názov práce: Workflow manament systém - procesnı server\\
+Vedúci práce: prof. RNDr. Gabriel Juhás, PhD.\\
+Bratislava 2016
+\\\\
+\indent Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\\\\   
+\indent K¾úèové slová: Petriho siete, workflov manament, prípady pouitia
+
+\newpage
+\thispagestyle{empty}
+\section*{Abstract}
+\noindent University: Slovak Technical University in Bratislava\\
+Faculty: Faculty of Electrical Engineering and Information Technology\\
+Study programme: Applied Informatics\\
+Training workplace: Institute of Computer Science and Mathematics\\
+Author: Anna Demeterová\\
+Title: Workflow management system - process server\\
+Thesis supervisor: prof. RNDr. Gabriel Juhás, PhD.\\
+Bratislava 2016
+\\\\
+\indent Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\\\\
+\indent Keywords: Petri nets, workflow management, case
+
+\newpage 
+\thispagestyle{empty}
+\tableofcontents %table of contents
+
+\newpage
+\thispagestyle{empty} %my fancy header
+\listoffigures
+
+\newpage
+\addtocounter{section}{-1}
+\section{Úvod}
+V praxi sa èasto stretávame s potrebou riadenia internıch biznis procesov firiem alebo pracovnıch tímov. Väèšinou sa riadenie realizuje pomocou rôznych softvérovıch systémov. V tıchto prípadoch nastáva problém nejednotnosti systémov, alebo potreby znalostí komplikovaného modelovacieho, prípadne programovacieho jazyka. Èasto je potrebné funkcionalitu novıch procesov implementova do zabehnutıch systémov, èo je spojené so zvıšenımi finanènımi vıdavkami a èasovou investíciou. 
+\\
+\indent Riešením tohto problému by bol jednotnı systém, ktorı by umoòoval pomocou jednoduchého a ¾ahko pochopite¾ného modelovacieho jazyka pridáva funcionalitu rôznych procesov bez nutnosti odborného programovania.
+\\
+\indent Našou snahou bolo navrhnú a vytvori takıto Workflow manament systém, v ktorom sa procesy budú modelova pomocou Petriho sietí a v jednoduchıch editoroch na front-ende bude moné pridáva dodatoènú funkcionalitu, a~to pridávanie formulárov a zadefinovanie pouívate¾skıch rolí pre jednotlivé úlohy. Navyše, v systéme sa procesy budú môc zdie¾a medzi rôznymi firmami, èie proces jednej firmy si budú môct zakúpi iné. 
+\\
+\indent Cie¾om tejto bakalárskej práce je namodelovanı proces pomocou Petriho siete uloi do databázy, umoni vytvorenie tzv. case-u prípadu a na základe jeho logiky ho reprezentova vo forme úloh pre pouívate¾ov. Taktie umoòuje vizualizáciu prípadov, aby bolo zistite¾né, v akom stave sa ktorı prípad nachádza, ktoré úlohy sú splnené, ktoré sa vykonávajú a ktoré ešte vykonané neboli.
+
+\newpage
+\section{Analıza problému}
+\subsection{Workflow manament systémy}
+\label{WFMS}
+Cie¾om mnohıch informaènıch systémov v dnešnej dobe je podpora a monitorovanie biznis porcesov. Je iadané, aby tieto systémy kontrolovali správny tok práce v organizáciách. Na základe tejto potreby a špecifikácie sa pod¾a\cite{application_of_petrinets} zrodil termín \textbf{Workflow manament systém} (ïalej WFMS). W.M.P. van der Aalst v \cite{application_of_petrinets} definuje WFMS ako všeobecnı softvérovı nástroj, ktorı umoòuje definovanie, realizáciu, registráciu a kontrolu pracovnıch postupov. Termín workflow sa èaasto pouíva ako synonymum pre biznis proces \cite{wfmodels} a môeme ho chápa ako rozdelenie komplikovanejšieho procesu na postupnos jednoduchších krokov. Túto postupnos je potrebné ma správne zadefinovanú, ak chceme, aby WFMS pracoval správne, ako je iadané, pretoe kvalita WFMS stojí na tomto zadefinovaní. WFMS ponúkajú riešenie pre podporu a optimalizáciu komplexnejších èinností - procesov, riadi, aby aktivity boli plnené správnym èlovekom v riadnom èase v správnom poradí. Pod¾a Workflow Management Coalition\cite{application_of_petrinets} sa tieto systémy vzahujú k doménam sústredenım na logistiku biznis procesov. \emph{``Workflow manament systémy úplne definujú, riadia a vykonávajú workflow pomocou spúštania softvéru, ktorého poradie jednotlivıch krokov je riadené poèítaèovou reprezentáciou workflow logiky.''}. Tieto systémy nie sú limitované na špecifickú biznis aplikáciu, sú široko pouite¾né.\cite{wfmodels}
+\\
+\indent Ako príklad uveïme proces iados o pôièku. Tento proces má pevne zadefinované kroky, ich postupnos, pravidlá pre ich splnenie. Banka opakovane pouíva tento proces pre správny postup pri posudzovaní iadostí.
+\\
+\subsubsection{Prípad pouitia - case}
+\label{case} Pod¾a \cite{application_of_petrinets} WFMS sú \emph{zaloené na case-och/ prípadoch}, èo znamená, e z procesov sú pouívate¾mi vytvárané prípady pouitia, takzvané case -y (ïalej prípad). Prípad je unikátna reprezentácia workflow procesu a má svoju identitu.\cite{PNtechnology} Cie¾om WFMS je riadi prípady èo najefektívnejšie. Opä uvaujme proces iados o pôièku. Zákazník poiada o pôièku vo firme pouívajúcej tento proces, povaujeme to za jeden prípad, alebo prípad pouitia. Ak o pôièku zaiada inı zákazník, povaujeme to za inı prípad. Taktie ak by ten istı zákazník opätovne podal ïalšiu iados, opä je to novı prípad.
+
+\subsubsection{Úloha - task}
+\label{task} Pod¾a \cite{wfmodels} prípady procesov sú reprezentované ako tasky - úlohy. Sú to nedelite¾né - atomické logické jednotky procesu.\cite{introduction} Tieto úlohy plnia pouívatelia, zamestnanci vo firme, prípadne tvorcovia prípadu, èo bıvajú èasto ¾udia mimo firmu, ako napríklad zákazníci. S tımito úlohami môu by späté rôzne podúlohy, ako napríklad vyplnenie formulárov, dodanie dokumentov, a~iné. V \cite{application_of_petrinets} je spustite¾ná úloha špecifického prípadu definovaná ako \textbf{work item - pracovná poloka}. Pod¾a tej istej literatúry nazıvame \textbf{activity - aktivitou} vykonávanie pracovnej poloky. Jednotilvé úlohy sú vykonávané zdrojmi, ako napríklad, poèítaèe, alebo èastejšie ¾udia Ak opä ako príklad pouijeme proces iados o pôièku, jednotlivé úlohy by mohli by napríklad Posúdenie iadosti, Dohodnutie splátok, Podpísanie zmluvy a~iné. Na úlohu Dohodnutie splátok môe by naviazaná podmienka vyplnenia splátkového kalendára a jeho podpísanie iadate¾om.
+\subsubsection{Workflow rozmery} Na základe \ref{case} , \ref{task} , \cite{application_of_petrinets} a \cite{wfmodels} má workflow 3 rozmery, a~to:
+\begin{itemize}[label=$\bullet$]
+  \item \emph{Rozmer prípadu} - znamená, e kadı prípad je riadenı individuálne. Prípady sa navzájom neovplyvòujú.
+  \item \emph{Rozmer procesu} - smerovanie procesuje je špecifikované.
+  \item \emph{Rozmer zdrojov} - zdroje spracuvávajú cas-y, vykonávajú úlohy.
+\end{itemize}
+Ak má skupina zdrojov nejakú podmienku schopností a predpokladov pre jej èlenov, tak túto skupinu voláme \textbf{rola - role}.\cite{application_of_petrinets} Môeme tak pre úlohy definova, akú rolu má ma pouívate¾, ktorı ju má vykona. Napríklad vo vyššie uvedenom príklade môeme definova, e Posúdenie iadosti môe vykona iba zamestnanec s rolou finanènı poradca. Taktie je moné uvies, ktorá rola môe novı prípad vytvori.
+\subsection{Petriho siete}
+\label{petrinet}
+\subsubsection{História}
+\label{history}
+Pôvod Petriho sietí sa v \cite{whatispn} datuje v šesdesiatych rokoch v dizertaènej práci "Communication with Automata" Carla Adama Petriho($\ast$12.júl 1926 – $\dag$ 2.júl 2010)\cite{webPetri}. Niektoré zdoje \cite{scholarPN} uvádzajú, e Petri tieto siete vymyslel u v roku 1939 na modelovanie chemickıch procesov. Pod¾a \cite{whatispn}, jeho skorá práca neobsahuje Petriho siete a ich definície tak, ako ich poznáme v dnešnej dobe. Doteraz existuje viacero definícií Petriho sietí.
+\subsubsection{Klasické Petriho siete}
+Pod¾a \cite{pt_petrinets} klasické Petriho siete sú zvláštny druh orientovaného grafu. Tento graf pozostáva z 2 typov elementov, a~to z \textbf{uzlov} a \textbf{hrán}. 
+\\
+\indent Petriho sie povaujeme za graf \textbf{bipartitnı} \cite{application_of_petrinets} \cite{introduction}, èo znamená, e uzly v tıchto grafoch sú 2 typov, a to \textbf{miesto} - \emph{place} a \textbf{prechod} - \emph{transition}. Tieto uzly sú spojené pomocou \textbf{hrán} - \emph{arcs}. Platí pravidlo, e 2 uzly toho istého typu nemôu by spojené hranou. \cite{introduction} Ako sme spomínali v \ref{history}, definícii Petriho sieti je viac, uvádzame definíciu z \cite{sevcikovadus}.
+
+\newtheorem{pndef}{Definícia}
+\begin{pndef}
+\textbf{Petriho sie} je orientovanı bipartitnı graf reprezentovanı štvoricou \\(P,T,F,W,$ m_{0} $), kde:
+\\ \indent P = \{$ p_{1} $, ... ,$ p_{n} $\} - koneèná neprázdna mnoina miest;
+\\ \indent T = \{$ t_1 $, ... , $ t_n $\} - koneèná neprázdna mnoina prechodov ;
+\\ \indent P $ \cap $ T = \O, P $ \cup $ T $ \neq $ \O;
+\\ \indent F $ \subseteq $ (P  $ \times $  T) $ \cup $  (T  $ \times $  P) - mnoina hrán (toková relácia);
+\\ \indent W: F $ \rightarrow $ N $\cup$ \{0\} - váhová funkcia;
+\\ \indent $m_0$ P $ \rightarrow $ N $\cup$ \{0\} - poèiatoèné znaèkovanie;  
+\end{pndef}
+\indent Váhová funkcia predstavuje mnoinu funkènıch hodnôt váh všetkıch hrán v Petriho sieti. Poèiatoèné znaèkovanie vyjadruje poèiatoènı stav Petriho siete, priraïuje kadému miestu poèet \textbf{znaèiek} - \emph{tokenov}.\cite{sevcikovadus} Ich poèet v miestach sa poèas spúšania prechodov siete mení. 
+\\
+\indent Miesta môeme oznaèova ako vstupné a vıstupné vzh¾adom na jeden prechod. Ako vstupné ho oznaèíme, ak hrana z neho vychádza a smeruje do daného prechodu. Naopak, z tohto prechodu hrana smeruje do miesta, ktoré oznaèujeme vıstupné. 
+
+\subsubsection{Spustite¾nos a spustenie prechodu}
+Prechod znaèíme \textbf{spustite¾nı}, ak platí, e znaèkovanie kadého vstupného miesta vzh¾adom na danı prechod, je väèšie alebo rovné, ako váhová funkcia hrany, ktorá do skúmaného prechodu vchádza. Teda:
+\begin{equation}
+ \forall p \in P: m(p) \geq I(p,t)
+\end{equation}
+kde I je vstupná - \emph{input} matica danej Petriho siete. \cite{sevcikovadus}
+\\
+\indent Ak prechod spåòa tieto podmienky, jeho spustenie môeme rozdeli do 2 krokov: skonzumovanie znaèiek a produkcia znaèiek. Prechod spustíme a ten z kadého vstupného miesta \emph{skonzumuje} takı poèet znaèiek, aká je váha príslušnıch spojovacích hrán. Následne sa vyprodukujú znaèky do vıstupnıch miest, pre kadé miesto to¾ko, akú váhu má spojovacia hrana. Nastala zmena znaèkovania:
+\begin{equation}
+ \forall p \in P: m`(p) = m(p) + O(p,t) - I(p,t)
+\end{equation}
+kde O je vıstupná - \emph{output} matica danej Petriho siete. \cite{sevcikovadus}
+
+\subsubsection{Grafické znázornenie}
+Petriho siete sú grafickım jazykom. \cite{application_of_petrinets} Miesta sú reprezentované krunicou, prechody štvorcom a hrany oblúkmi, prièom šípka hrany indikuje smer toku. Váhy hrán sa znaèia èíslom na hrany, ak je váha hrany rovná jednej, váha sa neznaèí. Znaèky sa v grafoch znaèia ako èierne body v mieste, prípadne pri vyšších hodnotách ich znaèíme èíselne.\cite{sevcikovadus} \begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{images/pn_grafik.png}
+  \caption{Grafické znaèenie objektov Petriho sietí}
+  \label{fig:blocks}
+  \end{figure}
+
+\subsubsection{Inhibítorové a reset hrany}
+\label{inhibitorreset}
+V nasledujúcej podkapitole vyuívame informácie z  \cite{resetinhibitor}. V našom systéme vyuívame okrem normálnych hrán aj hrany inhibítorové a reset hrany. Jedná sa o jednoduché rozšírenie. Tieto hrany môu by pouité na namodelovanie blokovania a vymazania. Obidva typy majú smer z miesta do prechodu, èie sú to vstupné hrany. 
+\\
+\indent Reset hrany umoòujú prechodu zkonzumova všetky znaèky z miesta, z ktorého vychádzajú, èie spustením prechodu v tomto mieste nezostane iadna znaèka. V sieti ich zaznaèujeme dvojitou šípkou pri prechode.
+\\
+\indent Inhibítorové hrany povo¾ujú spustenie prechodu len v tom prípade, ak miesto z ktorého vychádza inhibítorová hrana obsahuje menší poèet znaèiek, ako je váha tejto hrany. Graficky sa tieto hrany neukonèujú na prechode šípkou, ale malou krunicou.
+ \begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{images/inhibitor_reset.png}
+  \caption{Grafické znaèenie inhibítor a reset hrán}
+  \label{fig:blocks}
+  \end{figure}
+
+\subsection{WFMS zaloené na Petriho sieach}
+V minulosti, softvérové systémy boli navrhnuté tak, aby kontrolovali jeden proces, prípadne dokonca iba jednu úlohu. Neboli generické, kadá zmena procesu vyadovala implementáciu.
+Petriho siete sú silnı nástroj na špecifikovanie smerovania prípadov procesu. Sú grafické, intuitívne, ¾ahko nauèite¾né. Mapovanie procesu do Petriho siete je zrejmé - úlohy sú namodelované pomocou prechodov a závislosti sa modelujú pomocou miest, hrán. Prípady sú reprezentované znaèkami. Urèuje dynamické správanie pre kadı prípad z tohto procesu.\cite{wfmodels} Petriho sie, ktorá modeluje workflow proces sa nazıva WorkFlow sie(ïalej WF-sie). \cite{application_of_petrinets}. WF siete majú 3 podmienky:
+ \begin{enumerate}
+   \item Jedno zdrojové miesto (\emph{i}) a jedno koneèné miesto (\emph{o}).Znaèka v \emph{i} zodpovedá zaèiatku prípadu a znaèka v \emph{o} prípadu, ktorı u nemá úlohy na splnenie, jeho prechody u nie sú spustite¾né a prípad je ukonèenı.
+   \item Kadá úloha - prechod a podmienka - miesto prispievajú k spracovaniu prípadov, èie všetky prechody a miesta by mali by umiestnené na ceste z miesta \emph{i} do miesta \emph{o} \cite{application_of_petrinets}
+   \item Ku koneènému miestu nie je pripojená iadna reset hrana.
+ \end{enumerate}
+ Definícia pod¾a \cite{soundness} znie:
+ \newtheorem{wfdef}{Definícia}
+  \begin{wfdef}
+  Petriho sie môeme nazıva \textbf{Workflow-sieou} vtedy a len vtedy, ak:
+  \\$\bullet$ V sieti je len jediné \textbf{zdrojové} miesto \begin{center}\{ p $ \in $ P $ \textbar $ $\bullet$p = \O \} = \{\emph{i}\}\end{center}
+  a jediné \textbf{koneèné} miesto \begin{center}\{ p $ \in $ P $ \textbar $  p$\bullet$ = \O  \} = \{\emph{o}\}\end{center}
+  $\bullet$ Kadı uzol siete je dostupnı na ceste od \emph{i} ku \emph{o}, \\teda \begin{center}$\forall$ n $ \in $ P $ \cup $ T:(i, n) $ \in $ F$^\ast$ a (n, o) $ \in $ F$^\ast$\end{center}
+  $\bullet$ V sieti nie je iadna reset hrana pripojená ku koneènému miestu \begin{center}$\forall_{t \in T}$ o $\notin$ R(t)\end{center}
+  \end{wfdef}
+  Ako $\bullet$p oznaèujeme mnoinu prechodov zdie¾ajúcich miesto p ako vıstupné miesto a p$\bullet$ mnoinu prechodov, ktoré zdie¾ajú p ako vstupné miesto.
+ \\
+ \indent Príklad spomínanı v kapitole \ref{WFMS} iados o pôièku zjednodušene mohol vyzera nasledovne:
+ \begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{images/ziadost.png}
+  \caption{Príklad workflow procesu pomocou Petriho siete - iados o pôièku}
+  \label{fig:blocks}
+  \end{figure}
+  V tejto sieti povaujeme za zdrojové miesto (\emph{i}) to, ktoré jediné má znaèku a predchádza prechodu \emph{Vyplnenie údajov}. Je jasne definovaná postupnos úloh, ktoré sa majú plni. Úlohy \emph{Vyplnenie údajov, Kontrola dlhov, Kontrola ruèenia, Posúdenie iadosti, Schválenie iadosti, Zamietnutie iadosti, Odoslanie zmlúv, Odoslanie rozhodnutia} boli namodelované pomocou prechodov. Vïaka zadefinovanej postupnosti a poèiatoènému znaèkovaniu sa tieto úlohy nemôu vykonáva v inom poradí, ako je definované. Po \emph{Posúdení iadosti} nemôu nasta obidva prípady - aj \emph{Schválenie pôièky} aj \emph{Zamietnutie pôièky}. Predpokladajme, e v tejto sieti je pri tıchto oboch prechodoch referencia na prechod \emph{Posúdenie iadosti}, èo znamená, e tieto úlohy môe vykonáva len pouívate¾, ktorı iados posúdil a vïaka znaèkovaniu sa môe rozhodnú len pre jednu z tıchto úloh. Aj keby sme so spomínanou referenciou nepoèítali, nemôe sa sta, aby jeden pouívate¾ iados schválil a inı pouívate¾ ju zamietol, pretoe v mieste nasledujúcom po prechode \emph{Posúdenie iadosti} nemôe nasta prípad, aby tam boli dva znaèky. Za koneèné miesto (\emph{o}) povaujeme miesto, do ktorého je vyprodukovaná znaèka po \emph{Odoslaní rozhodnutia} pri neschválení pôièky, prípadne po \emph{Odoslanie zmlúv} po jej schválení. V momente, keï je v tomto mieste znaèka, v sieti u nie je iaden prechod spustite¾nı, prípad povaujeme za ukonèenı.
+  
+ \subsubsection{Modelovanie smerovania}
+ V tejto podkapitole vyuívame vedomosti z \cite{application_of_petrinets} a \cite{wfmodels}. Na nasledovnom obrázku vidíme stavebné bloky, pomocou ktorıch modelujeme logiku a podmienky WF procesov.
+ \begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{images/blocks.png}
+  \caption{Stavebné bloky modelovania workflow}
+  \label{fig:blocks}
+  \end{figure}
+ Poznáme 4 typy smerovania
+ \begin{itemize}[label=$\bullet$]
+  \item \emph{Sekvenèné} - rieši kauzálne vzahy medzi úlohami, úlohy sa vykonávajú sekvenène za sebou.
+   \begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{images/workflow-seq-routing.png}
+  \caption{Sekvenèné smerovanie\cite{application_of_petrinets}}
+  \label{fig:blocks}
+  \end{figure}
+  \item \emph{Paralelné} - vyuíva sa, keï sa niektoré úlohy môu rieši paralelne, prípade na poradí ich riešenia nezáleí. Na modelovanie paralelity sa pouívajú bloky AND-split a AND-join.
+     \begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{images/workflow-parallel-routing.png}
+  \caption{Paralelné smerovanie\cite{application_of_petrinets}}
+  \label{fig:blocks}
+  \end{figure}
+  \item \emph{Podmienkové} - umoòuje rozhodovanie, smerovanie, v ktorom sa prípady môu líši. Je závislé na atribútoch prípadu. Toto smerovanie sa realizuje pomocou blokov OR-slit a OR-join
+   \begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{images/workflow-conditional-routing.png}
+  \caption{Podmienkové smerovanie\cite{application_of_petrinets}}
+  \label{fig:blocks}
+  \end{figure}
+ \item \emph{Iteraèné} - pomáha rieši situácie, ak prechod má by spustenı viackrát
+ \end{itemize}
+  
+\subsubsection{Analıza modelu procesu}
+Aj napriek intuitívnosti a nenároènosti Petriho sietí môu nasta pri modelácií procesu viac typov chıb, ktoré by negatívne ovplyvòovali WFMS, a~to napríklad, nekoneèné cykly, deadlocky a iné. Preto je potrebné analyzova navrhnutú Petriho sie aby sa tımto chybám predchádzalo. V \cite{application_of_petrinets} W.M.P. van der Aalst definuje 3 typy analızy sietí, a~to:
+\begin{itemize}[label=$\bullet$]
+  \item \emph{Validácia}  - testovanie, èi sa proces správa tak, ako je oèakávané. Toto sa skúma interaktívnou simuláciou, vytvorí sa nejakı poèet testovacích prípadov a sleduje sa, ako ich systém zvláda
+  \item \emph{Verifikácia} - zisovanie korektnosti siete
+  \item \emph{Analıza vıkonu} - urèenie, èi model spåòa poiadavky(napr. èo sa tıka zdrojov)
+\end{itemize}
+
+  \subsubsection{??Spo¾ahlivos?? - Soundness}
+  Okrem 3 podmienok Workflow-siete spomenutıch v predchádzajúcej kapitole by pod¾a \cite{soundness} a \cite{application_of_petrinets} mali spåòa ešte nasledujúce 2 podmienky:
+  \begin{enumerate}
+   \item Kadı prípad by mal skonèi hneï, ako je znaèka v koneènom mieste \emph{o} a všetky ostatné miesta sú prázdne - neobsahujú iadna znaèka.
+   \item V procese by nemali by iadne ``màtve`` úlohy, teda by malo by moné vykona ¾ubovo¾nú úlohu nasledovaním vhodnej cesty vo WF-sieti.
+  \end{enumerate}
+  Tieto 2 vlastnosti sú zhrnuté vo vlastnosti Spo¾ahlivos, ktorej definícia pod¾a \cite{application_of_petrinets}
+  \newtheorem{soundness}{Definícia}
+  \begin{soundness}
+  Postup namodelovanı pomocou WF-siete je \textbf{spo¾ahlivı} vtedy a len vtedy ak:
+  \\$\bullet$ Pre kadı stav M dosiahnute¾nı zo stavu i existuje taká postupnos spúšania prechodov, ktorá vedie zo stavu M do stavu o:
+  \begin{center}$ \forall _M$(i $\xrightarrow{\ast}$ M) $\Rightarrow$ (M $\xrightarrow{\ast}$ o)\end{center}
+  $\bullet$ Stav o je jedinı stav dosiahnute¾nı zo stavu i s minimálne 1 znaèkou v mieste o:
+  \begin{center}$ \forall _M$(i $\xrightarrow{\ast}$ M $\wedge$ M $\geq$ o) $\Rightarrow$ (M = o) \end{center}
+  $\bullet$ Nie sú tam iadne màtve prechody:
+  \begin{center}$\forall _{t \in T}$ $\exists_{M,M'}$ i $\xrightarrow{\ast}$ M $\xrightarrow{t}$ M'\end{center}
+  \end{soundness}
+
+\subsection{Pouité technológie}
+\subsubsection{HTML, HTML5}
+Nasledujúca kapitola je písaná na základe informácii z \cite{wwwdomes}, \cite{w3html} a \cite{w3html5}. \textbf{HTML} je znaèkovací jazyk pre písanie webovıch dokumentov, ktorého zmyslom je umoni zobrazenie textového a obrazového obsahu stránok. Táto skratka pochádza zo spojenia Hyper Text Markup Language. Tieto dokumenty sa píšu do definovanıch znaèiek - tagov (napr. <p>Toto je odstavec</p>) a majú koncovku .html. HTML nevytvára vzh¾ad, èie nehovorí prehliadaèu, niè o ve¾kosti, farbe a inıch vlastnostiach, iba pomocou znaèiek definuje, èo je nadpis, odkaz, odstavec, obrázok, formulár a iné. Znaèky sú väèšinou párové, no existujú aj nepárové, ako napríklad znaèka obrázku <img />, vstupného po¾a <input /> alebo koniec riadku <br />.
+\\
+\indent \textbf{HTML5} je momentálne najnovší štandard HTML predstavenı v roku 2014. Okrem iného, priniesla sadu novıch znaèiek, a to znaèky pre \emph{header, footer, article - èlánok, section - sekciu} pre grafické a multimediálne elementy ako \emph{audio, video, svg a canvas}. Taktie predstavila nové typy formulárovıch vstupov a~to èíslo, dátum, èas, kalendár a rozsah. Niektoré zastaralé znaèky nahradila pomocou CSS vlastností, napr. znaèky <font> a <center>. 
+\\
+\indent HTML, rovnako ako ïalej spomenuté CSS a JavaScript sa vykonávajú na tzv. frontende, èie v prehliadaèi na strane klienta, nie na strane servera.
+\\
+\indent HTML dokument sa vizuálne upravuje pomocou \textbf{CSS}, èo je skratka pre \emph{Cascading Style Sheets}, èie kaskádové štıly. Tento jazyk nie je znaèkovací, ale štılovací. Pod¾a \cite{w3css} existujú 3 spôsoby zápisu CSS, a~to:
+\begin{enumerate}
+ \item \emph{Inline} - zápis priamo do HTML elementov, napr. \\<p style=``font-weight: bold;``>Odstavec</p>
+ \item \emph{Pouitím <style> elementu vnoreného v <head> znaèke}
+ \item Vytvorenie samostatného \emph{.css súboru}
+ \end{enumerate}
+ Vïaka CSS môeme HTML elementom nastavova ve¾kos, pozíciu, farbu, zarovnanie, ohranièenie a mnoho inıch vlastností, ktoré robia HTML dokumenty atraktívnejšiemi pre pouívate¾a. Aj responzivita pre rôzne ve¾kostí zariadení sa rieši pomocou vyuitia kaskádovıch štılov. Najnovšia verzia je momentálne CSS3.
+\\
+\indent V \cite{w3js} sa uvádza, e \textbf{JavaScript} je programovací jazyk vytvorenı pre potrebu písania skriptov ovplyvòujúcich HTML dokumenty, èie je to skriptovací jazyk. Javascript robí HTML stránky interaktívnejšiemi a dynamickejšími. Môeme ho zapisova 2 spôsobmi:
+\begin{enumerate}
+ \item Do \emph{párovej znaèky <script>} priamo v HTML dokumente
+ \item Do \emph{samostatného .js súboru}
+ \end{enumerate}
+  Pomocou javascriptu sa môe vykonáva validácia vstupnıch hodnôt od pouívate¾a, dynamicky meni CSS štıly, pridáva a odobera HTML elementy, hıba s elementami a viac inıch akcií. V prehliadaèoch je moné JavaScript zakáza. V tomto prípade sa dá poui znaèka <noscript>, ktorá definuje alternatívny obsah, ak strana klienta nepodporuje skriptovanie pomocou tohto jazyka.
+\subsubsection{PHP}
+\label{technologies}
+Informácie v tejto kapitole èerpáme z \cite{w3php} a \cite{php1001}. \textbf{PHP} je skriptovací jazyk vykonávanı na strane servera - backende vuyívanı pre tvorbu klient-server aplikácií. PHP je rekurzívna skratka z \emph{PHP: Hypertext Preprocessor}. Do PHP súborov môeme písa okrem HTML kódu aj kódy HTML, CSS a JS a majú koncovku .php. v php súbore píšeme HTML priamo ako v .html súbore, CSS píšeme v rovnakom formáte, ako bolo spomínané v predchádzajúcej podkapitole a PHP kód vkladame do súboru do znaèiek <?php /*Tu sa píše kód*/ ?>. Môu sa poui aj znaèky <? ... ?> ale je potrebné to nastavi na serveri.
+\\
+\indent Pomocou PHP sa môu vykonáva nároènejšie vıpoèty na strane servera, ktoré sa neodporúèajú robi v Javascripte v prehliadaèi klienta. PHP dynamicky generuje HTML obsah, ktorı sa zobrazí v prehliadaèi. Okrem toho, PHP umoòuje prácu so súbormi, èie ich otváranie, èítanie, upravovanie, a mazanie. PHP vïaka komunikácii s HTML dokumentmi a akciám POST a GET dokáe získava dáta od pouívate¾ov z formulárov a tie môe spracováva. Okrem iného, umoòuje pripojenie k databáze a odosiela na òu poiadavky, ako vyberanie dát, upravovanie, vymazávanie a tie zmeny tabuliek.  Vyuíva sa aj šifrovanie dát, teda zabezpeèuje bezpeènos stránky.
+\\
+\indent PHP sa v dnešnej dobe teší ve¾kej ob¾ube\cite{PHPTrend} (Viï obrázok \ref{phpgraph}. Na obrázku sú zobrazené programovacie jazyky s percentom vyuitia viac, ako 1\%). Jednım z dôvodov môe by, e je zadarmo stiahnute¾nı aj pouite¾nı. Taktie je podporovanı najvyuívanejšími platformami - Windows, Linux, Unix, Mac OS X\cite{php}. Podporuje viac typov databáz ako napríklad MySQL, PostgreSQL, Oracle alebo MS SQL\cite{php1001}. Je kompatibilnı s väèšinou serverov, ktoré sa dnes pouívajú\cite{w3php}. Umoòuje objektovo orientované programovanie.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{images/graph_php_popularity.png}
+  \caption{Vyuitie programovacích jazykov na serverovej strane pre webové stránky ku 25.4.2016\cite{PHPTrend} }
+  \label{phpgraph}
+  \end{figure}
+\subsubsection{SQL, MySQL}
+Na základe informácií z \cite{w3sql}, \textbf{SQL} je definovanı ako štandardnı jazyk pre prístup a manipuláciu s databázou. SQL znamená skrátene \emph{Structured Query Language}. Je to ANSI(\emph{American National Standards Institute}) štandard. Vïaka nemu vykonávame poiadavky na databázu pre získavanie, vkladanie, mazanie a upravovanie dát. Prostredníctvom SQL môeme vytvára aj tabu¾ky, meni ich, vymazáva, a. i.. Tento jazyk umoòuje nastavova práva prístupu pouívate¾ov k dátam. 
+\\
+\indent \textbf{MySQL} je vo¾ne dostupnı relaènı databázovı softvér, ktorı podporuje pouívanie SQL na prístup k dátam a ich spracovanie. \cite{mysql}
+\subsubsection{AJAX}
+\label{texhajax}
+Technológia \textbf{AJAX} - \emph{Asynchronous JavaScript and XML} umoòuje asynchrónnu komunikáciu a vımenu dát so serverom bez obnovenia stránky. Bez pouitia AJAX-u,sk chce webová aplikácia komunikova so serverom, musí zobrazi novú stránku, prípadne opätovne naèíta aktuálnu. \cite{php1001}
+V \cite{w3ajax} uvádza internetové štandardy, na ktorıch je AJAX zaloenı:
+\begin{itemize}[label=$\bullet$]
+ \item XMLHttpRequest - asynchrónna vımena dát so serverom
+ \item JavaScript/DOM - zobrazenie alebo manipulácia s informáciou
+ \item CSS - naštılovanie dát
+ \item XML - èasto vyuívané na vımenu dát
+\end{itemize}
+
+\subsubsection{XML, SVG}
+\label{techxmlsvg}
+Pod¾a informácií z \cite{w3xml} a \cite{php1001} \textbf{XML} je skratka pre \emph{Extensible Markup Language} a bolo navrhnuté tak, aby sa ¾ahko èítalo aj èlovekom, aj poèítaèom. Slúi na ukladanie a prenos dát. Ako HTML, tak aj XML povaujeme za znaèkovací jazyk, pretoe informácie, dáta sa vpisujú do znaèiek, avšak XML nepouíva vopred definované znaèky, tie definuje autor dokumentu. 
+\\
+\indent \textbf{SVG} - \emph{Scalable Vector Graphics} definuje vektrorovú grafiku prostredníctvom XML formátu. Jeho hlavnımi vıhodami sú tie, e nestráca kvalitu pribliovaním obrázka a je editovate¾nı v textovıch editoroch.\cite{w3svg} 
+\subsubsection{JSON}
+\label{techjson}
+\textbf{JSON} je skratka vırazu \emph{JavaScript Object Notation}. Je to formát ukladania a vımeny dát. Nie je závislı na programovacom jazyku, pretoe je to txt a je podobného formátu, ako XML. Funkcie JavaScriptu aj PHP umoòujú konverziu JSON dát na objekty a naopak. Dáta v òom môu by ukladané hierarchicky. Èasto sa vyuíva namiesto XML, pretoe nepouíva tagy, je kratší, rıchlejší na èítanie a zápis. Všetky informácie v tomto odseku pochádzajú z \cite{w3json}.
+\subsection{Pouité návrhové vzory}
+\label{patterns}
+Táto kapitola je písaná na základe vedomostí z \cite{php5framework} a \cite{designpatterns}.
+\subsubsection{Model-View-Controller (MVC)}
+\label{patternmvc}
+\textbf{Model-View-Controller} je štrukturálny návrhovı vzor, ktorı odde¾uje logiku aplikácie od pouívate¾ského rozhrania. Pouivate¾ské rozhranie - \emph{view} komunikuje s dátami - \emph{model} prostredníctvom \emph{controllera}. \emph{Controller} - \emph{ovládaè} obsahuje biznis logiku aplikácie, manipuluje dáta - prijíma ich a odosiela do modelu. Teda \emph{model} reprezentuje dáta, ktoré sú primárne uloené v databáze. Na obrázku \ref{mvcpic} vidíme komunikáciu medzi modelom a databázou. \emph{View} - \emph{náh¾ad} zobrazuje obsah stránky v internetovom prehliadaèi a odosiela vstupné dáta do \emph{ovládaèa}, ktorı ich na základe naimplementovanej logiky spracuváva. Pri špecifickejších zloitejších poiadavkách na databázu, môe tieto poiadavky spracova \emph{ovládaè}. 
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{images/mvc.png}
+  \caption{Model-View-Controller}
+  \label{mvcpic}
+  \end{figure}
+\subsubsection{Registry - Register}
+\label{patternregistry}
+Návrhovı vzor \textbf{register} je taktie štrukturálny vzor. Jeho hlavnou ideou je uchovávanie objektov aplikácie. Potreba \emph{registra} rastie pri architektúre MVC, kde je potrebné zdie¾a viacero objektov medzi rôznymi \emph{modelmi} a \emph{controllermi}, ako napríklad objekt na prístup k databáze, objekt autentifikácie, a.i.. \emph{Register} nám umoòuje uchováva tieto objekty na jednom mieste, je prístupnım bodom ku potrebnım objektom.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{images/registry.png}
+  \caption{Register}
+  \label{registrypic}
+  \end{figure}
+\subsubsection{Singleton}
+\label{patternsingleton}
+\textbf{Singleton} radíme medzi vytvárajúce návrhové vzory. Rieši potrebu toho, aby v celom behu sa vytvorila len jediná inštancia triedy a poskytuje k nej globálny prístupovı bod. Konštruktor tejto triedy je privátny, verejná je prístupová metóda, ktorá zabezpeèuje to, aby sa z nej nevytvorilo viac, ako jeden objekt.
+\newpage
+\section{Opis riešenia - WFMS}
+Našim cie¾om bolo naimplementova komplexnı Workflow manament systém vo forme portálu, ktorı by umoòoval namodelovanie procesov pomocou Petriho sietí, priradenie rolí, referencií a formulárov úloham. Umoòí vytvára prípad z namodelovaného procesu a na základe Workflow-siete riadi workflow prípadov. Taktie je moná organizácia pouívate¾ov vo firmách a v rolách. Na prechod sa môe viaza formulár, ktorı treba vyplni pre ukonèenie úlohy. Náš systém sme rozdelili na 7 èastí, ktoré implementovali 7 èlenovia tímu v rámci bakalárskeho projektu.
+\subsection{Procesnı portál}
+\label{Matko}
+Procesnı portál vypracoval Martin Kováèik. Portál umoòuje registráciu a prihlasovanie pouívate¾ov do našeho systému. Prihlásenı si môe manaova svoj úèet, meni heslo a v prípade straty hesla poiada o jeho reset a zaslanie nového hesla na registrovanı email. Pouívate¾ má umonené vytvori si vlastnú organizáciu - firmu a spravova ju, ako aj pouívate¾ov v nej - pridáva, odstraòova, priraïova im práva pre manament firmy. Ak firma nemá nastavená heslo, pouívatelia sa do nej môu vo¾ne pridáva, do inıch pre pridanie je potrebné heslo. Keïe náš systém by mal fungova ako verejnı portál, namodelované Workflow-siete sú verejné, avšak nie vo¾ne pouite¾né. Workflow-siete si pouívate¾ bude môc pre svoju firmu nakopírova(keïe systém je robenı v rámci bakalárskej práce, pouívatelia si zatia¾ procesy nekupujú, ale kopírujú) aj s jej namodelovanımi vlastnosami, èie s rolami a formulármi. Úlohou Martina Kováèika bolo teda aj vyrieši toto kopírovanie procesov do firiem. Tım pádom, ak firma pouívate¾a by chcela pouíva rovnakı proces, ako iná firma s podobnım zameraním a u funkène namodelovanou Workflow-sieou elaného workflow procesu, tak by si túto firmu mohol nakopírova do svojej firmy a zaèa ju vyuíva. Táto èas funguje podobne, ako e-shop, teda WF-sie si pouívate¾ objednáva.
+\subsection{Procesnı editor}
+\label{Tomasko}
+Procesnı editor riešil Tomáš Prieboj. Cie¾om bolo naimplementova editor na strane klienta, pomocou ktorého by sa modelovali Petriho siete. V editore je moné modelova vo forme svg. Všetkımi namodelovanımi objektami je moné pohybova. Ak je k miestu alebo prechodu pripojená hrana, tak pri pohybovaní ostáva pripojená a hıbe sa spolu s miestom alebo prechodom. Editor umoòuje simuláciu behu siete spúšaním prechodov, tım pádom sa dá skontrolova, èi Workflow-sie je správne namodelovaná, ako bolo špecifikované. Prechodom sa dávajú oznaèenia, ktoré reprezentujú názov úlohy v prípade. Model je moné uloi na lokálny disk ako SVG alebo XML súbor. Sie je taktie moné z XML naèíta. Pre potreby workflow, pouívate¾ sieti priradí popis a vımenou dát vo formáte JSON, SVG a XML slubou naimplementovanou na strane Procesného servera(viï kapitolu \ref{procesnyserver}) iada o uloenie do databázy. Po úspešnom uloení prijme id, ktoré jej bolo v databáze priradené, a v prípade integrácie presmeruje na Editor formulárov a dátového modelu. Pouívate¾ si z databázy môe naèíta siete, ktoré tam u uloil.
+\subsection{Editor manamentu rolí a organizaènej štruktúry}
+\label{Kristianko}
+Èasti Editor manamentu rolí a organizaènej štruktúry sa venoval Kristián Stroka. Tento editor umoòuje ... TODO
+\subsection{Editor formulárov a dátového modelu}
+\label{Janicko}
+Editor formulárov a dátového modelu vytvoril Ján Poláèek. Vïaka tomuto editor, aplikácia poskytuje monos navrhova dátovı model pre formuláre, ktoré sa budú vypåòa poèas plnenia úloh prípadov. Editor naèíta svg súbor navrhnutej Workflow-siete a navrhnuté formuláre sa mapujú na prechody reprezentujúce úlohy. Formulár je moné vytvori, odstráni, upravi a importnú ich do XML a SVG súborov. Naopak, formuláre je moné aj naèíta zo súborov. Návrh formulárov spoèíva v tvorbe, ako aj editácii, prípadne mazaní vstupnıch polí.
+Vstupné polia môu by typu krátka alebo dlhá odpoveï, \emph{select} - rozklikávací zoznam, alebo \emph{checkboxy} - zaklikávacie políèka. Pri kadom vstupe sa dá urèi, èi je povinnı, vidite¾nı alebo upravite¾nı. Dá sa im prida popis, ktorı špecifikuje, èo dané vstupné pole reprezentuje, prípadne vyaduje. Rozklikávací zoznam a tie zaklikávacie políèka sa môu zoradi v abecednom poradí. Vytvorí dataset, èo sú premenné, do ktorıch sa ukladajú vstupné hodnoty z polí. Tento editor je integrovanı s èasou Server formulárov a dátového modelu a to spoèíva v odosielaní a prijímaní dát vo forme JSON.
+\subsection{Procesnı server}
+Èas Procesnı server je témou tejto bakalárskej práce, èie jej riešeniu a implementácii venujeme celú kapitolu \ref{procesnyserver}.
+\subsection{Server manamentu rolí a pouívate¾ov}
+\label{Palinko}
+Server manamentu rolí a pouívate¾ov mal na starosti Pavol Martiš. Rieši organizaènú štruktúru pouívate¾ov, èo sa rolí tıka. Umoòuje zobrazi všetkıch pouívate¾ov firmy a zoraïova ich pod¾a rôznych atribútov, ako napríklad meno, priezvisko, e-mailu, dokonca pod¾a id. Dôleitou funkciou tejto aplikácie je priraïovanie pouívate¾ov k roliam v rámci firmy, èo je moné individuálne, alebo skupinovo. V rámci firmy je umonené vytvára nové role, alebo je moné importnú ich z XML súboru. Role, na ktoré nie sú naviazané iadne procesy firmy, je moné z tejto firmy odstráni, aby bolo moné udriava prieh¾adnos medzi rolami a neuchováva všetky staršie, nepouívané role. V prípade vyiadania z Editoru manamentu rolí a organizaènej štruktúry, pripraví JSON so všetkımi rolami iadanej firmy. Komunikácia s tımto editorom taktie spoèíva v tom, e pri novovytvorenej Workflow-sieti, ukladá namapované role na prechody a referencie prechodov do databázy s tım, e aj v databáze to namapuje tak, aby to zodpovedalo predlohe.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{images/palo.png}
+  \caption{Server manamentu rolí a pouívate¾ov}
+  \label{structure}
+  \end{figure}
+\subsection{Server formulárov a dátového modelu}
+\label{Kubko}
+Server formulárov a dátového modelu je èas naprogramovaná Jakubom Kováèikom. Táto aplikácia reaguje, keï pouívate¾ cez Editor formulárov chce uloi namapované formuláre. Tieto formuláre a XML súbor sa uloia do databázy, prípadne opaènım smerom, Editor si môe vyiada proces s formulármi a prislúchajúce XML. V prípade vytvorenia procesu, vytvorí sa klon formulárov, ktorıch zobrazenie a vypåòanie má je jednou z funkcií tejto aplikácie. Takıto formulár u nie je moné upravova v editore. Ak pomocou akcie GET prijme id prípadu a prechodu, zobrazí prislúchajúci formulár. Pouívate¾ má monos prácu s formulárom uloi, aj napriek tomu, ake nie je ešte úplne a validne vyplnenı. Pri uloení sa toti validácia nevykonáva, a pouívate¾ nestratí svoju doterajšiu prácu. Ak pouívate¾ formulár \emph{odošle}, validácia sa vykoná a uloí sa do databázy. V prípade kompletnej integrácie formulár musí by pre ukonèenie úlohy zvalidovanı.
+\section{Opis riešenia - Procesnı server}
+\label{procesnyserver}
+Témou tejto bakalárskej práce je èas WFMS - procesnı server. Aplikácia spracuje poiadavku Procesného editora pre uloenie Workflow-siete do databázy. Jeho hlavnou úlohou je umoni vytváranie prípadov a ich riadenie pod¾a modelu Workflow-siete. Bolo potrebné zabráni kolíziám. Systém taktie umoòuje uchovávanie histórie a zobrazuje vizualizáciu prípadov. Rieši vrátenie úlohy pomocou \emph{cancel} tlaèidla. Všetky funkcionality aplikácie podrobne opíšeme v tejto kapitole. 
+\\
+\subsection{Vıber technológií}Pre implementáciu aplikácie sme sa rozhodli poui programovací jazyk PHP, kvôli jeho vo¾nej dostupnosti. Jednım z dôvodov vıberu tohoto jazyka bola aj jeho široká podpora na serveroch. Kvôli tımto dôvodom sme sa s ostatnımi èlenmi tímu dohodli na pouití PHP aj napriek tomu, e nikto z nás nemal oh¾adom neho nemal profesionálnejšie vedomosti. 
+\\
+\indent Keïe sme chceli zjednoti vstupy, vıstupy, dáta jednotlivıch aplikácii, museli sme sa dohodnú aj na type databázového servera a vybrali sme MySQL. Tento server podporuje PHP jazyk a je to relaènı server. Tım pádom nám umoòuje mapova vzahy medzi databázovımi tabu¾kami a taktie je vo¾ne dostupnı. Pracuje na rôznych platformách, èo je pre náš tím dôleité, pretoe nepracujeme na jednotnej platforme. Teda, MySQL spåòalo všetky naše podmienky. 
+\\
+\indent Komunikáciu medzi \emph{frontendom} a \emph{backendom} zväèša vykonávame asynchrónne, pomocou technológie AJAX, aby nebolo potrebné presmerovanie, prípadne opätovné naèítanie stránky.
+\\
+\indent Pre vımenu dát medzi editorovımi a serverovımi èasami sme si vybrali JSON, pretoe ako bolo spomenuté v kapitole  \ref{techjson}, JSON je rıchlo èitate¾nı, je asociatívny a dá sa funkciami PHP a JavaScript prekonvertova na objekt. Dáta ukladáme aj vo forme SVG, aby boli graficky èitate¾né  a vo forme XML, aby sa dáta dali exporotova na lokálny disk a boli jednoducho èitate¾né èlovekom.
+\\
+\indent Pouívate¾ské rozhranie je riešené pomocou HTML5. Pri vıbere technológii, HTML5 poznali všetci èlenovia tímu a mali s òou programátorské skúsenosti. Je podporovanı všetkımi prehliadaèmi a v dnešnej dobe je to aktuálny HTML štandart.
+\subsection{Vıber návrhovıch vzorov, návrh systému}
+Pri tomto vıbere sme sa inšpirovali literatúrou \cite{php5framework}. Po naštudovaní návrhového vzoru \emph{Model-View-Controller}, ktorému sme venovali kapitolu \ref{patternmvc} sme usúdili, e pomocou neho môeme oddeli biznis logiku aplikácie od pouívate¾ského rozhrania. Vïaka vzoru \emph{Register} budeme uchováva dôleité objekty, ako prístup k databáze, autentifikácia a smerovaè na jednom mieste a budú prístupné zo všetkıch miest systému, kde to bude potrebné. V našom \emph{Registri} sme vyuili aj vzor \emph{Singleton}, vïaka ktorému je zabezpeèené to, e budeme ma len jednu inštanciu triedy \emph{Register}.
+\\
+\indent Graficky, štruktúra aplikácie s tokom vımeny dát je zobrazená na obrázku \ref{structure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.8]{images/strukturasystemu.png}
+  \caption{Štruktúra Procesného servera}
+  \label{structure}
+  \end{figure}
+\subsection{Jadro systému}
+Cie¾om bolo vytvori samostatne beiacu aplikáciu Procesnı server. Keïe sme sa rozhodli implementova aplikáciu bez pouitia \emph{frameworku}, aby bolo èo najmenšie zaaenie serverovej strany, bolo potrebné naprogramova jadro, na ktorom je aplikácia postavená. Ako spomíname v predchádzajúcej kapitole, drali sme sa 3 návrhovıch vzorov, na základe ktorıch sme rozvrhli štruktúru systému. Naše jadro pozostáva z nasledujúcich èastí:
+\begin{itemize}
+ \item Register
+ \item Smerovaè
+ \item Objekt pre prístup k databáze
+ \item Objekt pre autentifikáciu
+ \item Manaér upozornení
+ \item Autoloader
+\end{itemize}
+Kadú z tıchto èastí si priblíime v nasledujúcich kapitolách. 
+\subsubsection{Register}
+Register je v našej aplikácii reprezentovanı triedou \emph{Flow} v súbore \emph{Flow.php}. Keïe cie¾om bolo, aby poèas behu aplikácie sa nevytvorilo viac ako jedna inštancia tejto triedy, tak konštruktor tejto triedy je privátny, rovnako ako metóda \emph{clone}. \emph{Index.php} zavolá \emph{Singleton} metódu Registra:
+\begin{Verbatim}[baselinestretch=0.75]
+public static function app(){
+        if(empty(self::$instance)){
+            /*Vytvorí novú inštanciu registra a vráti ju*/
+        }
+        else{
+	  /*Vráti u skôr vytvorenı register, nevytvára novı*/
+        }
+    }
+\end{Verbatim}
+Na základe vrátenej inštancie naštartuje aplikáciu, prièom sa funkcia \emph{start()} naèíta konfiguraèné nastavenia a uloia sa nasledujúce objekty, a to \emph{Autoloader}, \emph{Objekt pre autentifikáciu}, \emph{Objekt pre prácu s databázou} a \emph{Smerovaè}, ktoré budú dostupné prostredníctvom \emph{Registra} poèas behu aplikácie. Taktie sa tu skontroluje, èi je v \emph{SESSION} pouívate¾ prihlásenı pomocou Objektu pre autentifikáciu. V tejto triede je okrem iného naimplementovaná metóda \emph{getConfig(\$key)}, ktorá vracia konfiguraèné nastavenie pod¾a názvu ako vstupného parametra.
+\subsubsection{Smerovaè}
+Smerovaèu odpovedá trieda \emph{Router}. Jeho hlavnou funkciou je spracova vstupnú URL adresu, ktorá je definovaná v tvare:
+\begin{center} www.nazovdomeny.sk/index.php/nazovovladaca/nazovfunkcie/parametre \end{center}   
+Napríklad URL:
+\begin{center} www.nazovdomeny.sk/index.php/case/create/vstupnyparamater \end{center}  
+zavolá \emph{CaseController.php} a jeho funkciu \emph{create(\$str)}, kde \$str = 'vstupnyparameter'. Viacero parametrov sa odde¾uje lomkou /.
+\\
+\indent Objekt smerovaèa sa vytvára a uchováva v Registri.
+\subsubsection{Objekt pre prístup k databáze}
+Tento objekt je inštancia triedy \emph{PdoConnection} a táto trieda dedí od PHP triedy PDO. Zabezpeèuje pripojenie k databáze na základe informácií z konfiguraèného súbora získanıch prostredníctvom Registra. Má funkcie pre poiadavky \emph{INSERT}, \emph{UPDATE} a \emph{DELETE}, ktoré na základe vstupnıch parametrov iadanú poiadavku poskladajú do reazca znakov a vykonajú ju v databáze.
+\subsubsection{Objekt pre autentifikáciu}
+\label{auth}
+Kvôli testovaniu aplikácie bola potreba naprogramova funkcionalitu pre autentifikáciu, aj napriek tomu, e táto èas je súèasou Procesného portálu. Má naimplementované metódy, ktoré overujú, zaisujú prihlásenie do systému. Na testovanie boli potrebnı minimálne 2 pouívatelia. Do systému sa dá prihlási 3 úètami. Pri prípadnej integrácii bude táto èas nahradená metódami, ktoré implementuje Procesnı portál.
+\subsubsection{Manaér upozornení}
+Objekt triedy \emph{Alertmanager} u¾ahèuje správu a zobrazovanie upozornení pre pouívate¾a. Upozornenia nie sú zobrazované priamo, ale sú ukladané do \emph{SESSION}, aby ich bolo moné zobrazi v prípade presmerovania, respektíve AJAX volania.
+\subsubsection{Autoloader}
+Autoloader je trieda PSR-4 štandardu \cite{autoloader}. Slúi na pripájanie súborov s PHP triedami na základe menného priestoru a jemu prislúchajúcim súborovım adresárom.Vïaka jeho pouitiu odpadá nutnos pouíva funkcie PHP \emph{include}, respektíve \emph{require}.
+\subsection{Modely}
+Modely predstavujú v našej aplikácii dáta. Prostredníctvom \emph{PdoConnection} objektu vkladajú data do databázy, vyberajú a upravujú ich, prípadne maú. Väèšina vytvorenıch modelov reprezentujú jednu tabu¾ku v databáze.
+\\
+\indent \textbf{AbstractModel} je abstraktná nadtrieda, ktorú dedia všetky modely. Spája atribúty a funkcie, ktoré sú rovnaké pre kadú triedy modelov. Táto trieda umoòuje generické vytvorenie parametrov pre špecifickı model, vïaka konštruktoru, ktorı \emph{DESCRIBE} poiadavkou na databázu získa ståpce poadovanej tabu¾ky. Podobne, ako v triede \emph{PdoConnection}, tak tu sú zadefinované metódy, ktoré na základe vstupnıch parametrov vyskladajú \emph{SELECT} poiadavku pre konkrétnu tabu¾ku.
+\subsection{Ovládaèe}
+Ovládaèe vyuívame na spracovanie dát buï z modelov, alebo od pouívate¾a. Vıpoèty a biznis logika sa vykonáva v ovládaèoch. 
+\\
+\indent Podobne, ako bol \emph{AbstractModel} vytvorenı pre modely, pre ovládaèe sme vytvorili \textbf{AbstractController}. Jeho pointou je to isté, èie spoji spoloènú funkcionalitu do jednej abstraktnej nadtriedy, aby sme sa vyhli opakovaniu kódu vo viacerıch triedach. Okrem iného, trieda implementuje funkcie pre obmedzenie prístupu k funkciám ovládaèov, na základe práv, èie neprihlásenı pouívate¾ nemá právo vola niektoré funkcie. Aj z tohto dôvodu bolo nutné naprogramovanie autentifikácie, ako bolo spomenuté v kapitole \ref{auth}. Taktie sme tu napísali funkciu, ktorá zavolá správny náh¾ad a odovzdá mu dáta, ktoré má zobrazi.
+\subsection{Náh¾ady}
+PHP súbory nah¾adov špecifikujú a generujú HTML kód pre prehliadaè. Ovládaèe im odovzdajú dáta, a náh¾ady zapracujú tieto dáta do štruktúry stránky. Cez náh¾ady sa rieši aj pouivate¾skı vstup. Vïaka formulárom môe pouívate¾ odosla dáta alebo poiadavky na serverovú stranu, ktorá poiadavku vyhodnotí a spracuje.
+\subsection{Databáza}
+\subsection{Implementácia biznis logiky}
+\subsubsection{Uloenie Petriho siete do databázy}
+Po poiadavke pouívate¾a o uloenie Workflow-siete Z Procesného editora do databázy, editor pomocou AJAX-u zavolá funkciu, ktorá sa nachádza v \emph{ApiController-i} našej aplikácie. Uskutoèní sa komunikácia a spracovanie prijatıch dát. Prijaté dáta akciou POST sú nasledovné:
+\begin{itemize}
+ \item JSON 
+ \item XML
+ \item SVG
+\end{itemize}
+JSON sa prekonveruje do objektu, ktorı obsahuje všetky potrebné informácie, pre beh Workflow-siete
+\begin{enumerate}
+ \item Do tabu¾ky databázy \emph{petri\_net} sa uloí Petriho sie s atribútmi ako meno a popis, ktoré je v JSON-e, XML a SVG a z aplikácie sa získa ID prihláseného pouívate¾a, ako aj aktuálny dátum a èas. Pri úspechu sa vráti priradené ID, pri neúspechu vypíše chybu a sie sa neuloí.
+ \item V siutácii, e uloenie siete bolo úspešné, tak pre kadé miesto z JSON-a sa vytvorí záznam v databáze, kde sa pre kadı uchováva jeho meno(ak je zadané), poèiatoèné znaèkovanie a id v XML súbore. Uchovanie tohot ID je potrebné pre spracovanie rolí a formulárov na serverovej strane pri vytvorení novej siete. Taktie sa pouíva pri vizualizácii prípadu, kde sa na jeho základe zaznaèuje aktuálne znaèkovanie. Zaznaèuje sa aj cudzí k¾úè ID Petriho siete.
+ \item Podobnım spôsobom sa uloia prechody, ktoré nemajú atribút pre poèiatoèné znaèkovanie.
+ \item Spracujú sa dáta oh¾adom hrán. Pri hranách typu \emph{regular} sa zisuje, èi je ich zdrojové miesto prechod, alebo miesto a na základe typu sa všetky hrany uloia do prislúchajúcej tabu¾ky. 
+ \item Odošle sa ID siete spä do Procesného editora.
+\end{enumerate}
+Pomocou takto spracovanıch dát a uloenıch môe bea \emph{workflow} procesu.
+
+\subsubsection{Vytvorenie prípadu}
+Ak pouívate¾ chce vytvori prípad, zadá poiadavku na server. Server, na základe pouívate¾ového ID musí vykona poiadavku do databázy, ktorá vyfiltruje procesy pod¾a podmienok:
+\begin{itemize}
+ \item Proces musí by priradenı jednej, alebo viacerım firmám, v ktorıch je pouívate¾ zaradenı.
+ \item Pouívate¾ musí ma vo firme, ktorá má právo vyuíva proces, rolu, ktorá je definovaná ako tá, ktorá môe prípady tohto procesu vytvára.
+\end{itemize}
+Všetky vrátené dáta sa spracujú do poadovaného formátu, èo v tomto prípade je asociatívne pole, kde k¾úè je id firmy a hodnota je pole procesov. 
+Zobrazí sa nasledujúci formulár:
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.8]{images/case_create.png}
+  \caption{Formulár ma vytvorenie prípadu}
+  \label{structure}
+\end{figure}
+Po vybratí firmy z ¾avého rozba¾ovacieho zoznamu sa pomocou JavaScriptu vygenerujú monosti pravého rozba¾ovacieho zoznamu pod¾a ID vybratej firmy. Ak pouívate¾ vyplní všetky polia a odošle formulár, server vytvorí záznam prípadu v databáze, kde je zaznaèené, kto a kedy ho vytvoril a pod akou firmou bol vytvorenı. Do tabu¾ky \emph{case\_marking} sa prekopíruje poèiatoèné znaèkovanie, ktoré sa poèas behu prípadu bude tu meni. Ak sa pouívate¾ pokúša odosla formulár bez toho, aby vyplnil všetky polia, je upozornenı na pole, ktoré nevyplnil a systém mu oznámi, e prípad sa nevytvoril. 
+\subsubsection{Správa workflow prípadu}
+Táto èas práce bola najzloitejšia na implementáciu. Okrem h¾adania a vypoèítavania spustite¾nosti prechodov, ich spúšania spojeného s konzumáciou a produkciou znaèiek, sa spája aj dlhımi nároènımi poiadavkami na databázu. Môeme ju rozdeli na 3 èasti:
+\begin{enumerate}
+ \item Vıber prechodov z databázy a zistenie ich spustite¾nosti
+ \item Prevzanie úlohy
+ \item Ukonèenie úlohy
+\end{enumerate}
+Kadú z tıchto èastí si popíšeme podrobnejšie.
+\\
+\indent \textbf{Vıber prechodov z databázy a zistenie ich spustite¾nosti}. O túto èas sa stará trieda \emph{TaskController}. Je potrebné poiada databázu o prechody. Samozrejme, zisova spustite¾nos pre všetky prechody firiem, v ktorıch je pouívate¾, by bolo zdåhavé a vıpoètovo nároèné, rozhodli sme sa vypracova poiadavku na databázu, ktorá má dané podmienky:
+\begin{itemize}
+ \item Prechody patria prípadom vytvorenıch vo firmách, do ktorıch pouívate¾ patrí.
+ \item Ak je na úlohu naviazaná referencia, úloha sa pridá do zoznamu.
+ \item Ak je na tento prechod naviazaná rola, pouívate¾ musí ma v danej firme túto rolu.
+\end{itemize}
+Okrem tıchto podmienok, poiadavka ešte definuje, aby sa k dátam naviazali aj informaèné údaje, ako napríklad názov úlohy alebo názov caseu. Všetky tieto podmienky sú zadefinované v jednej komplikovanejšej poiadavke, aby sme poèet zisovanıch úloh obmedzili na minimum. V tomto bode sa zisuje spustite¾nos prechodov nasledujúcim spôsobom. Opä si to vyaduje poiadavky do databázy, ktoré vrátia hrany vstupujúce do daného prechodu a znaèkovanie v miestach pre zodpovedajúci prípad. 
+\\Kontroluje sa, èi kadá hrana vstupujúca do miesta spåòa podmienky pod¾a jej typu, ktoré sme zadefinovali na základe kapitoly \ref{petrinet}:
+\begin{itemize}
+  \item Normálna hrana: znaèkovanie \emph{m} miesta \emph{p} je väèšie alebo rovné, ako váhová funkcia \emph{w} tejto hrany h.
+ \begin{center}
+    $m_p \geq w(h) $
+ \end{center}
+ \item Inhibítorová hrana: znaèkovanie \emph{m} miesta \emph{p} je menšie, ako váhová funkcia \emph{w} tejto hrany h.
+ \begin{center}
+    $m_p < w(h) $
+ \end{center}
+ \item Reset hrana: pre tento typ hrany nie je zadefinovaná podmienka, ktorá by ovplyvòovala spustite¾nos prechodu,ako bolo spomínané v kapitole \ref{inhibitorreset}.
+\end{itemize}
+Automaticky, ak aspoò pre jednu hranu a znaèkovanie miesta nie je táto podmienka splnená, funkcia vráti \emph{bool} hodnotu \emph{FALSE} a prechod sa z po¾a úloh vymae. Ak sa splnia všetky hodnoty, funkcia vráti hodnotu \emph{TRUE}.
+Po odkontrolovaní kadej úlohy nasleduje riešenie referencií. Okrem zistenia, èi referencované prechody vykonal pouívate¾, bolo našou snahou èo mono najviac obmedzi \emph{deadlocky}, ktoré mohli vzniknú zlım nastavením referencií. Riešime to tımito spôsobmi:
+\\Bola referencovaná úloha spustená?:
+\begin{enumerate}
+  \item ÁNO: Spustil prihlásenı pouívate¾ referencovanú úlohu?
+  \begin{enumerate}
+    \item ÁNO: Nechaj úlohu v zozname úloh a zaznaè k nej dôraz na referenciu.
+    \item NIE: Je pouívate¾, ktorı spustil túto úlohu stále vo firme?
+    \begin{enumerate}
+    \item ÁNO: Vyma úlohu zo zoznamu úloh pre prihláseného pouívate¾a.
+    \item NIE: Má prechod naviazanú rolu?
+    \begin{enumerate}
+    \item ÁNO: Má prihlásenı pouívate¾ v danej firme túto rolu?
+    \\ --- ÁNO: Nechaj úlohu v zozname úloh.
+    \\ --- NIE: Vyma úlohu zo zoznamu úloh pre prihláseného pouívate¾a. 
+    \item NIE: Nechaj úlohu v zozname úloh.
+    \end{enumerate}
+    \end{enumerate}
+    \end{enumerate}
+    \item NIE: Má prechod naviazanú rolu?
+    \begin{enumerate}
+    \item ÁNO: Má prihlásenı pouívate¾ v danej firme túto rolu?
+    \begin{enumerate}
+    \item ÁNO: Nechaj úlohu v zozname úloh
+    \item NIE: Vyma úlohu zo zoznamu úloh pre prihláseného pouívate¾a. 
+    \end{enumerate}
+    \item NIE: Nechaj úlohu v zozname úloh
+  \end{enumerate}
+\end{enumerate}
+Tu sa ukonèí overovanie spustite¾nosti a kontrola referencií a všetky vyfiltrované úlohy sa zobrazia poiívate¾ovi vo forme tabu¾ky. Kadı riadok, èie úloha, má tlaèidlo, pomocou ktorého si pouívate¾ môe úlohu vzia. Na obrázku môeme vidie, e pri úlohe, ktorı mal referenciu na pouívate¾a sa zobrazí vıkrièník. Túto úlohu môe toti splni len on. Zobrazujeme aj, na ktorú z jeho rolí sa úloha viae. Tieto úlohy si môe pouívate¾ vïaka rozba¾ovaciemu zoznamu vytriedi na základe firmy.
+\\TODO: SCREEN.
+\\
+\indent \textbf{Prevzatie úlohy}. Pouívate¾ sa rozhodne vzia úlohu a klikne na odosielajúce tlaèidlo. Aj napriek tomu, e tento zoznam je pomocou AJAXu kadıch 30 sekúnd aktualizovanı( èasovı údaj 30 sekúnd sme zvolili kvôli tomu, e obnovenie údajov je spojené s nároènejšími vıpoètami a poiadavkami do databázy), môe nasta situácia, e pouívate¾ sa pokúsi zobra úlohu, ktorú u niekto pár sekúnd pred ním vzal. Kvôli tejto situácii, po odoslaní iadosti pre prevzatie úlohy, je prvá vec, ktorú kontrolujeme, èi je úloha ešte stále k dispozícii. Ak nie, pouívate¾ovi sa zobrazí upozornenie, e úloha u nie je k dispozícii. V prípade, e úloha je stále vo¾ná, priradí sa pouívate¾ovi. Táto fáza zodpovedá v mapovaní na Petriho sie spusteniu prechodu - skonzumovaniu tokenov. Dochádza k tımto akciám:
+\begin{itemize}
+ \item Z databázy sa vyberú hrany, ktoré do tohoto miesta vchádzajú
+ \item Z databázy sa vyberie znaèkovanie prípadu, z ktorıch tieto hrany vychádzajú
+ \item Upraví sa znaèkovanie na základe pravidiel hrany:
+ \\ - Normálna hrana \emph{h} umoní prechodu \emph{t} skonzumova to¾ko znaèiek z miesta \emph{p}, aká je váhová funkcia \emph{w} tejto hrany. Znaèkovanie sa zmení
+  \begin{center}
+    $ m_p =  m_{po} - w(h)$
+    \\kde $m_{po}$ je znaèkovanie miesta \emph{p} pred konzumáciou tokenov.
+  \end{center}
+ - Reset hrana skonzumuje všetky znaèky z miesta, odkia¾ vychádza, $m_{p}$ = 0.
+ \\- Inhibítorová hrana nemení znaèkovanie v zdrojovom mieste.
+\end{itemize}
+ V databáze sa zaznaèí, kto úlohu vzal a èasovı údaj, kedy ju vzal. V tejto fáze sa ešte neprodukujú iadne znaèky do vıstupnıch miest.
+ \\\indent V prípade integrácie je naplánované prepojenie úlohy so Serverom formulárov a dátového modelu, ktoré bude fungova nasledovne. Na zobrazenie formuláru pouívate¾ stlaèí tlaèidlo \emph{Zobrazi} pod hlavièkou formulár. Naša aplikácia zavolá Server formulárov a odošle mú ID prípadu a úlohy. Tak, ako bolo spomenuté v opise tejto èasti aplikácie v \ref{Kubko}, pouívate¾ si bude môc formulár predvyplni a uloi bez validácie, avšak pri pokuse o ukonèenie úlohy sa bude kontrolova validita vyplnenia formuláru a ak správne vyplnenı nebude, pouívate¾ bude na to upozornenı a úloha sa neukonèí.
+\indent \textbf{Ukonèenie úlohy}
+\subsubsection{Funkcia vrátenia úlohy}
+\subsubsection{Uchovávanie histórie}
+\subsubsection{Vizualizácia prípadu}
+\subsection{Príklad}
+\subsection{Use case diagramy}
+
+%cislovany zoznam
+\noindent\textbf{UC\_01 Názov}
+\begin{itemize}[noitemsep]
+\renewcommand{\labelitemi}{$-$}
+  \item \underline{Popis:} tu príde popis
+  \item \underline{Vstupné podmienky pre pouívate¾a:} 
+  \item \underline{Chybovı tok:}
+  \item \underline{Zmena stavu systému:}
+\end{itemize}
+\subsection{Moné rozšírenia}
+
+
+\newpage
+\section{Záver}
+
+\newpage
+\lhead{}%clear left side header, from this point to the end of the document
+  
+  \begin{thebibliography}{99}
+  
+  \bibitem{application_of_petrinets}
+  AALST, W.: \emph{The Application of Petri Nets to Workflow Management}. Dostupné na internete: http://wwwis.win.tue.nl/~wvdaalst/publications/p53.pdf
+  \bibitem{pt_petrinets}
+  DESEL, J. - REISIG, W.: \emph{Lectures on Petri nets I: Basic models}. Germany: Universtität Karlsruhe: Springer, 1998, ISBN 3-540-65306-6
+  \bibitem{introduction}
+  LEWIS, A.H.: \emph{An introduction to Petri nets}[cit.2016.04.25]. Dostupné na internete: <http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=B8F8CDAA74845325257536573F737B2B?doi=10.1.1.103.7990\&rep=rep1\&type=pdf>
+  \bibitem{PNtechnology}
+  EHRIG, H. a kol. \emph{Petri Net Technology for Communication-Based Systems, Advances in Petri Nets}. Germany: Springer, 2003, ISBN 3-540-20538-1
+  \bibitem{whatispn}
+  EHRIG, H a kol. \emph{Unifying Petri Nets}. Germany: Springer, 2001, ISBN 3-540-43067-9
+  \bibitem{scholarPN}
+  PETRI, C.A. - REISIG, W. 2008 \emph{Petri net}. [online] [cit. 27.04.2016]. Dostupné na internete: <http://www.scholarpedia.org/article/Petri\_net>
+  \bibitem{sevcikovadus}
+  JUHÁS, G.: \emph{Modelovacie formalizmy udalostnıch systémov} Bratislava: RT systems s.r.o., 2011, ISBN 978-80-970519-1-4, p. 29-45
+  \bibitem{resetinhibitor}
+  VERBEEK, H.M.W. a kol.: \emph{Reduction Rules for Reset/Inhibitor Nets} Netherlands: Elsevier, 2009, Dostupné na internete: <http://wwwis.win.tue.nl/~wvdaalst/publications/p572.pdf>
+  \bibitem{wfmodels}
+  AALST, W. - HEE, K.: \emph{Workflow Management Models, methods and systems}Cambridge, Massachusetts: The MIT Press, 2004, ISBN 0-262-01189-1, p. 267-268
+  \bibitem{soundness}
+  AALST, W.M.P a kol.: \emph{Soundness of Workflow Nets: Classification,Decidability, and Analysis}, Netherlands, [online] [cit. 27.04.2016]. Dostupné na internete: <http://alexandria.tue.nl/repository/books/636105.pdf>
+  \bibitem{webPetri}
+  \emph{Prof. Dr. Carl Adam Petri} [online] [cit. 27.04.2016]. Dostupné na internete: <http://www.informatik.uni-hamburg.de/TGI/mitarbeiter/profs/petri\_eng.html>
+  \bibitem{wwwdomes}
+  DOMES,M.: \emph{Tvorba WWW stránek pro úplné zaèáteèníky} Brno: Computer Press, 2012, ISBN 978-80-251-2160-3
+  \bibitem{w3html}
+  \emph{Introduction to HTML}. [online] [cit. 27.04.2016]. Dostupné na internete: <http://www.w3schools.com/html/html\_intro.asp>
+  \bibitem{w3html5}
+  \emph{HTML5 Introduction}. [online] [cit. 27.04.2016]. Dostupné na internete: <http://www.w3schools.com/html/html5\_intro.asp>
+  \bibitem{w3css}
+  \emph{CSS Introduction}. [online] [cit. 27.04.2016]. Dostupné na internete: <http://www.w3schools.com/css/css\_intro.asp>
+  \bibitem{w3js}
+  \emph{JavaScript Introduction}. [online] [cit. 27.04.2016]. Dostupné na internete: <http://www.w3schools.com/js/js\_intro.asp>
+  \bibitem{w3php}
+  \emph{PHP 5 Introduction}. [online] [cit. 27.04.2016]. Dostupné na internete: <http://www.w3schools.com/php/php\_intro.asp>
+  \bibitem{w3sql}
+  \emph{Introduction to SQL}. [online] [cit. 27.04.2016]. Dostupné na internete: <http://www.w3schools.com/sql/sql\_intro.asp>
+  \bibitem{w3ajax}
+  \emph{AJAX Introduction}. [online] [cit. 27.04.2016]. Dostupné na internete: <http://www.w3schools.com/php/php\_ajax\_intro.asp>
+  \bibitem{w3json}
+  \emph{JSON Tutorial}. [online] [cit. 27.04.2016]. Dostupné na internete: <http://www.w3schools.com/json/>
+  \bibitem{w3xml}
+  \emph{XML Tutorial}. [online] [cit. 27.04.2016]. Dostupné na internete: <http://www.w3schools.com/xml/default.asp>
+  \bibitem{w3svg}
+  \emph{SVG Tutorial}. [online] [cit. 27.04.2016]. Dostupné na internete: <http://www.w3schools.com/svg/default.asp>
+  \bibitem{php}
+  \emph{PHPManual}. [online] [cit. 27.04.2016]. Dostupné na internete: <https://secure.php.net/manual/en/index.php>
+  \bibitem{PHPTrend}
+  \emph{Historical trends in the usage of server-side programming languages for websites}. [online] [cit. 27.04.2016]. Dostupné na internete: <http://w3techs.com/technologies/history\_overview/programming\_language>
+  \bibitem{mysql}
+  \emph{What is MySQL? What is a Database? What is SQL?}. [online] [cit. 27.04.2016]. Dostupné na internete: <http://www.thesitewizard.com/faqs/what-is-mysql-database.shtml>
+  \bibitem{php1001}
+  DOMES,M.: \emph{1001 tipù a trikù pro PHP} Brno: Computer Press, 2012, ISBN 978-80-251-2940-1
+  \bibitem{php5framework}
+  PEACOCK,M.: \emph{PHP 5 e-commerce Development} Birmingham: Packt Publlishing Ltd., 2010, ISBN 978-1-847199-64-5, p. 19-60
+  \bibitem{designpatterns}
+  \emph{Design Patterns}. [online] [cit. 27.04.2016]. Dostupné na internete: <https://sourcemaking.com/design\_patterns>
+  \bibitem{autoloader}
+  \emph{PSR-4: Autoloader}. [online] [cit. 29.04.2016]. Dostupné na internete: <http://www.php-fig.org/psr/psr-4/>
+\end{thebibliography}
+
+\newpage
+\section*{Obsah CD nosièa}
+\noindent Obsah priloeného CD nosièa je nasledovnı:
+\begin{itemize}
+  \item v prieèinku \emph{dokument} sa nachádza text diplomovej práce vo formáte PDF
+  \item v prieèinku \emph{aplikácia} sú zdrojové súbory vıslednej funkènej aplikácie, a~tie skript pre vytvorenie tabuliek v databáze
+  \item v prieèinku \emph{dokumentácia} je dokumentácia zdrojového kódu vo formáte HTML obsahujúca popis jednotlivıch tried a ich metód
+\end{itemize}
+\end{document}
