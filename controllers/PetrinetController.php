@@ -11,7 +11,7 @@ use PDO;
  *
  * @package    
  * @author     Anna Demeterova
- * @link       http://workflow.com/
+ * @link       http://workflow.market/
  * @version    1.0.0
  */
 class PetrinetController extends AbstractController{

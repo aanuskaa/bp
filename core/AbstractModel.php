@@ -9,7 +9,7 @@ use PDO;
  *
  * @package    
  * @author     Anna Demeterova
- * @link       http://workflow.com/
+ * @link       http://workflow.market/
  * @version    1.0.0
  */
 abstract class AbstractModel {
@@ -311,7 +311,7 @@ abstract class AbstractModel {
         foreach ($this->attributes as $attr => $value) {
             if (isset($rules['required']) && preg_match('/\b' . $attr . '\b/', $rules['required']) != false) {
                 if ($this->primaryKey !== $attr && !in_array($attr, $this->columnsWithDefValue) && strlen($value)==0) {
-                    $this->validationErrors[$attr] = Flow::t('{FIELD} is required field', ['{FIELD}' => ucfirst(isset($labels[$attr]) ? $labels[$attr] : $attr)]);
+                    $this->validationErrors[$attr] = Flow::translate('{FIELD} is required field', ['{FIELD}' => ucfirst(isset($labels[$attr]) ? $labels[$attr] : $attr)]);
                 }
             }
             if (isset($rules['unique']) && preg_match('/\b' . $attr . '\b/', $rules['unique']) != false && !is_null($value)) {
@@ -323,7 +323,7 @@ abstract class AbstractModel {
                 //var_dump($query);
                 $result = Flow::app()->pdo->query($query)->fetchAll(PDO::FETCH_OBJ);
                 if (!empty($result)) {
-                    $this->validationErrors[$attr] = Flow::t('Value in the field {FIELD} is already in use', ['{FIELD}' => ( isset($labels[$attr]) ? $labels[$attr] : $attr)]) ;
+                    $this->validationErrors[$attr] = Flow::translate('Value in the field {FIELD} is already in use', ['{FIELD}' => ( isset($labels[$attr]) ? $labels[$attr] : $attr)]) ;
                 }
             }
         }

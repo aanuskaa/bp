@@ -10,7 +10,7 @@ use RecursiveIteratorIterator;
  *
  * @package    flow
  * @author     Anna Demeterova
- * @link       http://workflow.com/
+ * @link       http://workflow.market/
  * @version    1.0.0
  * 
  * @property PdoConnection $pdo 

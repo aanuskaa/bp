@@ -4,12 +4,12 @@
  *
  * @package    app
  * @author     Anuska
- * @link       http://workflow.com/
+ * @link       http://workflow.market/
  * @version    1.0.0
  */
 
 error_reporting( E_ALL );       //typ error 
-ini_set('display_errors', 0);   //zobrazenie errorov
+ini_set('display_errors', 1);   //zobrazenie errorov
 
 define('APP_PATH', __DIR__ . '/');
 

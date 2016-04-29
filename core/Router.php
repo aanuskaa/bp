@@ -7,7 +7,7 @@ namespace flow;
  *
  * @package    
  * @author     Anna Demeterova
- * @link       http://workflow.com/
+ * @link       http://workflow.market/
  * @version    1.0.0
  */
 class Router {
@@ -15,7 +15,6 @@ class Router {
     public function resolve(){
         
         $request = $this->parseUrl();
-        
         //Default search Controller->action();
         $controllerClass = '\app\controllers\\' . ucfirst($request[0]) . 'Controller';
 
@@ -28,6 +27,9 @@ class Router {
             
             $this->forward($controllerClass, 'index');
             return TRUE;
+        }
+        else{
+            $this->forward('\app\controllers\TaskController', 'listAll');
         }
     }
     
@@ -48,6 +50,10 @@ class Router {
             $urldata = substr($urldata, strpos($urldata, basename(ROOT_URL)) + strlen(basename(ROOT_URL)));
         }
         
+        //split cez otaznik
+        if(strpos($urldata, '?') !== FALSE){
+            $urldata = substr($urldata, 0, strpos($urldata, '?'));
+        }
         //split cez lomitko
         $splited = preg_split('/[\/]/', $urldata);
         $parsed  = array_values((array_filter($splited,'self::array_trim'))); //vycisti prazdne hodnoty

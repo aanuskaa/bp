@@ -7,7 +7,7 @@ namespace app\models;
  *
  * @package    
  * @author     Anna Demeterova
- * @link       http://workflow.com/
+ * @link       http://workflow.market/
  * @version    1.0.0
  * 
  * @property int id
@@ -29,7 +29,7 @@ class Arc_TPModel extends \flow\AbstractModel{
      */
     public function rules(){
         return [
-            'required' => 'from, to, weight, id_in_xml',
+            'required' => 'from, to, weight',
             'unique'   => 'id',
         ];
     }

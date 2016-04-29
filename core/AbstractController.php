@@ -10,7 +10,7 @@ use const APP_PATH;
  *
  * @package    
  * @author     Anna Demeterova
- * @link       http://workflow.com/
+ * @link       http://workflow.market/
  * @version    1.0.0
  */
 abstract class AbstractController {

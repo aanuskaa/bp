@@ -3,13 +3,11 @@
 namespace flow;
 
 /**
- * Basic object representation of logged user session
+ * @todo write description
  *
- * @package    orchidphp
- * @author     Matus Macak <matus.macak@orchidsphere.com>
- * @copyright  2015 OrchidSphere
- * @link       http://orchidsphere.com/
- * @license    License here
+ * @package    
+ * @author     Anna Demeterova
+ * @link       http://workflow.market/
  * @version    1.0.0
  */
 class Authentication {
@@ -159,6 +157,13 @@ class Authentication {
             $this->role     = 'user';
             $this->username = 'user';
             $this->updateSession(2);
+        }
+        elseif ($u == 'user2' && $p == 'user2') {
+            $this->loggedIn = true;
+            $this->userId   = 2;
+            $this->role     = 'user';
+            $this->username = 'user2';
+            $this->updateSession(3);
         }
         else{
             $this->loggedIn = false;

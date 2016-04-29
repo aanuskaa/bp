@@ -15,7 +15,7 @@ use const ENTRY_SCRIPT_URL;
  *
  * @package    
  * @author     Anna Demeterova
- * @link       http://workflow.com/
+ * @link       http://workflow.market/
  * @version    1.0.0
  */
 class TaskController extends AbstractController{
@@ -106,7 +106,13 @@ class TaskController extends AbstractController{
                 unset($data[$firm_id]);
             }
         }
-        $this->render('listavailable', ['firm_cases' => $data, 'firms' => $firms]);
+        if(isset($_GET['ajaxify'])){
+
+            $this->renderPartial('listavailable.table', ['firm_cases' => $data, 'firms' => $firms]);
+        }
+        else{
+            $this->render('listavailable', ['firm_cases' => $data, 'firms' => $firms]);
+        }
     }
     
     /**
@@ -306,7 +312,7 @@ class TaskController extends AbstractController{
                     `case`.firm,
                     FIRM.`firm_name` AS firm_name
                 FROM
-                    workflow2.case_progress
+                    workflow.case_progress
                         LEFT JOIN
                     `case` ON case_progress.id_case = `case`.id
                         LEFT JOIN
@@ -316,6 +322,7 @@ class TaskController extends AbstractController{
                 WHERE
                     case_progress.started_by = ' . Flow::app()->auth->getUserId() . '
                         AND case_progress.timestamp_stop IS NOT NULL;';
+        var_dump($query);
         $data= Flow::app()->pdo->query($query)->fetchAll(PDO::FETCH_OBJ);
         $this->render('viewFinished', ['tasks' => $data]);
     }
