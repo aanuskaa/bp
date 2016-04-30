@@ -3,6 +3,8 @@
 namespace app\models;
 
 use flow\AbstractModel;
+use flow\Flow;
+use PDO;
 
 
 /**
@@ -136,8 +138,9 @@ class TransitionModel extends AbstractModel{
      * @param type $case_id
      */
     public function fireStart($case_id, $transition_id){
-        $reset = [FALSE, 0];
-        $arcs = ArcModel::model()->findAll('arcs.`to` = ' . (int)$transition_id, 'arcs.`from`, arcs.`weight`, arcs.`type`');
+        $reset = [];
+        $cnt = 0;
+        $arcs = ArcModel::model()->findAll('arcs.`to` = ' . (int)$transition_id, 'arcs.`id_arc`, arcs.`from`, arcs.`weight`, arcs.`type`');
         foreach ($arcs as $arc){
             switch($arc->type){
                 case 'PT':
@@ -152,11 +155,12 @@ class TransitionModel extends AbstractModel{
                 case 'inhibitor':
                 case 'reset':
                     $pl = Case_MarkingModel::model()->findOne('id_case =' . $case_id . ' AND id_place =' . $arc->from);
-                    $reset = [TRUE, $pl->marking];
+                    $reset[$cnt]->id = $arc->id_arc;
+                    $reset[$cnt]->tokens = $pl->marking;
                     $pl->marking = 0;
                     $pl->save(TRUE);
+                    $cnt++;
                     break;
-                
             }
         }
         return $reset;
@@ -167,8 +171,8 @@ class TransitionModel extends AbstractModel{
      * @param type $case_id
      * @param type $transition_id
      */
-    public function returnTokens($case_id, $transition_id, $reset){
-        $arcs = ArcModel::model()->findAll('arcs.`to` = ' . (int)$transition_id, 'arcs.`from`, arcs.`weight`, arcs.`type`');
+    public function returnTokens($case_id, $transition_id, $case_progressid){
+        $arcs = ArcModel::model()->findAll('arcs.`to` = ' . (int)$transition_id, 'arcs.`id_arc`, arcs.`from`, arcs.`weight`, arcs.`type`');
         foreach ($arcs as $arc){
             switch($arc->type){
                 case 'PT':
@@ -178,9 +182,12 @@ class TransitionModel extends AbstractModel{
                     break;
                 case 'inhibitor':
                 case 'reset':
+                    $query = 'SELECT * FROM `reset_arc_cancel` WHERE arc_id=' . $arc->id_arc .  ' AND case_progress_id = ' . $case_progressid;
+                    $result = Flow::app()->pdo->query($query)->fetchAll(PDO::FETCH_OBJ);
                     $pl = Case_MarkingModel::model()->findOne('id_case =' . $case_id . ' AND id_place =' . $arc->from);
-                    $pl->marking = $reset;
+                    $pl->marking = $pl->marking + $result[0]->consumed_tokens;
                     $pl->save(TRUE);
+                    $query = 'DELETE FROM `workflow`.`reset_arc_cancel` WHERE arc_id=' . $arc->id_arc .  ' AND case_progress_id = ' . $case_progressid;
                     break;
                 
             }

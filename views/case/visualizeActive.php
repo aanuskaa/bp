@@ -16,10 +16,10 @@
     <thead>
         <tr>
             <th>Case</th>
-            <th>Začaté</th>
-            <th>Začal/a</th>
-            <th>Firma</th>
-            <th>Pozri aktuálny stav</th>
+            <th>Started</th>
+            <th>Started by</th>
+            <th>Firm</th>
+            <th>View current state</th>
         </tr>
     </thead>
     <tbody>

@@ -45,6 +45,7 @@ class TaskController extends AbstractController{
         $query = 'SELECT DISTINCT
                     USERS_X_FIRM.firm_id,
                     FIRM.firm_name,
+                    `case`.timestamp_stop,
                     `case`.id AS case_id,
                     `case`.`name` AS case_name,
                     `case`.id_pn,
@@ -71,11 +72,11 @@ class TaskController extends AbstractController{
                     EXISTS( SELECT * FROM
                             USERS_X_ROLE
                         WHERE user_id = ' . Flow::app()->auth->getUserId() . '
-                                        AND USERS_X_FIRM.firm_id = USERS_X_ROLE.firm_id
-                                        AND TRANSITIONS_X_ROLE.id_role = USERS_X_ROLE.role_id)
-                        OR referenced_transition_id IS NOT NULL
-                    OR id_role IS NULL;';
-        $result = Flow::app()->pdo->query($query)->fetchAll(PDO::FETCH_OBJ);
+                            AND USERS_X_FIRM.firm_id = USERS_X_ROLE.firm_id
+                            AND TRANSITIONS_X_ROLE.id_role = USERS_X_ROLE.role_id) AND `case`.timestamp_stop IS NULL 
+                            OR referenced_transition_id IS NOT NULL AND `case`.timestamp_stop IS NULL 
+                            OR id_role IS NULL AND `case`.timestamp_stop IS NULL' ;
+        Flow::app()->pdo->query($query);
         $data = $this->sanitizeTasksData($result);
         
         foreach ($data as $firm_id=>$firm){
@@ -143,15 +144,18 @@ class TaskController extends AbstractController{
             $caseProgress->id_transition = $temp[1];
             $caseProgress->started_by = Flow::app()->auth->getUserId();
             $caseProgress->timestamp_start=  date("Y-m-d H:i:s");
-            
-            if($reset[0] != FALSE){
-                $caseProgress->consumed_tokens = $reset[1];
-            }
             $caseProgress->save(TRUE);
+            if(!empty($reset)){
+                foreach ($reset as $r){
+                    $query = 'INSERT INTO `reset_arc_cancel` (`case_progress_id`,`consumed_tokens`, `arc_id`) VALUES (' . $caseProgress->id . ',' . $r->tokens . ', ' . $r->id . ');'; 
+                    $result = Flow::app()->pdo->query($query)->fetchAll(PDO::FETCH_OBJ);
+                    //var_dump($result);
+                }
+            }
+            
         }
         else{
             Flow::app()->alertmanager->setAlert('task-error', 'alert-danger', 'Task uz nie je k dispozicii');
-            
         }
         header('Location:' . ENTRY_SCRIPT_URL . 'task/listAvailable', TRUE, 301);
     }
@@ -162,7 +166,7 @@ class TaskController extends AbstractController{
     protected function cancel(){
         $temp = explode(',', $_POST['cancel']);
         $caseProgress = Case_ProgressModel::model()->findOne('id = ' .  $temp[0]);
-        TransitionModel::model()->returnTokens($temp[1], $temp[2], $caseProgress->consumed_tokens);
+        TransitionModel::model()->returnTokens($temp[1], $temp[2], $caseProgress->id);
         $caseProgress->delete();
         header('Location:' . ENTRY_SCRIPT_URL . 'task/listAll', TRUE, 301);
     }
@@ -322,7 +326,6 @@ class TaskController extends AbstractController{
                 WHERE
                     case_progress.started_by = ' . Flow::app()->auth->getUserId() . '
                         AND case_progress.timestamp_stop IS NOT NULL;';
-        var_dump($query);
         $data= Flow::app()->pdo->query($query)->fetchAll(PDO::FETCH_OBJ);
         $this->render('viewFinished', ['tasks' => $data]);
     }

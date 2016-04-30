@@ -175,6 +175,7 @@ class CaseController extends AbstractController{
         
         $xmlStr = $pn->xml_file;
         $xml = new SimpleXMLElement($xmlStr);
+
         
         foreach ($xml->place as $p){
             $p->tokens = $arr[(Integer) $p->id];
@@ -183,9 +184,9 @@ class CaseController extends AbstractController{
         $str = $xml->asXML();
         /*XML odoslat do editora - ziskat zafarbene SVG*/
         $str = str_replace('<?xml version="1.0"?>', '<?xml version="1.0" encoding="UTF-8"?>', $str);
+        $str = str_replace(['\n', '\n\r', '\r\n', PHP_EOL], '', $str);
         
-        $svg = $pn->svg_file;
-        
+                
         $query = 'SELECT 
                     transition.id_in_xml, USERS.first_name, USERS.last_name
                 FROM
@@ -197,6 +198,6 @@ class CaseController extends AbstractController{
                     id_case = ' . $id_case . ' AND timestamp_stop IS NULL;';
         $case_progress = Flow::app()->pdo->query($query)->fetchAll(PDO::FETCH_OBJ);
         
-        $this->render('visualizeOne', ['svg' => $svg, 'progress' => $case_progress]);
+        $this->render('visualizeOne', ['xml' => $str, 'progress' => $case_progress]);
     }
 }

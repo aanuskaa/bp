@@ -1,0 +1,432 @@
+
+/*#controlArea{
+    border: 1px solid black;
+    width: 100%;
+    height: 15%;
+}*/
+body{
+    margin: 0;
+}
+/*
+input{
+    margin: 3px;
+    padding: 5px;
+}*/
+.background{
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: lightgray;
+    position: absolute;
+}
+
+.popup{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-box-shadow: 1px 1px 4px 0px rgba(221,221,221,1);
+    -moz-box-shadow: 1px 1px 4px 0px rgba(221,221,221,1);
+    box-shadow: 1px 1px 4px 0px rgba(221,221,221,1);
+    height: 300px;
+    width: 500px;
+    margin: auto;
+    background: white;
+    border: 1px solid #cecece;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.popup .close{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 25px;
+    color:#ff6666;
+
+}
+
+.popup .close:hover{
+    color: #ff1a1a;
+    cursor: pointer;
+}
+.popup .question{
+    position: relative;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 28px;
+    text-align: center ;
+    
+}
+
+.popup .popup-input{
+    position: relative;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+
+    height: 30px;
+    line-height: 30px;
+    font-size: 28px;
+}
+
+.popup .button-group{
+    width: 100%;
+    height: 35px;
+    position: absolute;
+    bottom:10px;
+}
+
+.popup .button-group .save, .popup .button-group .cancel{
+    height: 100%;
+    width: 100px;
+    background-color: #00A5C3;
+    font-size: 23px;
+    vertical-align: middle;
+    line-height: 35px;
+    color: white;
+}
+
+.popup .button-group .save:hover, .popup .button-group .cancel:hover{
+    background-color: #295F7D;
+    cursor: pointer;
+}
+
+.popup .button-group .save{
+     float: right;
+     margin-right: 5%;
+ }
+
+.popup .button-group .cancel{
+    float: left;
+    margin-left: 5%;
+}
+
+.blur{
+    filter: blur(5px) grayscale(20%);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+}
+/*---------------*/
+
+.container-fluid ul li input:hover{
+    cursor:pointer;
+}
+
+.container-fluid input {
+    opacity: 0;
+    position: absolute;
+ /*sirkaaaa ako*/  
+   
+}
+.container-fluid ul li input{
+    border: none;
+    width: 30px;
+    height: 30px;
+    margin :0;
+    padding :0;
+}
+
+.container-fluid input + label{
+    margin: 10px;
+    color: #00A5C3;
+    margin: 0;
+    text-shadow: 1px 1px #fff;
+}
+
+.container-fluid input:checked + label{
+    /*color:#5F6F81;*/
+    color:#295F7D;
+}
+
+.container-fluid li{
+    display: inline-block;
+    /*margin: 2% 0 1%;*/
+}
+
+
+.container-fluid ul{
+    padding-top: 5px;
+    padding-bottom: 1px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 35px;
+    padding-left: 10px;
+    
+}
+.container-fluid i{
+    font-size: 30px;
+}
+/*------------------------------------------*/
+.container-fluid{
+    height: calc(100vh - 120px);
+    min-width: 800px;
+    min-height: 650px;
+}
+
+.container-fluid .menu{
+    height: 80px;
+    width: 100%;
+    background: black;
+    background-image: url(swLogo.svg);
+    background-size: 100% 125%;
+    background-position-y: 50%;
+    background-repeat: no-repeat;
+}
+
+.container-fluid .spodok{
+    height: 40px;
+    width: 100%;
+    background: #000;
+    float: left;
+}
+
+.container-fluid .svgDiv #netDrawArea{
+    width: 100%;
+    height: 99%;
+ /*   float: left;*/
+}
+.container-fluid .controlAreaUpped {
+    height: 60px;
+}
+.container-fluid .controlAreaUpped ul{
+    text-align: left;
+}
+
+.container-fluid .controlAreaLower {
+    border-top: 1px solid #cecece;
+    width : 70px;
+    height: calc(100% - 60px);
+    float: left;
+}
+.container-fluid .controlAreaLower li{
+    position:relative;
+    margin: 6px;
+}
+.container-fluid .controlAreaUpped li{
+    position:relative;
+    margin: 8px;
+}
+.container-fluid .controlAreaUpped li .tooltip{
+    display:none;
+    width:80px;
+    color:#00A5C3;
+    
+    /*height:50px;*/
+    padding: 10px;
+    box-sizing: border-box;
+    word-break: normal;
+    box-sizing: border-box;
+    border-radius: 2px;
+    border: 1px solid #cecece;
+    background-color: white;
+    position:absolute;
+    text-align: center;
+    -webkit-box-shadow: 1px 1px 4px 0px rgba(221,221,221,1);
+    -moz-box-shadow: 1px 1px 4px 0px rgba(221,221,221,1);
+    box-shadow: 1px 1px 4px 0px rgba(221,221,221,1);
+    top : 55px;
+    left:-25px;
+    
+    z-index: 20;
+}
+
+.container-fluid .controlAreaUpped li .tooltip:before{
+    content:'';
+    display:block;
+    width:0;
+    height:0;
+    position:absolute;
+    border-bottom: 12px solid #cecece;
+    border-right: 12px solid transparent;
+    border-left: 12px solid transparent;
+    left: 28px;
+    top: -12px;
+}
+
+.container-fluid .controlAreaUpped li:hover .tooltip{
+    display: block;
+}
+
+.container-fluid .controlAreaLower li .tooltip{
+    visibility: hidden;
+    display:inline-block;
+    background-color: #FFFFFF;
+    color: #00A5C3;
+    border-radius: 2px;
+    padding: 10px;
+    border: 1px solid #CECECE;
+    line-height:22px;
+    position: absolute;
+    top:calc(-50% + 13px);
+    left:47px;
+    z-index: 1;
+    white-space: nowrap;
+    -webkit-box-shadow: 1px 1px 4px 0px rgba(221,221,221,1);
+    -moz-box-shadow: 1px 1px 4px 0px rgba(221,221,221,1);
+    box-shadow: 1px 1px 4px 0px rgba(221,221,221,1);
+}
+
+.container-fluid .controlAreaLower li .tooltip:before{
+    content:'';
+    display:block;
+    width:0;
+    height:0;
+    position:absolute;
+    border-bottom: 12px solid transparent;
+    border-top: 12px solid transparent;
+    border-right: 12px solid #cecece;
+    left: -12px;
+    top: 9px;
+}
+
+.container-fluid .controlAreaLower li:hover .tooltip{
+    visibility: visible;
+}
+
+.container-fluid .controlAreaLower ul{
+    position: relative;
+    float: left;
+}
+
+.container-fluid .svgDiv{
+    border:1px solid #cecece;
+    overflow: auto;
+    width: calc(100% - 70px) ;
+    height: calc(100% - 75px);
+    box-sizing: border-box;
+    float: left;
+}
+/*-----------------------------------------*/
+
+.popupInfo{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-box-shadow: 1px 1px 4px 0px rgba(221,221,221,1);
+    -moz-box-shadow: 1px 1px 4px 0px rgba(221,221,221,1);
+    box-shadow: 1px 1px 4px 0px rgba(221,221,221,1);
+    height: 400px;
+    width: 500px;
+    word-wrap: break-word;
+    margin: auto;
+    background: white;
+    border: 1px solid #cecece;
+    color: #00A5C3;
+    text-align: left;
+    padding: 10px;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.popupInfo .head{
+     /* width: 100%; */
+    height: 50px;
+    padding: 10px;
+    margin: 0;
+    padding-bottom: 0;
+    /* font-size: 22px; */
+    color: #00A5C3;
+}
+.popupInfo .head .close{
+    position: absolute;
+    right: 10px;
+    font-size: 20px;
+    color: #CB4E4E;
+}
+
+.popupInfo .head .infoHead{
+    float: left;
+    font-size: 25px;
+    width: calc(100% - 40px);
+    text-align: center;
+    font-size: 30px;
+    
+    
+}
+.popupInfo .head .close:hover{
+    color: #ff1a1a;
+    cursor: pointer;
+}
+
+
+.popupInfo .body{
+    width: 100%;
+    height: calc(100% - 70px);
+    overflow-y: auto;
+    border-top: 1px solid #CECECE;
+    border-bottom: 1px solid #CECECE;
+    
+}
+
+.popupInfo .body p{
+   /* border-bottom: solid 1px #cccccc;*/
+   padding: 15px 0;
+   width: 100%;
+   margin: 0 auto;
+   padding-left: 20px;
+   box-sizing: border-box;
+   padding-right: 20px;
+}
+
+.popupInfo .infoF{
+    width: 100%;
+    height: 10px;
+}
+
+.popupInfo .infoF .confirm{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 10px;
+    margin-top: 5px;
+    height: 30px;
+    width: 100px;
+    background-color: #00A5C3;
+    font-size: 25px;
+    vertical-align: middle;
+    line-height: 35px;
+    color: white;
+}
+
+.popupInfo .infoF .confirm:hover{
+    background-color: #295F7D;
+    cursor: pointer;
+}
+
+.popupInfo .body i{
+    margin-right: 10px;
+    font-size: 25px;
+    float: left;
+    color: #295F7D;
+}
+
+.popupInfo .body .upper{
+    color: #00A5C3;
+}
+.popupInfo span{
+    color: #999999;
+    position: relative;
+    width: 100%;
+    padding-left: 35px;
+    box-sizing: border-box;
+    display: block;
+}
+.popupInfo .body p:nth-child(even) {
+    background-color: rgba(128, 128, 128, 0.09);
+}
+
+.container-fluid .controlAreaLower li label i:hover{
+    color:red;
+}

@@ -91,3 +91,7 @@ body{
     background-color: #f2dede;
     border-color: #ebccd1
 }
+#visiblesvg{
+    overflow: auto;
+    border: 1px solid #cecece;
+}

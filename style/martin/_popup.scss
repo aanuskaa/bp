@@ -1,0 +1,11 @@
+.popup-success{
+  @include martin-popup(#00663a, $white);
+}
+
+.popup-error{
+  @include martin-popup(#d80019, $white);
+}
+
+.error-form-text{
+  color: #f00;
+}

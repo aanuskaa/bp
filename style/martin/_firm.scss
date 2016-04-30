@@ -1,0 +1,17 @@
+.firm-profile-feature{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  i{
+    font-size: 50px;
+    color: $purple;
+  }
+}
+
+#firm-passwd{
+  display: none;
+}
+
+#firm-strategy:checked ~ #firm-passwd{
+  display: inline-block;
+}

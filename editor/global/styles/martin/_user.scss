@@ -1,0 +1,47 @@
+
+
+.order{
+  width: 100%;
+  padding: 30px 0;
+  border-bottom: 1px solid $grey-border;
+  
+  h2{
+    margin-bottom: 20px;
+  }
+  
+}
+
+.order:first-child{
+  padding: 0 0 30px 0;
+}
+
+.order:last-child{
+  border-bottom: none;
+}
+
+.registration-advantages{
+  width: 100%;
+  margin: -20px 0;
+  padding: 0 0 0 40px;
+  border-left: 1px solid $grey-border;
+  
+  .advantage{
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    margin: 20px 30px 20px 0;
+    display: inline-block;
+    color: $white;
+    background-color: $blue;
+    border-radius: 48px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 22px;  
+  }
+  
+  span{
+    font-size: 22px;
+    vertical-align: middle;
+  }
+  
+}

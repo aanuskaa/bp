@@ -27,7 +27,8 @@ class ApiController extends AbstractController{
      */
     protected function accessRules(){
         return [
-            'logged_in' => ['petrinetPost', 'saveArcs'],
+            //'logged_in' => ['petrinetPost', 'saveArcs'],
+            'logged_in' => [],
         ];
     }
     
@@ -35,17 +36,29 @@ class ApiController extends AbstractController{
      * Ulozenie PN do db pre potreby wf enginu
      */
     public function petrinetPost(){
-        $teststr = '{"places":[{"id_in_xml":0,"name":"","initial_marking":2},{"id_in_xml":2,"name":"","initial_marking":0}],"transitions":[{"id_in_xml":1,"name":"inhibitor"},{"id_in_xml":3,"name":"reset"},{"id_in_xml":5,"name":"klasika"}],"arcs":[{"id_in_xml":4,"type":"inhibitor","sourceId":0,"destinationId":1,"weight":1},{"id_in_xml":6,"type":"regular","sourceId":0,"destinationId":5,"weight":1},{"id_in_xml":7,"type":"regular","sourceId":5,"destinationId":2,"weight":1},{"id_in_xml":8,"type":"regular","sourceId":1,"destinationId":2,"weight":1},{"id_in_xml":9,"type":"reset","sourceId":2,"destinationId":3,"weight":1}],"xml_name":"testik.xml"}';
+        if(!isset($_POST['json']) || !isset($_POST['xml'])){
+            return FALSE;
+        }
+        $teststr = $_POST['json'];
         $json_pn = json_decode($teststr);
         
         $petri_net = new Petri_NetModel();
-        $petri_net->xml_file = $json_pn->xml_name;
         $petri_net->name = str_replace('.xml', '', $json_pn->xml_name);
-        $petri_net->created_by = Flow::app()->auth->getUserId();
+        $petri_net->created_by = 1;
+        //$petri_net->created_by = Flow::app()->auth->getUserId();
         $petri_net->created_date =  date("Y-m-d H:i:s");
-        $petri_net->xml_file =  $xml;
-        $petri_net->svg_file =  $svg;
-        var_dump($petri_net->save(TRUE));
+        $petri_net->xml_file =  $_POST['xml'];
+        $petri_net->description = $json_pn->description;
+        
+        if(isset($_POST['svg'])){
+            $petri_net->svg_file =  $_POST['svg'];
+        }
+        
+        if(!($petri_net->save(TRUE))){
+            return FALSE;
+        }
+        
+        var_dump($petri_net->id);
         
         $place_model = new PlaceModel();
         foreach ($json_pn->places as $k => $place){
@@ -67,7 +80,7 @@ class ApiController extends AbstractController{
         
         $this->saveArcs(json_encode($json_pn));
         
-        //$this->render('');
+        echo $petri_net->id;
     }
     
     /**

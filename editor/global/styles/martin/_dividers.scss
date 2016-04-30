@@ -1,0 +1,3 @@
+.divider-h-30-30{
+  @include martin-divider-h(100%,1px,$gap30,$gap30);
+}

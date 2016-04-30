@@ -1,0 +1,45 @@
+h1,h2,h3,h4{
+  margin-top: 0px;
+  padding-top: 0px;
+  line-height: 1;
+}
+h1{
+  color: $white;
+}
+
+h2{
+  margin-bottom: 30px;
+  font-size: $h2Size;
+  font-weight: 400;
+}
+
+.h2-icon{
+  @extend h2;
+  display: inline;
+  line-height: 2;
+}
+
+.h2-icon:after{
+  content:"\A"; 
+  white-space:pre;
+}
+
+h3{
+  font-size: $h3Size;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+p{
+  font-size: $textSmallSize;
+  line-height: 1.5;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+a.colored{
+  color: #2a5db0;
+}

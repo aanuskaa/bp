@@ -1,0 +1,101 @@
+@mixin button($color,$fontColor,$hovercolor,$hoverFontColor,$height:30px){
+  padding: 0px 20px;
+  height: $height;
+  background-color: $color;
+  color: $fontColor;
+  box-sizing: border-box;
+  border-radius: 2px;
+  border: 0;
+  line-height: $height;
+  vertical-align: middle;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  top: -1px;
+  &:hover{
+    background-color: $hovercolor;
+    color:$hoverFontColor;
+  }
+}
+
+@mixin input($color,$fontColor,$hovercolor,$hoverFontColor,$height:30px){
+  padding: 10px;
+  height: $height;
+  background-color: $color;
+  box-sizing: border-box;
+  color:$fontColor;
+  border: 1px solid $gray2;
+  border-radius: 2px;
+  &:hover{
+    background-color: $hovercolor;
+    color:$hoverFontColor;
+  }
+  &:focus{
+    outline:1px solid $gray2;
+  }
+}
+
+@mixin ellipsis ($line-height, $lines: 2) {
+
+    overflow: hidden;
+    height: $line-height*$lines;
+
+    max-height: $line-height*$lines;
+    line-height: $line-height;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+
+    // Solution for Opera
+    text-overflow: -o-ellipsis-lastline;
+}
+
+
+/////////////////////////////////// MARTIN /////////////////////////////////////
+@mixin martin-divider-h($width,$height,$padding-top,$padding-bottom){
+  width: $width;
+  height: $height;
+  margin: $padding-top 0 $padding-bottom 0;
+  background: $grey-border;
+}
+
+@mixin martin-input($width, $margin-bottom: 10px, $padding: 12px, $border: 1px solid $grey-border, $box-shadow: $box-shadow){
+  width: $width;
+  margin-bottom: $margin-bottom;
+  padding: $padding;
+  border: $border;
+  box-shadow: $box-shadow;
+}
+
+@mixin martin-button($width, $padding-vertical, $padding-horizontal, $border, $background: inherit, $color: inherit, $box-shadow: none){
+  width: $width;
+  border: $border;
+  background: $background;
+  color: $color;
+  box-shadow: $box-shadow;
+  text-align: center;
+  
+  padding: $padding-vertical $padding-horizontal;
+  a{
+    display: block;
+    margin: (-$padding-vertical) (-$padding-horizontal);
+    padding: $padding-vertical $padding-horizontal;
+  }
+}
+
+@mixin martin-popup($background, $color, $width: 50%, $padding: 15px, $top: 50px){
+  width: $width;
+  margin: 0 auto;
+  padding: $padding;
+  position: absolute;
+  display: inline-block;
+  background: $background;
+  color: $color;
+  text-align: center;
+  border-radius: $border-radius;
+  left: 0;
+  right: 0;
+  top: $top;
+  z-index: 99998;
+}
+/////////////////////////////////// ./MARTIN ///////////////////////////////////

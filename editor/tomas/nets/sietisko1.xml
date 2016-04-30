@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <place>
+        <id>0</id>
+        <x>213.5</x>
+        <y>64</y>
+        <label></label>
+        <tokens>0</tokens>
+    </place>
+    <transition>
+        <id>1</id>
+        <x>374.5</x>
+        <y>63</y>
+        <label></label>
+    </transition>
+    <arc>
+        <id>2</id>
+        <type>regular</type>
+        <sourceId>0</sourceId>
+        <destinationId>1</destinationId>
+        <multiplicity>1</multiplicity>
+    </arc>
+    <description></description>
+</document>

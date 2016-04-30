@@ -15,10 +15,10 @@
     <thead>
         <tr>
             <th>Case</th>
-            <th>Začaté</th>
-            <th>Ukončené</th>
-            <th>Začal/a</th>
-            <th>Firma</th>
+            <th>Started</th>
+            <th>Finished</th>
+            <th>Started by</th>
+            <th>Firm</th>
         </tr>
     </thead>
     <tbody>

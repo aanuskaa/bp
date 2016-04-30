@@ -8,19 +8,23 @@
  * @link       http://workflow.com/
  * @version    1.0.0
  */
+ 
+ include APP_PATH . 'editor/tomas/visualize.php';
 
 ?>
+<div id="visiblesvg">
+</div>
   
 <script>
     function addProgress(idTransition, username){
-        var x = $("#" + (idTransition-1)).attr("x");
-        var y = $("#" + (idTransition-1)).attr("y");
-        var width = $("#" + (idTransition-1)).attr("width") -10;
-        var height = $("#" + (idTransition-1)).attr("height") -10;
-        var svg = document.getElementsByTagName('svg')[0];
+        var x = $("#" + (idTransition)).attr("x");
+        var y = $("#" + (idTransition)).attr("y");
+        var width = $("#" + (idTransition)).attr("width") -10;
+        var height = $("#" + (idTransition)).attr("height") -10;
+        var svg = $("#visiblesvg").find('svg')[0];
         var link = 'http://www.w3.org/2000/svg';
         
-        var text_id = 'transition-name' + (idTransition-1);
+        var text_id = 'transition-name' + (idTransition);
         console.log(text_id);
         
         var icon = document.createElementNS(link, 'image');
@@ -46,13 +50,14 @@
         
         icon.appendChild(title);
         
-        $(svg).html($(svg).html());
+        $("#visiblesvg").find('svg').html($("#visiblesvg").find('svg').html());
     }
     
 </script>
     
 <?php
-echo $data->svg;
+
+echo '<script>$("#visiblesvg").html(svg);</script>';
 
 foreach ($data->progress as $p){
     $user_name = $p->last_name . ' ' . $p->first_name;

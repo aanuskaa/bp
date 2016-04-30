@@ -1,0 +1,1093 @@
+.car, .carousel-middle {
+  width: 100%;
+  position: relative;
+  background: #000; }
+  .car .drop-buttons, .carousel-middle .drop-buttons {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 270px;
+    z-index: 99999; }
+    .car .drop-buttons .button, .carousel-middle .drop-buttons .button {
+      height: 40px;
+      padding: 10px 20px;
+      border-radius: 0 0 5px 5px;
+      font-size: 15px;
+      box-sizing: border-box;
+      display: inline-block;
+      cursor: pointer;
+      position: relative;
+      margin-right: 10px; }
+      .car .drop-buttons .button i, .carousel-middle .drop-buttons .button i {
+        margin-right: 5px;
+        font-size: 15px;
+        padding-bottom: 2px; }
+      .car .drop-buttons .button:hover, .carousel-middle .drop-buttons .button:hover {
+        -moz-border-radius-bottomleft: 0;
+        -webkit-border-bottom-left-radius: 0; }
+        .car .drop-buttons .button:hover .drop-card, .carousel-middle .drop-buttons .button:hover .drop-card {
+          display: block; }
+    .car .drop-buttons .process, .carousel-middle .drop-buttons .process {
+      left: 0;
+      background-color: #00a5c3;
+      color: white; }
+      .car .drop-buttons .process:hover, .carousel-middle .drop-buttons .process:hover {
+        background-color: #0085a2; }
+    .car .drop-buttons .firm, .carousel-middle .drop-buttons .firm {
+      background-color: #e51a6b;
+      color: white; }
+      .car .drop-buttons .firm:hover, .carousel-middle .drop-buttons .firm:hover {
+        background-color: #b10047; }
+
+.carousel-middle {
+  height: 140px; }
+  .carousel-middle .row {
+    margin-top: 50px; }
+
+#carousel-background {
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+  height: 380px;
+  transition: all .2s ease;
+  vertical-align: middle;
+  position: absolute;
+  top: 0; }
+
+#carousel-image {
+  z-index: 99;
+  position: absolute; }
+
+#carousel {
+  position: relative;
+  height: 380px; }
+
+.carousel .container .drop-buttons {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 270px; }
+
+.carousel-wrapper {
+  z-index: 100;
+  position: absolute;
+  height: 100%;
+  display: block;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin-left: auto;
+  margin-right: auto; }
+
+.carousel-content {
+  height: 380px; }
+  .carousel-content h1 {
+    font-size: 45px;
+    font-weight: normal;
+    color: #fff;
+    position: relative;
+    top: 20px; }
+  .carousel-content .col {
+    height: 100%; }
+  .carousel-content .drop-buttons {
+    position: relative;
+    top: 0;
+    left: 0px;
+    width: 270px; }
+    .carousel-content .drop-buttons .button {
+      height: 40px;
+      padding: 10px 20px;
+      border-radius: 0 0 5px 5px;
+      font-size: 15px;
+      box-sizing: border-box;
+      display: inline-block;
+      cursor: pointer;
+      position: relative;
+      margin-right: 10px; }
+      .carousel-content .drop-buttons .button i {
+        margin-right: 5px;
+        font-size: 15px;
+        padding-bottom: 2px; }
+      .carousel-content .drop-buttons .button:hover {
+        -moz-border-radius-bottomleft: 0;
+        -webkit-border-bottom-left-radius: 0; }
+        .carousel-content .drop-buttons .button:hover .drop-card {
+          display: block; }
+    .carousel-content .drop-buttons .process {
+      left: 0;
+      background-color: #00a5c3;
+      color: white; }
+      .carousel-content .drop-buttons .process:hover {
+        background-color: #0085a2; }
+    .carousel-content .drop-buttons .firm {
+      background-color: #e51a6b;
+      color: white; }
+      .carousel-content .drop-buttons .firm:hover {
+        background-color: #b10047; }
+  .carousel-content .full-height {
+    height: 100%; }
+
+.drop-card {
+  display: none;
+  width: 600px;
+  height: 270px;
+  position: absolute;
+  background-color: inherit;
+  top: 35px;
+  left: 0;
+  border-radius: 2px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  cursor: default;
+  z-index: 2; }
+  .drop-card .content {
+    position: relative;
+    width: 100%;
+    height: 100%; }
+    .drop-card .content .top-line {
+      height: 5px;
+      width: 100%;
+      position: relative;
+      top: 0;
+      left: 0; }
+    .drop-card .content .menu {
+      height: calc(100% - 5px);
+      width: 100%;
+      margin: auto;
+      background-color: white;
+      padding: 30px;
+      box-sizing: border-box; }
+      .drop-card .content .menu .column {
+        width: 50%;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 0 30px;
+        border-right: 1px solid #e2e2e2;
+        font-size: 15px;
+        color: #909090; }
+        .drop-card .content .menu .column:first-child {
+          padding-left: 0;
+          float: left; }
+        .drop-card .content .menu .column:last-child {
+          padding-right: 0;
+          border-right: 0;
+          float: right; }
+        .drop-card .content .menu .column .header {
+          font-size: 15px;
+          color: #414141;
+          margin-bottom: 20px; }
+        .drop-card .content .menu .column .links .link {
+          padding: 8px 0;
+          font-size: 13px;
+          border-bottom: 1px solid #e2e2e2;
+          box-sizing: border-box; }
+          .drop-card .content .menu .column .links .link:last-child {
+            border-bottom: 0; }
+          .drop-card .content .menu .column .links .link a {
+            display: inline-block;
+            margin: -8px 0;
+            padding: 8px 0; }
+          .drop-card .content .menu .column .links .link:hover .text {
+            color: #414141; }
+          .drop-card .content .menu .column .links .link:hover .icon {
+            color: #0085a2; }
+        .drop-card .content .menu .column .alphabet {
+          margin-bottom: 20px; }
+          .drop-card .content .menu .column .alphabet .char {
+            display: inline-block;
+            padding: 4px;
+            box-sizing: border-box; }
+            .drop-card .content .menu .column .alphabet .char a {
+              display: inline-block;
+              margin: -4px;
+              padding: 4px; }
+            .drop-card .content .menu .column .alphabet .char:hover {
+              color: #414141; }
+        .drop-card .content .menu .column .search .search-input {
+          padding: 10px;
+          height: 30px;
+          background-color: white;
+          box-sizing: border-box;
+          color: #414141;
+          border: 1px solid #e2e2e2;
+          border-radius: 2px;
+          font-size: 13px;
+          margin-right: 5px;
+          padding: 0; }
+          .drop-card .content .menu .column .search .search-input:hover {
+            background-color: white;
+            color: #414141; }
+          .drop-card .content .menu .column .search .search-input:focus {
+            outline: 1px solid #e2e2e2; }
+        .drop-card .content .menu .column .search .search-button {
+          padding: 0px 20px;
+          height: 30px;
+          background-color: #00a5c3;
+          color: white;
+          box-sizing: border-box;
+          border-radius: 2px;
+          border: 0;
+          line-height: 30px;
+          vertical-align: middle;
+          position: relative;
+          cursor: pointer;
+          text-align: center;
+          top: -1px; }
+          .drop-card .content .menu .column .search .search-button:hover {
+            background-color: #0085a2;
+            color: white; }
+  .drop-card .card-tr {
+    display: table-row;
+    width: 100%; }
+  .drop-card .card-td {
+    display: table-cell; }
+
+.quickregistration {
+  position: relative;
+  height: 320px;
+  top: 30px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px 30px;
+  box-sizing: border-box; }
+  .quickregistration .header {
+    font-size: 28px;
+    color: #e51a6b;
+    margin-bottom: 20px; }
+  .quickregistration .name, .quickregistration .surname, .quickregistration .email, .quickregistration .password {
+    padding: 10px;
+    height: 40px;
+    background-color: white;
+    box-sizing: border-box;
+    color: #414141;
+    border: 1px solid #e2e2e2;
+    border-radius: 2px;
+    margin-bottom: 15px;
+    width: 100%;
+    font-size: 13px; }
+    .quickregistration .name:hover, .quickregistration .surname:hover, .quickregistration .email:hover, .quickregistration .password:hover {
+      background-color: white;
+      color: #414141; }
+    .quickregistration .name:focus, .quickregistration .surname:focus, .quickregistration .email:focus, .quickregistration .password:focus {
+      outline: 1px solid #e2e2e2; }
+  .quickregistration .name, .quickregistration .surname {
+    width: calc(50% - 5px); }
+  .quickregistration .surname {
+    margin-left: 5px; }
+  .quickregistration .footer {
+    width: 100%;
+    border-top: 1px solid #e2e2e2;
+    padding-top: 10px; }
+    .quickregistration .footer .register {
+      padding: 0px 20px;
+      height: 40px;
+      background-color: #00a5c3;
+      color: white;
+      box-sizing: border-box;
+      border-radius: 2px;
+      border: 0;
+      line-height: 40px;
+      vertical-align: middle;
+      position: relative;
+      cursor: pointer;
+      text-align: center;
+      top: -1px;
+      width: 100%; }
+      .quickregistration .footer .register:hover {
+        background-color: #0085a2;
+        color: white; }
+      .quickregistration .footer .register a, .quickregistration .footer .register i {
+        color: white;
+        text-decoration: none;
+        font-size: 18px; }
+      .quickregistration .footer .register i {
+        margin-right: 10px; }
+
+#carousel-background {
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+  height: 140px;
+  transition: all .2s ease;
+  vertical-align: middle;
+  position: absolute;
+  top: 0; }
+
+#carousel-image {
+  z-index: 99;
+  position: absolute; }
+
+#carousel {
+  position: relative;
+  height: 140px; }
+
+.carousel .container .drop-buttons {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 270px; }
+
+.carousel-wrapper {
+  z-index: 100;
+  position: absolute;
+  height: 100%;
+  display: block;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin-left: auto;
+  margin-right: auto; }
+
+.carousel-content {
+  height: 140px; }
+  .carousel-content h1 {
+    font-size: 45px;
+    font-weight: normal;
+    color: #fff;
+    position: relative;
+    top: 20px; }
+  .carousel-content .col {
+    height: 100%; }
+  .carousel-content .drop-buttons {
+    position: relative;
+    top: 0;
+    left: 0px;
+    width: 270px; }
+    .carousel-content .drop-buttons .button {
+      height: 40px;
+      padding: 10px 20px;
+      border-radius: 0 0 5px 5px;
+      font-size: 15px;
+      box-sizing: border-box;
+      display: inline-block;
+      cursor: pointer;
+      position: relative;
+      margin-right: 10px; }
+      .carousel-content .drop-buttons .button i {
+        margin-right: 5px;
+        font-size: 15px;
+        padding-bottom: 2px; }
+      .carousel-content .drop-buttons .button:hover {
+        -moz-border-radius-bottomleft: 0;
+        -webkit-border-bottom-left-radius: 0; }
+        .carousel-content .drop-buttons .button:hover .drop-card {
+          display: block; }
+    .carousel-content .drop-buttons .process {
+      left: 0;
+      background-color: #00a5c3;
+      color: white; }
+      .carousel-content .drop-buttons .process:hover {
+        background-color: #0085a2; }
+    .carousel-content .drop-buttons .firm {
+      background-color: #e51a6b;
+      color: white; }
+      .carousel-content .drop-buttons .firm:hover {
+        background-color: #b10047; }
+  .carousel-content .full-height {
+    height: 100%; }
+
+.drop-card {
+  display: none;
+  width: 600px;
+  height: 270px;
+  position: absolute;
+  background-color: inherit;
+  top: 35px;
+  left: 0;
+  border-radius: 2px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  cursor: default;
+  z-index: 2; }
+  .drop-card .content {
+    position: relative;
+    width: 100%;
+    height: 100%; }
+    .drop-card .content .top-line {
+      height: 5px;
+      width: 100%;
+      position: relative;
+      top: 0;
+      left: 0; }
+    .drop-card .content .menu {
+      height: calc(100% - 5px);
+      width: 100%;
+      margin: auto;
+      background-color: white;
+      padding: 30px;
+      box-sizing: border-box; }
+      .drop-card .content .menu .column {
+        width: 50%;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 0 30px;
+        border-right: 1px solid #e2e2e2;
+        font-size: 15px;
+        color: #909090; }
+        .drop-card .content .menu .column:first-child {
+          padding-left: 0;
+          float: left; }
+        .drop-card .content .menu .column:last-child {
+          padding-right: 0;
+          border-right: 0;
+          float: right; }
+        .drop-card .content .menu .column .header {
+          font-size: 15px;
+          color: #414141;
+          margin-bottom: 20px; }
+        .drop-card .content .menu .column .links .link {
+          padding: 8px 0;
+          font-size: 13px;
+          border-bottom: 1px solid #e2e2e2;
+          box-sizing: border-box; }
+          .drop-card .content .menu .column .links .link:last-child {
+            border-bottom: 0; }
+          .drop-card .content .menu .column .links .link a {
+            display: inline-block;
+            margin: -8px 0;
+            padding: 8px 0; }
+          .drop-card .content .menu .column .links .link:hover .text {
+            color: #414141; }
+          .drop-card .content .menu .column .links .link:hover .icon {
+            color: #0085a2; }
+        .drop-card .content .menu .column .alphabet {
+          margin-bottom: 20px; }
+          .drop-card .content .menu .column .alphabet .char {
+            display: inline-block;
+            padding: 4px;
+            box-sizing: border-box; }
+            .drop-card .content .menu .column .alphabet .char a {
+              display: inline-block;
+              margin: -4px;
+              padding: 4px; }
+            .drop-card .content .menu .column .alphabet .char:hover {
+              color: #414141; }
+        .drop-card .content .menu .column .search .search-input {
+          padding: 10px;
+          height: 30px;
+          background-color: white;
+          box-sizing: border-box;
+          color: #414141;
+          border: 1px solid #e2e2e2;
+          border-radius: 2px;
+          font-size: 13px;
+          margin-right: 5px;
+          padding: 0; }
+          .drop-card .content .menu .column .search .search-input:hover {
+            background-color: white;
+            color: #414141; }
+          .drop-card .content .menu .column .search .search-input:focus {
+            outline: 1px solid #e2e2e2; }
+        .drop-card .content .menu .column .search .search-button {
+          padding: 0px 20px;
+          height: 30px;
+          background-color: #00a5c3;
+          color: white;
+          box-sizing: border-box;
+          border-radius: 2px;
+          border: 0;
+          line-height: 30px;
+          vertical-align: middle;
+          position: relative;
+          cursor: pointer;
+          text-align: center;
+          top: -1px; }
+          .drop-card .content .menu .column .search .search-button:hover {
+            background-color: #0085a2;
+            color: white; }
+  .drop-card .card-tr {
+    display: table-row;
+    width: 100%; }
+  .drop-card .card-td {
+    display: table-cell; }
+
+.footer {
+  width: 100%;
+  padding: 40px 0px;
+  background: #e2e2e2;
+  color: #909090;
+  border-top: 1px solid #cecece; }
+  .footer .bottomrow {
+    font-size: 13px; }
+    .footer .bottomrow p {
+      margin: 0;
+      padding: 0; }
+  .footer .heading {
+    margin: 0 0 30px 0;
+    font-weight: bold;
+    font-size: 15px; }
+  .footer ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
+    .footer ul li {
+      margin: 0 0 20px 0;
+      font-size: 13px; }
+    .footer ul li:last-child {
+      margin: 0; }
+  .footer ul.last {
+    border-right: 1px solid #cecece; }
+  .footer .footer-baseinput, .footer .footer-button-blue, .footer .footer-input-full {
+    display: inline-block;
+    font-size: 13px;
+    border-radius: 2px; }
+  .footer .footer-button-blue {
+    width: inherit;
+    border: none;
+    background: #00a5c3;
+    color: #fff;
+    box-shadow: none;
+    text-align: center;
+    padding: 12px 40px; }
+    .footer .footer-button-blue a {
+      display: block;
+      margin: -12px -40px;
+      padding: 12px 40px; }
+  .footer .footer-button-blue:hover {
+    background-color: #0085a2; }
+  .footer .footer-input-full {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 12px;
+    border: 1px solid #cecece;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08); }
+  .footer .footer-divider-h-30-30 {
+    width: 100%;
+    height: 1px;
+    margin: 30px 0 30px 0;
+    background: #cecece; }
+
+.header .navRight {
+  text-align: right;
+  margin: 0;
+  list-style: none;
+  padding: 0; }
+  .header .navRight li {
+    display: inline-block; }
+
+.upperHeader {
+  background-color: #4a4a4a;
+  color: #FFFFFF;
+  font-size: 12px; }
+  .upperHeader .row {
+    padding: 4px 0; }
+  .upperHeader ul li {
+    border-left: 1px solid #656565;
+    padding: 0 10px; }
+    .upperHeader ul li:first-child {
+      border-left: none; }
+    .upperHeader ul li:last-child {
+      padding: 0 0 0 10px; }
+    .upperHeader ul li a {
+      color: #fff; }
+
+.midHeader {
+  background-color: #fff;
+  font-size: 13px;
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08); }
+  .midHeader a {
+    color: #909090;
+    text-decoration: none; }
+  .midHeader .row > div, .midHeader .row > ul {
+    height: 54px; }
+    .midHeader .row > div .logo, .midHeader .row > ul .logo {
+      height: 100%; }
+      .midHeader .row > div .logo img, .midHeader .row > ul .logo img {
+        height: 100%; }
+  .midHeader ul li {
+    margin-left: 40px;
+    height: 100%;
+    line-height: 54px; }
+    .midHeader ul li:first-child {
+      margin-left: 0; }
+    .midHeader ul li a i {
+      padding-right: 5px; }
+
+.card-list-process .header {
+  font-size: 28px;
+  color: #00a5c3;
+  margin-bottom: 20px; }
+  .card-list-process .header .icon {
+    margin-right: 10px; }
+.card-list-process .cards .card {
+  width: 100%;
+  height: 310px;
+  display: inline-block;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  color: #909090;
+  font-size: 15px;
+  position: relative;
+  margin-bottom: 30px;
+  border: 1px solid #e2e2e2;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08); }
+  .card-list-process .cards .card .header, .card-list-process .cards .card .description, .card-list-process .cards .card .create-number, .card-list-process .cards .card .download-number, .card-list-process .cards .card .membercount, .card-list-process .cards .card .processcount, .card-list-process .cards .card .footer {
+    margin-bottom: 20px;
+    width: 100%; }
+  .card-list-process .cards .card .header {
+    font-size: 18px;
+    color: #00a5c3;
+    margin-bottom: 20px;
+    overflow: hidden;
+    height: 40px;
+    max-height: 40px;
+    line-height: 20px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: -o-ellipsis-lastline; }
+    .card-list-process .cards .card .header a {
+      color: #00a5c3;
+      text-decoration: none; }
+  .card-list-process .cards .card .description {
+    font-size: 15px;
+    overflow: hidden;
+    height: 45px;
+    max-height: 45px;
+    line-height: 15px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    text-overflow: -o-ellipsis-lastline;
+    color: #909090; }
+  .card-list-process .cards .card .create-number, .card-list-process .cards .card .download-number, .card-list-process .cards .card .membercount, .card-list-process .cards .card .processcount {
+    height: 25px; }
+    .card-list-process .cards .card .create-number i, .card-list-process .cards .card .download-number i, .card-list-process .cards .card .membercount i, .card-list-process .cards .card .processcount i {
+      font-size: 25px;
+      margin-right: 5px;
+      color: #00a5c3; }
+    .card-list-process .cards .card .create-number span, .card-list-process .cards .card .download-number span, .card-list-process .cards .card .membercount span, .card-list-process .cards .card .processcount span {
+      font-size: 13px; }
+      .card-list-process .cards .card .create-number span .number, .card-list-process .cards .card .download-number span .number, .card-list-process .cards .card .membercount span .number, .card-list-process .cards .card .processcount span .number {
+        font-weight: bold; }
+  .card-list-process .cards .card .footer {
+    padding: 15px 0 0 0;
+    border-top: 1px solid #e2e2e2;
+    position: relative;
+    height: 45px;
+    background-color: transparent; }
+    .card-list-process .cards .card .footer .price, .card-list-process .cards .card .footer .detail {
+      position: absolute; }
+    .card-list-process .cards .card .footer .price {
+      float: left;
+      height: 30px;
+      line-height: 30px;
+      vertical-align: middle; }
+      .card-list-process .cards .card .footer .price i {
+        font-size: 20px;
+        color: #f4c32d;
+        font-weight: bold; }
+    .card-list-process .cards .card .footer .detail, .card-list-process .cards .card .footer .profil {
+      padding: 0px 20px;
+      height: 25px;
+      background-color: #e2e2e2;
+      color: #00a5c3;
+      box-sizing: border-box;
+      border-radius: 2px;
+      border: 0;
+      line-height: 25px;
+      vertical-align: middle;
+      position: relative;
+      cursor: pointer;
+      text-align: center;
+      top: -1px;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+      float: right; }
+      .card-list-process .cards .card .footer .detail:hover, .card-list-process .cards .card .footer .profil:hover {
+        background-color: #909090;
+        color: #0085a2; }
+.card-list-process .more-button {
+  padding: 0px 20px;
+  height: 40px;
+  background-color: #00a5c3;
+  color: white;
+  box-sizing: border-box;
+  border-radius: 2px;
+  border: 0;
+  line-height: 40px;
+  vertical-align: middle;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  top: -1px;
+  width: 150px;
+  margin: 0 auto;
+  font-size: 15px; }
+  .card-list-process .more-button:hover {
+    background-color: #0085a2;
+    color: white; }
+
+.card-list-firm .header {
+  font-size: 28px;
+  color: #e51a6b;
+  margin-bottom: 20px; }
+  .card-list-firm .header .icon {
+    margin-right: 10px; }
+.card-list-firm .cards .card {
+  width: 100%;
+  height: 310px;
+  display: inline-block;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  color: #909090;
+  font-size: 15px;
+  position: relative;
+  margin-bottom: 30px;
+  border: 1px solid #e2e2e2;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08); }
+  .card-list-firm .cards .card .header, .card-list-firm .cards .card .description, .card-list-firm .cards .card .create-number, .card-list-firm .cards .card .download-number, .card-list-firm .cards .card .membercount, .card-list-firm .cards .card .processcount, .card-list-firm .cards .card .footer {
+    margin-bottom: 20px;
+    width: 100%; }
+  .card-list-firm .cards .card .header {
+    font-size: 18px;
+    color: #e51a6b;
+    margin-bottom: 20px;
+    overflow: hidden;
+    height: 40px;
+    max-height: 40px;
+    line-height: 20px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: -o-ellipsis-lastline; }
+    .card-list-firm .cards .card .header a {
+      color: #e51a6b;
+      text-decoration: none; }
+  .card-list-firm .cards .card .description {
+    font-size: 15px;
+    overflow: hidden;
+    height: 45px;
+    max-height: 45px;
+    line-height: 15px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    text-overflow: -o-ellipsis-lastline;
+    color: #909090; }
+  .card-list-firm .cards .card .create-number, .card-list-firm .cards .card .download-number, .card-list-firm .cards .card .membercount, .card-list-firm .cards .card .processcount {
+    height: 25px; }
+    .card-list-firm .cards .card .create-number i, .card-list-firm .cards .card .download-number i, .card-list-firm .cards .card .membercount i, .card-list-firm .cards .card .processcount i {
+      font-size: 25px;
+      margin-right: 5px;
+      color: #e51a6b; }
+    .card-list-firm .cards .card .create-number span, .card-list-firm .cards .card .download-number span, .card-list-firm .cards .card .membercount span, .card-list-firm .cards .card .processcount span {
+      font-size: 13px; }
+      .card-list-firm .cards .card .create-number span .number, .card-list-firm .cards .card .download-number span .number, .card-list-firm .cards .card .membercount span .number, .card-list-firm .cards .card .processcount span .number {
+        font-weight: bold; }
+  .card-list-firm .cards .card .footer {
+    padding: 15px 0 0 0;
+    border-top: 1px solid #e2e2e2;
+    position: relative;
+    height: 45px;
+    background-color: transparent; }
+    .card-list-firm .cards .card .footer .price, .card-list-firm .cards .card .footer .detail {
+      position: absolute; }
+    .card-list-firm .cards .card .footer .price {
+      float: left;
+      height: 30px;
+      line-height: 30px;
+      vertical-align: middle; }
+      .card-list-firm .cards .card .footer .price i {
+        font-size: 20px;
+        color: #f4c32d;
+        font-weight: bold; }
+    .card-list-firm .cards .card .footer .detail, .card-list-firm .cards .card .footer .profil {
+      padding: 0px 20px;
+      height: 25px;
+      background-color: #e2e2e2;
+      color: #e51a6b;
+      box-sizing: border-box;
+      border-radius: 2px;
+      border: 0;
+      line-height: 25px;
+      vertical-align: middle;
+      position: relative;
+      cursor: pointer;
+      text-align: center;
+      top: -1px;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+      float: right; }
+      .card-list-firm .cards .card .footer .detail:hover, .card-list-firm .cards .card .footer .profil:hover {
+        background-color: #909090;
+        color: #b10047; }
+.card-list-firm .more-button {
+  padding: 0px 20px;
+  height: 40px;
+  background-color: #e51a6b;
+  color: white;
+  box-sizing: border-box;
+  border-radius: 2px;
+  border: 0;
+  line-height: 40px;
+  vertical-align: middle;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  top: -1px;
+  width: 150px;
+  margin: 0 auto;
+  font-size: 15px; }
+  .card-list-firm .more-button:hover {
+    background-color: #b10047;
+    color: white; }
+
+#carousel-background {
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+  height: 140px;
+  transition: all .2s ease;
+  vertical-align: middle;
+  position: absolute;
+  top: 0; }
+
+#carousel-image {
+  z-index: 99;
+  position: absolute; }
+
+#carousel {
+  position: relative;
+  height: 140px; }
+
+.carousel .container .drop-buttons {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 270px; }
+
+.carousel-wrapper {
+  z-index: 100;
+  position: absolute;
+  height: 100%;
+  display: block;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin-left: auto;
+  margin-right: auto; }
+
+.carousel-content {
+  height: 140px; }
+  .carousel-content h1 {
+    font-size: 45px;
+    font-weight: normal;
+    color: #fff;
+    position: relative;
+    top: 20px; }
+  .carousel-content .col {
+    height: 100%; }
+  .carousel-content .drop-buttons {
+    position: relative;
+    top: 0;
+    left: 0px;
+    width: 270px; }
+    .carousel-content .drop-buttons .button {
+      height: 40px;
+      padding: 10px 20px;
+      border-radius: 0 0 5px 5px;
+      font-size: 15px;
+      box-sizing: border-box;
+      display: inline-block;
+      cursor: pointer;
+      position: relative;
+      margin-right: 10px; }
+      .carousel-content .drop-buttons .button i {
+        margin-right: 5px;
+        font-size: 15px;
+        padding-bottom: 2px; }
+      .carousel-content .drop-buttons .button:hover {
+        -moz-border-radius-bottomleft: 0;
+        -webkit-border-bottom-left-radius: 0; }
+        .carousel-content .drop-buttons .button:hover .drop-card {
+          display: block; }
+    .carousel-content .drop-buttons .process {
+      left: 0;
+      background-color: #00a5c3;
+      color: white; }
+      .carousel-content .drop-buttons .process:hover {
+        background-color: #0085a2; }
+    .carousel-content .drop-buttons .firm {
+      background-color: #e51a6b;
+      color: white; }
+      .carousel-content .drop-buttons .firm:hover {
+        background-color: #b10047; }
+  .carousel-content .full-height {
+    height: 100%; }
+
+.drop-card {
+  display: none;
+  width: 600px;
+  height: 270px;
+  position: absolute;
+  background-color: inherit;
+  top: 35px;
+  left: 0;
+  border-radius: 2px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  cursor: default;
+  z-index: 2; }
+  .drop-card .content {
+    position: relative;
+    width: 100%;
+    height: 100%; }
+    .drop-card .content .top-line {
+      height: 5px;
+      width: 100%;
+      position: relative;
+      top: 0;
+      left: 0; }
+    .drop-card .content .menu {
+      height: calc(100% - 5px);
+      width: 100%;
+      margin: auto;
+      background-color: white;
+      padding: 30px;
+      box-sizing: border-box; }
+      .drop-card .content .menu .column {
+        width: 50%;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 0 30px;
+        border-right: 1px solid #e2e2e2;
+        font-size: 15px;
+        color: #909090; }
+        .drop-card .content .menu .column:first-child {
+          padding-left: 0;
+          float: left; }
+        .drop-card .content .menu .column:last-child {
+          padding-right: 0;
+          border-right: 0;
+          float: right; }
+        .drop-card .content .menu .column .header {
+          font-size: 15px;
+          color: #414141;
+          margin-bottom: 20px; }
+        .drop-card .content .menu .column .links .link {
+          padding: 8px 0;
+          font-size: 13px;
+          border-bottom: 1px solid #e2e2e2;
+          box-sizing: border-box; }
+          .drop-card .content .menu .column .links .link:last-child {
+            border-bottom: 0; }
+          .drop-card .content .menu .column .links .link a {
+            display: inline-block;
+            margin: -8px 0;
+            padding: 8px 0; }
+          .drop-card .content .menu .column .links .link:hover .text {
+            color: #414141; }
+          .drop-card .content .menu .column .links .link:hover .icon {
+            color: #0085a2; }
+        .drop-card .content .menu .column .alphabet {
+          margin-bottom: 20px; }
+          .drop-card .content .menu .column .alphabet .char {
+            display: inline-block;
+            padding: 4px;
+            box-sizing: border-box; }
+            .drop-card .content .menu .column .alphabet .char a {
+              display: inline-block;
+              margin: -4px;
+              padding: 4px; }
+            .drop-card .content .menu .column .alphabet .char:hover {
+              color: #414141; }
+        .drop-card .content .menu .column .search .search-input {
+          padding: 10px;
+          height: 30px;
+          background-color: white;
+          box-sizing: border-box;
+          color: #414141;
+          border: 1px solid #e2e2e2;
+          border-radius: 2px;
+          font-size: 13px;
+          margin-right: 5px;
+          padding: 0; }
+          .drop-card .content .menu .column .search .search-input:hover {
+            background-color: white;
+            color: #414141; }
+          .drop-card .content .menu .column .search .search-input:focus {
+            outline: 1px solid #e2e2e2; }
+        .drop-card .content .menu .column .search .search-button {
+          padding: 0px 20px;
+          height: 30px;
+          background-color: #00a5c3;
+          color: white;
+          box-sizing: border-box;
+          border-radius: 2px;
+          border: 0;
+          line-height: 30px;
+          vertical-align: middle;
+          position: relative;
+          cursor: pointer;
+          text-align: center;
+          top: -1px; }
+          .drop-card .content .menu .column .search .search-button:hover {
+            background-color: #0085a2;
+            color: white; }
+  .drop-card .card-tr {
+    display: table-row;
+    width: 100%; }
+  .drop-card .card-td {
+    display: table-cell; }
+
+.quickregistration {
+  position: relative;
+  height: 320px;
+  top: 30px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px 30px;
+  box-sizing: border-box; }
+  .quickregistration .header {
+    font-size: 28px;
+    color: #e51a6b;
+    margin-bottom: 20px; }
+  .quickregistration .name, .quickregistration .surname, .quickregistration .email, .quickregistration .password {
+    padding: 10px;
+    height: 40px;
+    background-color: white;
+    box-sizing: border-box;
+    color: #414141;
+    border: 1px solid #e2e2e2;
+    border-radius: 2px;
+    margin-bottom: 15px;
+    width: 100%;
+    font-size: 13px; }
+    .quickregistration .name:hover, .quickregistration .surname:hover, .quickregistration .email:hover, .quickregistration .password:hover {
+      background-color: white;
+      color: #414141; }
+    .quickregistration .name:focus, .quickregistration .surname:focus, .quickregistration .email:focus, .quickregistration .password:focus {
+      outline: 1px solid #e2e2e2; }
+  .quickregistration .name, .quickregistration .surname {
+    width: calc(50% - 5px); }
+  .quickregistration .surname {
+    margin-left: 5px; }
+  .quickregistration .footer {
+    width: 100%;
+    border-top: 1px solid #e2e2e2;
+    padding-top: 10px; }
+    .quickregistration .footer .register {
+      padding: 0px 20px;
+      height: 40px;
+      background-color: #00a5c3;
+      color: white;
+      box-sizing: border-box;
+      border-radius: 2px;
+      border: 0;
+      line-height: 40px;
+      vertical-align: middle;
+      position: relative;
+      cursor: pointer;
+      text-align: center;
+      top: -1px;
+      width: 100%; }
+      .quickregistration .footer .register:hover {
+        background-color: #0085a2;
+        color: white; }
+      .quickregistration .footer .register a, .quickregistration .footer .register i {
+        color: white;
+        text-decoration: none;
+        font-size: 18px; }
+      .quickregistration .footer .register i {
+        margin-right: 10px; }
+
+/*# sourceMappingURL=modules.css.map */
