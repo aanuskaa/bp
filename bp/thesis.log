@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.24)  29 APR 2016 22:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.24)  30 APR 2016 22:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -586,6 +586,9 @@ LaTeX Warning: Label `structure' multiply defined.
 
 LaTeX Warning: Label `structure' multiply defined.
 
+
+LaTeX Warning: Label `structure' multiply defined.
+
 )
 \openout1 = `thesis.aux'.
 
@@ -963,7 +966,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[24]
+[24] <images/kubko.png, id=113, 584.1825pt x 702.625pt>
+File: images/kubko.png Graphic file (type png)
+ <use images/kubko.png>
+Package pdftex.def Info: images/kubko.png used on input line 388.
+(pdftex.def)             Requested size: 408.92496pt x 491.83414pt.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 15.04742pt.
@@ -971,7 +979,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [25 <./images/palo.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 388--390
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 15.04742pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 394--396
 
  []
 
@@ -981,11 +996,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[26] <images/strukturasystemu.png, id=121, 530.92207pt x 452.19218pt>
+[27 <./images/kubko.png (PNG copy)>]
+<images/strukturasystemu.png, id=125, 530.92207pt x 452.19218pt>
 File: images/strukturasystemu.png Graphic file (type png)
 
 <use images/strukturasystemu.png>
-Package pdftex.def Info: images/strukturasystemu.png used on input line 405.
+Package pdftex.def Info: images/strukturasystemu.png used on input line 411.
 (pdftex.def)             Requested size: 424.73824pt x 361.75423pt.
 
 
@@ -994,14 +1010,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[27]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 412.
+[28]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 418.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 412.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 418.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1009,20 +1025,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[28 <./images/strukturasystemu.png>]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 422.
+[29 <./images/strukturasystemu.png>]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 428.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 15.04742pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[29]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 15.04742pt.
@@ -1036,11 +1045,18 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[31] <images/case_create.png, id=140, 503.63156pt x 145.29282pt>
+[31]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 15.04742pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[32] <images/case_create.png, id=144, 503.63156pt x 145.29282pt>
 File: images/case_create.png Graphic file (type png)
 
 <use images/case_create.png>
-Package pdftex.def Info: images/case_create.png used on input line 489.
+Package pdftex.def Info: images/case_create.png used on input line 495.
 (pdftex.def)             Requested size: 402.90579pt x 116.23439pt.
 
 
@@ -1049,21 +1065,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[32]
+[33]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 15.04742pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[33 <./images/case_create.png>]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 15.04742pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[34]
+[34 <./images/case_create.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 15.04742pt.
@@ -1080,138 +1089,28 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [36]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.61858pt.
+ Make it at least 15.04742pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
 [37]
-Overfull \hbox (362.73108pt too wide) in paragraph at lines 601--602
-\T1/cmr/m/n/12 nete: <http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=
-B8F8CDAA74845325257536573F737B2B?doi=10.1.1.103.7990&rep=rep1&type=pdf> 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 617--618
-[]\T1/cmr/m/it/12 Prof. Dr. Carl Adam Petri \T1/cmr/m/n/12 [on-line] [cit. 27.0
-4.2016].
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 617--618
-\T1/cmr/m/n/12 Do-stupné na in-ter-nete: <http://www.informatik.uni-
- []
-
-
-Underfull \hbox (badness 2970) in paragraph at lines 621--622
-[]\T1/cmr/m/it/12 Introduction to HTML\T1/cmr/m/n/12 . [on-line] [cit. 27.04.20
-16]. Do-stupné na in-ter-nete:
- []
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.61858pt.
+ Make it at least 15.04742pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
 [38]
-Underfull \hbox (badness 6927) in paragraph at lines 623--624
-[]\T1/cmr/m/it/12 HTML5 In-tro-duc-tion\T1/cmr/m/n/12 . [on-line] [cit. 27.04.2
-016]. Do-stupné na in-ter-nete:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 625--626
-[]\T1/cmr/m/it/12 CSS In-tro-duc-tion\T1/cmr/m/n/12 . [on-line] [cit. 27.04.201
-6]. Do-stupné na in-ter-nete:
- []
-
-
-Underfull \hbox (badness 3118) in paragraph at lines 627--628
-[]\T1/cmr/m/it/12 JavaScript In-tro-duc-tion\T1/cmr/m/n/12 . [on-line] [cit. 27
-.04.2016]. Do-stupné na in-ter-nete:
- []
-
-
-Underfull \hbox (badness 6526) in paragraph at lines 629--630
-[]\T1/cmr/m/it/12 PHP 5 In-tro-duc-tion\T1/cmr/m/n/12 . [on-line] [cit. 27.04.2
-016]. Do-stupné na in-ter-nete:
- []
-
-
-Underfull \hbox (badness 5847) in paragraph at lines 631--632
-[]\T1/cmr/m/it/12 Introduction to SQL\T1/cmr/m/n/12 . [on-line] [cit. 27.04.201
-6]. Do-stupné na in-ter-nete:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 633--634
-[]\T1/cmr/m/it/12 AJAX In-tro-duc-tion\T1/cmr/m/n/12 . [on-line] [cit. 27.04.20
-16]. Do-stupné na in-ter-nete:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 635--636
-[]\T1/cmr/m/it/12 JSON Tu-to-rial\T1/cmr/m/n/12 . [on-line] [cit. 27.04.2016]. 
-Do-stupné na in-ter-nete:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 637--638
-[]\T1/cmr/m/it/12 XML Tu-to-rial\T1/cmr/m/n/12 . [on-line] [cit. 27.04.2016]. D
-o-stupné na in-ter-nete:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 639--640
-[]\T1/cmr/m/it/12 SVG Tu-to-rial\T1/cmr/m/n/12 . [on-line] [cit. 27.04.2016]. D
-o-stupné na in-ter-nete:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 641--642
-[]\T1/cmr/m/it/12 PHPManual\T1/cmr/m/n/12 . [on-line] [cit. 27.04.2016]. Do-stu
-pné na in-ter-nete:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 643--644
-[]\T1/cmr/m/it/12 Historical trends in the usage of server-side prog-ram-ming l
-an-gu-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 643--644
-\T1/cmr/m/it/12 ages for web-si-tes\T1/cmr/m/n/12 . [on-line] [cit. 27.04.2016]
-. Do-stupné na in-ter-nete:
- []
-
-
-Underfull \hbox (badness 4441) in paragraph at lines 645--646
-[]\T1/cmr/m/it/12 What is My-SQL? What is a Da-ta-base? What is SQL?\T1/cmr/m/n
-/12 . [on-line] [cit.
- []
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.61858pt.
+ Make it at least 15.04742pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
 [39]
-Underfull \hbox (badness 10000) in paragraph at lines 651--652
-[]\T1/cmr/m/it/12 Design Pat-terns\T1/cmr/m/n/12 . [on-line] [cit. 27.04.2016].
- Do-stupné na in-ter-nete:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 653--654
-[]\T1/cmr/m/it/12 PSR-4: Au-to-lo-ader\T1/cmr/m/n/12 . [on-line] [cit. 29.04.20
-16]. Do-stupné na in-ter-nete:
- []
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.61858pt.
+ Make it at least 15.04742pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
@@ -1222,16 +1121,154 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[41] (./thesis.aux)
+[41]
+Overfull \hbox (362.73108pt too wide) in paragraph at lines 648--649
+\T1/cmr/m/n/12 nete: <http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=
+B8F8CDAA74845325257536573F737B2B?doi=10.1.1.103.7990&rep=rep1&type=pdf> 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 664--665
+[]\T1/cmr/m/it/12 Prof. Dr. Carl Adam Petri \T1/cmr/m/n/12 [on-line] [cit. 27.0
+4.2016].
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 664--665
+\T1/cmr/m/n/12 Do-stupné na in-ter-nete: <http://www.informatik.uni-
+ []
+
+
+Underfull \hbox (badness 2970) in paragraph at lines 668--669
+[]\T1/cmr/m/it/12 Introduction to HTML\T1/cmr/m/n/12 . [on-line] [cit. 27.04.20
+16]. Do-stupné na in-ter-nete:
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.61858pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[42]
+Underfull \hbox (badness 6927) in paragraph at lines 670--671
+[]\T1/cmr/m/it/12 HTML5 In-tro-duc-tion\T1/cmr/m/n/12 . [on-line] [cit. 27.04.2
+016]. Do-stupné na in-ter-nete:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 672--673
+[]\T1/cmr/m/it/12 CSS In-tro-duc-tion\T1/cmr/m/n/12 . [on-line] [cit. 27.04.201
+6]. Do-stupné na in-ter-nete:
+ []
+
+
+Underfull \hbox (badness 3118) in paragraph at lines 674--675
+[]\T1/cmr/m/it/12 JavaScript In-tro-duc-tion\T1/cmr/m/n/12 . [on-line] [cit. 27
+.04.2016]. Do-stupné na in-ter-nete:
+ []
+
+
+Underfull \hbox (badness 6526) in paragraph at lines 676--677
+[]\T1/cmr/m/it/12 PHP 5 In-tro-duc-tion\T1/cmr/m/n/12 . [on-line] [cit. 27.04.2
+016]. Do-stupné na in-ter-nete:
+ []
+
+
+Underfull \hbox (badness 5847) in paragraph at lines 678--679
+[]\T1/cmr/m/it/12 Introduction to SQL\T1/cmr/m/n/12 . [on-line] [cit. 27.04.201
+6]. Do-stupné na in-ter-nete:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 680--681
+[]\T1/cmr/m/it/12 AJAX In-tro-duc-tion\T1/cmr/m/n/12 . [on-line] [cit. 27.04.20
+16]. Do-stupné na in-ter-nete:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 682--683
+[]\T1/cmr/m/it/12 JSON Tu-to-rial\T1/cmr/m/n/12 . [on-line] [cit. 27.04.2016]. 
+Do-stupné na in-ter-nete:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 684--685
+[]\T1/cmr/m/it/12 XML Tu-to-rial\T1/cmr/m/n/12 . [on-line] [cit. 27.04.2016]. D
+o-stupné na in-ter-nete:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 686--687
+[]\T1/cmr/m/it/12 SVG Tu-to-rial\T1/cmr/m/n/12 . [on-line] [cit. 27.04.2016]. D
+o-stupné na in-ter-nete:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 688--689
+[]\T1/cmr/m/it/12 PHPManual\T1/cmr/m/n/12 . [on-line] [cit. 27.04.2016]. Do-stu
+pné na in-ter-nete:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 690--691
+[]\T1/cmr/m/it/12 Historical trends in the usage of server-side prog-ram-ming l
+an-gu-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 690--691
+\T1/cmr/m/it/12 ages for web-si-tes\T1/cmr/m/n/12 . [on-line] [cit. 27.04.2016]
+. Do-stupné na in-ter-nete:
+ []
+
+
+Underfull \hbox (badness 4441) in paragraph at lines 692--693
+[]\T1/cmr/m/it/12 What is My-SQL? What is a Da-ta-base? What is SQL?\T1/cmr/m/n
+/12 . [on-line] [cit.
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.61858pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[43]
+Underfull \hbox (badness 10000) in paragraph at lines 698--699
+[]\T1/cmr/m/it/12 Design Pat-terns\T1/cmr/m/n/12 . [on-line] [cit. 27.04.2016].
+ Do-stupné na in-ter-nete:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 700--701
+[]\T1/cmr/m/it/12 PSR-4: Au-to-lo-ader\T1/cmr/m/n/12 . [on-line] [cit. 29.04.20
+16]. Do-stupné na in-ter-nete:
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.61858pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[44]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.61858pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[45] (./thesis.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 15349 strings out of 494305
- 287382 string characters out of 6162863
+ 15354 strings out of 494305
+ 287474 string characters out of 6162863
  341781 words of memory out of 5000000
- 18330 multiletter control sequences out of 15000+600000
+ 18334 multiletter control sequences out of 15000+600000
  15748 words of font info for 45 fonts, out of 8000000 for 9000
  382 hyphenation exceptions out of 8191
  55i,12n,54p,1500b,701s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1249,10 +1286,10 @@ texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive
 ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmsy8.pfb>
-Output written on thesis.pdf (41 pages, 607800 bytes).
+Output written on thesis.pdf (45 pages, 634707 bytes).
 PDF statistics:
- 742 PDF objects out of 1000 (max. 8388607)
- 150 compressed objects within 2 object streams
+ 760 PDF objects out of 1000 (max. 8388607)
+ 159 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 78 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 83 words of extra memory for PDF output out of 10000 (max. 10000000)
 

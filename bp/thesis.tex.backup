@@ -136,7 +136,7 @@ Pod¾a \cite{pt_petrinets} klasické Petriho siete sú zvláštny druh orientovaného 
 
 \newtheorem{pndef}{Definícia}
 \begin{pndef}
-\textbf{Petriho sie} je orientovanı bipartitnı graf reprezentovanı štvoricou \\(P,T,F,W,$ m_{0} $), kde:
+\textbf{Petriho sie} je orientovanı bipartitnı graf reprezentovanı päticou \\(P,T,F,W,$ m_{0} $), kde:
 \\ \indent P = \{$ p_{1} $, ... ,$ p_{n} $\} - koneèná neprázdna mnoina miest;
 \\ \indent T = \{$ t_1 $, ... , $ t_n $\} - koneèná neprázdna mnoina prechodov ;
 \\ \indent P $ \cap $ T = \O, P $ \cup $ T $ \neq $ \O;
@@ -383,6 +383,12 @@ Server manamentu rolí a pouívate¾ov mal na starosti Pavol Martiš. Rieši organi
 \subsection{Server formulárov a dátového modelu}
 \label{Kubko}
 Server formulárov a dátového modelu je èas naprogramovaná Jakubom Kováèikom. Táto aplikácia reaguje, keï pouívate¾ cez Editor formulárov chce uloi namapované formuláre. Tieto formuláre a XML súbor sa uloia do databázy, prípadne opaènım smerom, Editor si môe vyiada proces s formulármi a prislúchajúce XML. V prípade vytvorenia procesu, vytvorí sa klon formulárov, ktorıch zobrazenie a vypåòanie má je jednou z funkcií tejto aplikácie. Takıto formulár u nie je moné upravova v editore. Ak pomocou akcie GET prijme id prípadu a prechodu, zobrazí prislúchajúci formulár. Pouívate¾ má monos prácu s formulárom uloi, aj napriek tomu, ake nie je ešte úplne a validne vyplnenı. Pri uloení sa toti validácia nevykonáva, a pouívate¾ nestratí svoju doterajšiu prácu. Ak pouívate¾ formulár \emph{odošle}, validácia sa vykoná a uloí sa do databázy. V prípade kompletnej integrácie formulár musí by pre ukonèenie úlohy zvalidovanı.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.7]{images/kubko.png}
+  \caption{Server formulárov a dátového modelu}
+  \label{structure}
+  \end{figure}
 \section{Opis riešenia - Procesnı server}
 \label{procesnyserver}
 Témou tejto bakalárskej práce je èas WFMS - procesnı server. Aplikácia spracuje poiadavku Procesného editora pre uloenie Workflow-siete do databázy. Jeho hlavnou úlohou je umoni vytváranie prípadov a ich riadenie pod¾a modelu Workflow-siete. Bolo potrebné zabráni kolíziám. Systém taktie umoòuje uchovávanie histórie a zobrazuje vizualizáciu prípadov. Rieši vrátenie úlohy pomocou \emph{cancel} tlaèidla. Všetky funkcionality aplikácie podrobne opíšeme v tejto kapitole. 
@@ -551,7 +557,7 @@ Po odkontrolovaní kadej úlohy nasleduje riešenie referencií. Okrem zistenia, èi
 Tu sa ukonèí overovanie spustite¾nosti a kontrola referencií a všetky vyfiltrované úlohy sa zobrazia poiívate¾ovi vo forme tabu¾ky. Kadı riadok, èie úloha, má tlaèidlo, pomocou ktorého si pouívate¾ môe úlohu vzia. Na obrázku môeme vidie, e pri úlohe, ktorı mal referenciu na pouívate¾a sa zobrazí vıkrièník. Túto úlohu môe toti splni len on. Zobrazujeme aj, na ktorú z jeho rolí sa úloha viae. Tieto úlohy si môe pouívate¾ vïaka rozba¾ovaciemu zoznamu vytriedi na základe firmy.
 \\TODO: SCREEN.
 \\
-\indent \textbf{Prevzatie úlohy}. Pouívate¾ sa rozhodne vzia úlohu a klikne na odosielajúce tlaèidlo. Aj napriek tomu, e tento zoznam je pomocou AJAXu kadıch 10 sekúnd aktualizovanı, môe nasta situácia, e pouívate¾ sa pokúsi zobra úlohu, ktorú u niekto pár sekúnd pred ním vzal. Kvôli tejto situácii, po odoslaní iadosti pre prevzatie úlohy, je prvá vec, ktorú kontrolujeme, èi je úloha ešte stále k dispozícii. Ak nie, pouívate¾ovi sa zobrazí upozornenie, e úloha u nie je k dispozícii. V prípade, e úloha je stále vo¾ná, priradí sa pouívate¾ovi. Táto fáza zodpovedá v mapovaní na Petriho sie spusteniu prechodu - skonzumovaniu tokenov. Dochádza k tımto akciám:
+\indent \textbf{Prevzatie úlohy}. Pouívate¾ sa rozhodne vzia úlohu a klikne na odosielajúce tlaèidlo. Aj napriek tomu, e tento zoznam je pomocou AJAXu kadıch 30 sekúnd aktualizovanı( èasovı údaj 30 sekúnd sme zvolili kvôli tomu, e obnovenie údajov je spojené s nároènejšími vıpoètami a poiadavkami do databázy), môe nasta situácia, e pouívate¾ sa pokúsi zobra úlohu, ktorú u niekto pár sekúnd pred ním vzal. Kvôli tejto situácii, po odoslaní iadosti pre prevzatie úlohy, je prvá vec, ktorú kontrolujeme, èi je úloha ešte stále k dispozícii. Ak nie, pouívate¾ovi sa zobrazí upozornenie, e úloha u nie je k dispozícii. V prípade, e úloha je stále vo¾ná, priradí sa pouívate¾ovi. Táto fáza zodpovedá v mapovaní na Petriho sie spusteniu prechodu - skonzumovaniu znaèiek. Dochádza k tımto akciám:
 \begin{itemize}
  \item Z databázy sa vyberú hrany, ktoré do tohoto miesta vchádzajú
  \item Z databázy sa vyberie znaèkovanie prípadu, z ktorıch tieto hrany vychádzajú
@@ -559,20 +565,63 @@ Tu sa ukonèí overovanie spustite¾nosti a kontrola referencií a všetky vyfiltrova
  \\ - Normálna hrana \emph{h} umoní prechodu \emph{t} skonzumova to¾ko znaèiek z miesta \emph{p}, aká je váhová funkcia \emph{w} tejto hrany. Znaèkovanie sa zmení
   \begin{center}
     $ m_p =  m_{po} - w(h)$
-    \\kde $m_{po}$ je znaèkovanie miesta \emph{p} pred konzumáciou tokenov.
+    \\kde $m_{po}$ je znaèkovanie miesta \emph{p} pred konzumáciou znaèiek.
   \end{center}
  - Reset hrana skonzumuje všetky znaèky z miesta, odkia¾ vychádza, $m_{p}$ = 0.
  \\- Inhibítorová hrana nemení znaèkovanie v zdrojovom mieste.
 \end{itemize}
  V databáze sa zaznaèí, kto úlohu vzal a èasovı údaj, kedy ju vzal. V tejto fáze sa ešte neprodukujú iadne znaèky do vıstupnıch miest.
  \\\indent V prípade integrácie je naplánované prepojenie úlohy so Serverom formulárov a dátového modelu, ktoré bude fungova nasledovne. Na zobrazenie formuláru pouívate¾ stlaèí tlaèidlo \emph{Zobrazi} pod hlavièkou formulár. Naša aplikácia zavolá Server formulárov a odošle mú ID prípadu a úlohy. Tak, ako bolo spomenuté v opise tejto èasti aplikácie v \ref{Kubko}, pouívate¾ si bude môc formulár predvyplni a uloi bez validácie, avšak pri pokuse o ukonèenie úlohy sa bude kontrolova validita vyplnenia formuláru a ak správne vyplnenı nebude, pouívate¾ bude na to upozornenı a úloha sa neukonèí.
-\indent \textbf{Ukonèenie úlohy}
+\\\indent \textbf{Ukonèenie úlohy}. V Petriho sieti môeme túto fázu chápa ako vyprodukovanie znaèiek. Pouívate¾ úlohu ukonèí a vykonajú sa tieto akcie:
+\begin{itemize}
+ \item Do databázy sa zaznaèí dátum a èas, kedy pouívate¾ túto úlohu ukonèil.
+ \item Z databázy sa vyberú všetky hrany. Pre kadú z nich sa nájde vstupné miesto prípadu a zaznaèí sa nové znaèkovanie:
+ \begin{center}
+    $ m_p =  m_{po} + w(h)$
+ \end{center}
+ \item Overia sa 2 skutoènosti:
+ \\ - Je nejaká úloha v prípade práve vykonávaná?
+ \\ - Je nejaká úloha v prípade spustite¾ná?
+ Ak nastala situácia, kde obidve tieto podmienky sú negatívne, do databázy sa zaznaèí koniec tohto prípadu s aktuálnym dátumom a èasom. V opaènom prípade, ak je aspoò jedna podmienka pravdivá, prípad je stále aktívny a riadi sa jeho \emph{workflow} naïalej tak, ako je to popísané v tejto kapitole.
+\end{itemize}
 \subsubsection{Funkcia vrátenia úlohy}
-\subsection{Príklad}
+Naším cie¾om v tomto bode bolo umoni pouívate¾ov vráti úlohu, bez toho, aby to zmenilo stav Workflow-siete pred tım, ne ju vzal. Pri poiadavke zrušenia, databázu poiadame o všetky hrany vstupujúce do prechodu zodpovedajúcemu úlohe. Pri obyèajnıch hranách a inhibítor hrane sme nenarazili na iaden problém. Keïe inhibítorová hrana nekonzumuje iadne znaèky z miesta, tak pre òu sme nemuseli h¾ada iadne riešenie. Kadú obyèajnú hranu riešime tak, e ku aktuálnemu znaèkovaniu miesta, z ktorého vychádza, pripoèítame hodnotu váhovej funkcie tejto hrany. \\\indent Pri reset hranách to bolo zloitejšie. Tu sme nevedeli pomocou iadnej hodnoty z databázy zisti, ko¾ko znaèiek táto hrana umonila precodu skonzumova. Ako prvé riešenie sme navrhli to, e sme do databázy do tabu¾ky úloh pridali ståpec s \emph{defaultnou} hodnotou \emph{null}. Ak sa spustil niektorı prechod, do ktorého vstupovala reset hrana, tak sa do tohoto atribútu sa zaznaèil poèet znaèiek, akı táto hrana skonzumovala. Na základe tejto informácie sme vedeli pri vrátení úlohy zdrojovému miestu pripoèíta presnı poèet znaèiek, akı bol odtia¾ skonzumovanı. 
+\\\indent Problém nastal, ak do prechodu vchádzalo viac, ako jedna hrana. Pri tomto probléme sme sa rozhodli odstráni z tabu¾ky úloh pridanı atribút pre uchovávanie skonzumovanıch znaèiek, a vytvorili sme tabu¾ku, do ktorej ukladáme údaje reprezentujúce ID úlohy, ID reset hrany a poèet znaèiek. Tieto údaje nám umoòujú plnohodnotne vráti znaèky do pôvodnıch miest pri zrušení úlohy aj v situácii, kedy má prechod viac, ako 1  vstupné miesto spojené s rest hranou.
+\subsubsection{Uchovávanie histórie}
+Ako bolo spomenuté v predošlıch kapitolách, pri viacerıch údajoch uchovávame dátum a èas. Pre túto funkciu sme sa rozhodli, aby bolo moné odsledova históriu uloenıch Petriho sietí, vytvorenıch prípadov a úloh. Preto sme sa rozhodli uchováva tieto údaje:
+\begin{itemize}
+ \item Petriho sie
+ \\- dátum a èas vytvorenia
+ \\- ID pouívate¾a, ktorı sie vytvoril
+  \item Prípad
+ \\- dátum a èas vytvorenia
+ \\- ID pouívate¾a, ktorı prípad vytvoril
+ \\- dátum a èas ukonèenia
+  \item Úloha
+ \\- ID pouívate¾a, ktorı úlohu vykonáva
+ \\- dátum a èas vytvorenia
+ \\- dátum a èas ukonèenia
+\end{itemize}
+Vïaka tımto údajom zisujeme, vyššie spomenuté funkcionality, a~to èi je prípad ukonèenı, alebo ktoré úlohy ešte neboli skonèené. Na základe toho umoòujeme zobrazenie \emph{Histórie úloh pouívate¾a}, \emph{Histórie prípadov} a zobrazenie \emph{Aktuálnych prípadov}.
+\\TODO: SCREEN
+\subsubsection{Vizualizácia prípadu}
+Aby pouívate¾ mal predstavu, v akom stave sa prípad nachádza, rozhodli sme sa naimplementova vizualizáciu prípadov, ktorá je moná vïaka spolupráci s Tomášom Priebojom - Procesnı editor. Prebieha to tımto spôsobom:
+\begin{enumerate}
+ \item Pouívate¾ si z tabu¾ky aktuálnych prípadov vyberie prípad pre vizualizáciu a stlaèí formulárové tlaèidlo pre zobrazenie.
+ \item Zadá sa poiadavka na databázu, ktorá vráti XML zodpovedajúcej Petriho siete.
+ \item Z databázy sa vyberie aktuálne znaèkovanie vybraného prípadu.
+ \item Z databázy sa vyberú úlohy, ktoré sú aktuálne pre tento prípad vykonávané.
+ \item Poèiatoèné znaèkovanie v XML sa nahradí tımto aktuálnym znaèkovaním
+ \item Zavolá sa funkcia procesného editora, ktorá sie zaznaèenú v upravenom XML reazci vykreslí pomocou SVG, umiestni znaèky a vyfarbí spustite¾né prechody na zeleno a nespustite¾né na èerveno.
+ \item Naša aplikácia SVG vykreslí.
+ \item Pre kadú úlohu, ktorá je vykonávaná zaznaèíme do prechodu ikonu a pridáme jej atribút \emph{title} s menom pouívate¾a, ktorı úlohu vykonáva.
+\end{enumerate}
+TODO SCREEN
+
+\subsection{Testovanie riešenia - moné úpravy a rozšírenia}
 \subsection{Use case diagramy}
 
 %cislovany zoznam
-\noindent\textbf{UC\_01 Názov}
 \begin{itemize}[noitemsep]
 \renewcommand{\labelitemi}{$-$}
   \item \underline{Popis:} tu príde popis
@@ -580,7 +629,7 @@ Tu sa ukonèí overovanie spustite¾nosti a kontrola referencií a všetky vyfiltrova
   \item \underline{Chybovı tok:}
   \item \underline{Zmena stavu systému:}
 \end{itemize}
-\subsection{Moné rozšírenia}
+
 
 
 \newpage

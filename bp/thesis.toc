@@ -34,28 +34,27 @@
 \contentsline {subsection}{\numberline {2.5}Procesn\'y server}{24}
 \contentsline {subsection}{\numberline {2.6}Server mana\v zmentu rol\IeC {\'\i } a pou\v z\IeC {\'\i }vate\v lov}{25}
 \contentsline {subsection}{\numberline {2.7}Server formul\'arov a d\'atov\'eho modelu}{25}
-\contentsline {section}{\numberline {3}Opis rie\v senia - Procesn\'y server}{26}
-\contentsline {subsection}{\numberline {3.1}V\'yber technol\'ogi\IeC {\'\i }}{26}
-\contentsline {subsection}{\numberline {3.2}V\'yber n\'avrhov\'ych vzorov, n\'avrh syst\'emu}{27}
-\contentsline {subsection}{\numberline {3.3}Jadro syst\'emu}{28}
-\contentsline {subsubsection}{\numberline {3.3.1}Register}{29}
-\contentsline {subsubsection}{\numberline {3.3.2}Smerova\v c}{29}
-\contentsline {subsubsection}{\numberline {3.3.3}Objekt pre pr\IeC {\'\i }stup k datab\'aze}{30}
-\contentsline {subsubsection}{\numberline {3.3.4}Objekt pre autentifik\'aciu}{30}
-\contentsline {subsubsection}{\numberline {3.3.5}Mana\v z\'er upozornen\IeC {\'\i }}{30}
-\contentsline {subsubsection}{\numberline {3.3.6}Autoloader}{30}
-\contentsline {subsection}{\numberline {3.4}Modely}{30}
-\contentsline {subsection}{\numberline {3.5}Ovl\'ada\v ce}{31}
-\contentsline {subsection}{\numberline {3.6}N\'ah\v lady}{31}
-\contentsline {subsection}{\numberline {3.7}Datab\'aza}{31}
-\contentsline {subsection}{\numberline {3.8}Implement\'acia biznis logiky}{31}
-\contentsline {subsubsection}{\numberline {3.8.1}Ulo\v zenie Petriho siete do datab\'azy}{31}
-\contentsline {subsubsection}{\numberline {3.8.2}Vytvorenie pr\IeC {\'\i }padu}{32}
-\contentsline {subsubsection}{\numberline {3.8.3}Spr\'ava workflow pr\IeC {\'\i }padu}{33}
-\contentsline {subsubsection}{\numberline {3.8.4}Funkcia vr\'atenia \'ulohy}{36}
-\contentsline {subsubsection}{\numberline {3.8.5}Uchov\'avanie hist\'orie}{36}
-\contentsline {subsubsection}{\numberline {3.8.6}Vizualiz\'acia pr\IeC {\'\i }padu}{36}
-\contentsline {subsection}{\numberline {3.9}Pr\IeC {\'\i }klad}{36}
-\contentsline {subsection}{\numberline {3.10}Use case diagramy}{36}
-\contentsline {subsection}{\numberline {3.11}Mo\v zn\'e roz\v s\IeC {\'\i }renia}{36}
-\contentsline {section}{\numberline {4}Z\'aver}{37}
+\contentsline {section}{\numberline {3}Opis rie\v senia - Procesn\'y server}{27}
+\contentsline {subsection}{\numberline {3.1}V\'yber technol\'ogi\IeC {\'\i }}{28}
+\contentsline {subsection}{\numberline {3.2}V\'yber n\'avrhov\'ych vzorov, n\'avrh syst\'emu}{28}
+\contentsline {subsection}{\numberline {3.3}Jadro syst\'emu}{29}
+\contentsline {subsubsection}{\numberline {3.3.1}Register}{30}
+\contentsline {subsubsection}{\numberline {3.3.2}Smerova\v c}{30}
+\contentsline {subsubsection}{\numberline {3.3.3}Objekt pre pr\IeC {\'\i }stup k datab\'aze}{31}
+\contentsline {subsubsection}{\numberline {3.3.4}Objekt pre autentifik\'aciu}{31}
+\contentsline {subsubsection}{\numberline {3.3.5}Mana\v z\'er upozornen\IeC {\'\i }}{31}
+\contentsline {subsubsection}{\numberline {3.3.6}Autoloader}{31}
+\contentsline {subsection}{\numberline {3.4}Modely}{31}
+\contentsline {subsection}{\numberline {3.5}Ovl\'ada\v ce}{32}
+\contentsline {subsection}{\numberline {3.6}N\'ah\v lady}{32}
+\contentsline {subsection}{\numberline {3.7}Datab\'aza}{32}
+\contentsline {subsection}{\numberline {3.8}Implement\'acia biznis logiky}{32}
+\contentsline {subsubsection}{\numberline {3.8.1}Ulo\v zenie Petriho siete do datab\'azy}{32}
+\contentsline {subsubsection}{\numberline {3.8.2}Vytvorenie pr\IeC {\'\i }padu}{33}
+\contentsline {subsubsection}{\numberline {3.8.3}Spr\'ava workflow pr\IeC {\'\i }padu}{34}
+\contentsline {subsubsection}{\numberline {3.8.4}Funkcia vr\'atenia \'ulohy}{38}
+\contentsline {subsubsection}{\numberline {3.8.5}Uchov\'avanie hist\'orie}{38}
+\contentsline {subsubsection}{\numberline {3.8.6}Vizualiz\'acia pr\IeC {\'\i }padu}{39}
+\contentsline {subsection}{\numberline {3.9}Testovanie rie\v senia - mo\v zn\'e \'upravy a roz\v s\IeC {\'\i }renia}{40}
+\contentsline {subsection}{\numberline {3.10}Use case diagramy}{40}
+\contentsline {section}{\numberline {4}Z\'aver}{41}
