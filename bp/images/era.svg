@@ -1,2 +1,1099 @@
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="795px" height="903px" version="1.1" content="%3CmxGraphModel%20dx%3D%221687%22%20dy%3D%22940%22%20grid%3D%221%22%20gridSize%3D%2210%22%20guides%3D%221%22%20tooltips%3D%221%22%20connect%3D%221%22%20arrows%3D%221%22%20fold%3D%221%22%20page%3D%221%22%20pageScale%3D%221%22%20pageWidth%3D%22826%22%20pageHeight%3D%221169%22%20background%3D%22%23ffffff%22%20math%3D%220%22%20shadow%3D%220%22%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%223%22%20value%3D%22petri_net%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-green%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22390%22%20y%3D%22545%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2227%22%20value%3D%22arc_PT%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-green%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22300%22%20y%3D%22140%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2228%22%20value%3D%22case_progress%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-green%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22140%22%20y%3D%22420%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2229%22%20value%3D%22FIRM%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-blue%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%2240%22%20y%3D%22545%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2230%22%20value%3D%22ROLES_START_CASES%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-blue%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22650%22%20y%3D%22545%22%20width%3D%22140%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2231%22%20value%3D%22transition%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-green%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22370%22%20y%3D%22300%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2234%22%20value%3D%22arc_TP%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-green%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22160%22%20y%3D%22120%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2235%22%20value%3D%22arc_inhibitor%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-green%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22440%22%20y%3D%22170%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2238%22%20value%3D%22TRANSITION_X_ROLE%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-blue%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22655%22%20y%3D%22480%22%20width%3D%22130%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2239%22%20value%3D%22USERS%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-blue%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22390%22%20y%3D%22660%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2240%22%20value%3D%22arc_reset%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-green%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%2230%22%20y%3D%22150%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2241%22%20value%3D%22case%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-green%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22215%22%20y%3D%22545%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2242%22%20value%3D%22REFERENCES%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-blue%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22530%22%20y%3D%22300%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2243%22%20value%3D%22reset_arc_cancel%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-green%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%2230%22%20y%3D%22280%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2244%22%20value%3D%22USERS_X_FIRM%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-blue%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22300%22%20y%3D%22770%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2245%22%20value%3D%22USERS_X_ROLE%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-blue%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22500%22%20y%3D%22790%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2246%22%20value%3D%22case_marking%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-green%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22290%22%20y%3D%22420%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2247%22%20value%3D%22ROLES%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-blue%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22670%22%20y%3D%22790%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2256%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0.5%3BentryY%3D1%3BexitX%3D0.5%3BexitY%3D0%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2239%22%20target%3D%223%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22180%22%20y%3D%22670%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22230%22%20y%3D%22620%22%20as%3D%22targetPoint%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2257%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0.25%3BentryY%3D1%3B%22%20edge%3D%221%22%20parent%3D%221%22%20target%3D%2239%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22350%22%20y%3D%22788%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22390%22%20y%3D%22720%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22350%22%20y%3D%22730%22%2F%3E%3CmxPoint%20x%3D%22415%22%20y%3D%22730%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2259%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D1%3BentryY%3D0.5%3BexitX%3D0.5%3BexitY%3D0%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2245%22%20target%3D%2239%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22660%22%20y%3D%22760%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22710%22%20y%3D%22710%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22550%22%20y%3D%22680%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2260%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0%3BentryY%3D0.5%3BexitX%3D1%3BexitY%3D0.5%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2245%22%20target%3D%2247%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%2240%22%20y%3D%22600%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%2290%22%20y%3D%22550%22%20as%3D%22targetPoint%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2261%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D0.5%3BexitY%3D0%3BentryX%3D0.5%3BentryY%3D1%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2247%22%20target%3D%2230%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%221020%22%20y%3D%22700%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%221070%22%20y%3D%22650%22%20as%3D%22targetPoint%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2263%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D1%3BexitY%3D0.5%3BentryX%3D0%3BentryY%3D0.5%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%223%22%20target%3D%2230%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22480%22%20y%3D%22470%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22530%22%20y%3D%22420%22%20as%3D%22targetPoint%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2264%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D1%3BexitY%3D0.5%3BentryX%3D0%3BentryY%3D0.5%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2241%22%20target%3D%223%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22340%22%20y%3D%22500%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22390%22%20y%3D%22450%22%20as%3D%22targetPoint%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2268%22%20value%3D%22place%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-green%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22650%22%20y%3D%22300%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2269%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0.75%3BentryY%3D1%3BexitX%3D0.25%3BexitY%3D0%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2239%22%20target%3D%2241%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%2210%22%20y%3D%22290%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%2260%22%20y%3D%22240%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22415%22%20y%3D%22620%22%2F%3E%3CmxPoint%20x%3D%22290%22%20y%3D%22620%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2270%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D1%3BentryY%3D0.5%3BexitX%3D0%3BexitY%3D0.5%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2241%22%20target%3D%2229%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22180%22%20y%3D%22730%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22230%22%20y%3D%22680%22%20as%3D%22targetPoint%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2271%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0.75%3BentryY%3D1%3BexitX%3D0.25%3BexitY%3D0%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2241%22%20target%3D%2228%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20y%3D%22540%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%2250%22%20y%3D%22490%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22240%22%20y%3D%22510%22%2F%3E%3CmxPoint%20x%3D%22215%22%20y%3D%22510%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2272%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D0.75%3BexitY%3D0%3BentryX%3D0.5%3BentryY%3D1%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2241%22%20target%3D%2246%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22340%22%20y%3D%22540%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22390%22%20y%3D%22490%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22290%22%20y%3D%22510%22%2F%3E%3CmxPoint%20x%3D%22340%22%20y%3D%22510%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2273%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0.5%3BentryY%3D1%3BentryPerimeter%3D0%3BexitX%3D0%3BexitY%3D0.5%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2239%22%20target%3D%2228%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22190%22%20y%3D%22670%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22190%22%20y%3D%22470%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22190%22%20y%3D%22680%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2278%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0.5%3BentryY%3D1%3BexitX%3D0.5%3BexitY%3D0%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%223%22%20target%3D%2242%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22510%22%20y%3D%22520%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22560%22%20y%3D%22470%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22440%22%20y%3D%22440%22%2F%3E%3CmxPoint%20x%3D%22580%22%20y%3D%22440%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2279%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D0.75%3BexitY%3D0%3BentryX%3D0.5%3BentryY%3D1%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%223%22%20target%3D%2268%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22550%22%20y%3D%22530%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22600%22%20y%3D%22480%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22465%22%20y%3D%22460%22%2F%3E%3CmxPoint%20x%3D%22700%22%20y%3D%22460%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2284%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0.75%3BentryY%3D1%3BexitX%3D0%3BexitY%3D0.5%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2244%22%20target%3D%2229%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%2260%22%20y%3D%22780%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22110%22%20y%3D%22730%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22115%22%20y%3D%22790%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2286%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0.25%3BentryY%3D1%3BexitX%3D0.5%3BexitY%3D1%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2245%22%20target%3D%2229%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%2230%22%20y%3D%22740%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%2280%22%20y%3D%22690%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22550%22%20y%3D%22870%22%2F%3E%3CmxPoint%20x%3D%2265%22%20y%3D%22870%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2287%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D0.75%3BexitY%3D0%3BentryX%3D0%3BentryY%3D0.75%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2228%22%20target%3D%2231%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22240%22%20y%3D%22400%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22290%22%20y%3D%22350%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22215%22%20y%3D%22330%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2288%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0%3BentryY%3D0.5%3BexitX%3D0.5%3BexitY%3D1%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2243%22%20target%3D%2228%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%2290%22%20y%3D%22350%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%2240%22%20y%3D%22480%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%2280%22%20y%3D%22440%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2289%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0.5%3BentryY%3D0%3BexitX%3D0.5%3BexitY%3D1%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2240%22%20target%3D%2243%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22-60%22%20y%3D%22410%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22-10%22%20y%3D%22360%22%20as%3D%22targetPoint%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2294%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D1%3BexitY%3D0.75%3BentryX%3D0%3BentryY%3D0.75%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2231%22%20target%3D%2242%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22520%22%20y%3D%22420%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22570%22%20y%3D%22370%22%20as%3D%22targetPoint%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2295%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0.25%3BentryY%3D1%3BexitX%3D0.5%3BexitY%3D0%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2246%22%20target%3D%2268%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22630%22%20y%3D%22450%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22680%22%20y%3D%22400%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22340%22%20y%3D%22380%22%2F%3E%3CmxPoint%20x%3D%22675%22%20y%3D%22380%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2298%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D0%3BexitY%3D0.25%3BentryX%3D1%3BentryY%3D0.5%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2231%22%20target%3D%2240%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22260%22%20y%3D%22270%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22310%22%20y%3D%22220%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22180%22%20y%3D%22310%22%2F%3E%3CmxPoint%20x%3D%22180%22%20y%3D%22170%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2299%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0.25%3BentryY%3D0%3BexitX%3D0.5%3BexitY%3D1%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2234%22%20target%3D%2231%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22250%22%20y%3D%22270%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22300%22%20y%3D%22220%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22210%22%20y%3D%22260%22%2F%3E%3CmxPoint%20x%3D%22395%22%20y%3D%22260%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%22101%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D0.5%3BexitY%3D0%3BentryX%3D0.5%3BentryY%3D1%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2231%22%20target%3D%2227%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22480%22%20y%3D%22240%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22530%22%20y%3D%22190%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22420%22%20y%3D%22220%22%2F%3E%3CmxPoint%20x%3D%22350%22%20y%3D%22220%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%22103%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D0.75%3BexitY%3D0%3BentryX%3D0.44%3BentryY%3D1.05%3BentryPerimeter%3D0%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2231%22%20target%3D%2235%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22510%22%20y%3D%22300%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22560%22%20y%3D%22250%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22445%22%20y%3D%22250%22%2F%3E%3CmxPoint%20x%3D%22484%22%20y%3D%22250%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%22104%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D1%3BexitY%3D0.5%3BentryX%3D0.75%3BentryY%3D0%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2268%22%20target%3D%2240%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22850%22%20y%3D%22250%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22900%22%20y%3D%22200%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22780%22%20y%3D%22320%22%2F%3E%3CmxPoint%20x%3D%22780%22%20y%3D%2270%22%2F%3E%3CmxPoint%20x%3D%22105%22%20y%3D%2270%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%22105%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D0.75%3BexitY%3D0%3BentryX%3D0.5%3BentryY%3D0%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2268%22%20target%3D%2234%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22950%22%20y%3D%22290%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%221000%22%20y%3D%22240%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22725%22%20y%3D%2280%22%2F%3E%3CmxPoint%20x%3D%22210%22%20y%3D%2280%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%22106%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D0.5%3BexitY%3D0%3BentryX%3D0.5%3BentryY%3D0%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2268%22%20target%3D%2227%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22660%22%20y%3D%22280%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22710%22%20y%3D%22230%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22700%22%20y%3D%2290%22%2F%3E%3CmxPoint%20x%3D%22350%22%20y%3D%2290%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%22107%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D1%3BexitY%3D0.5%3BentryX%3D0.25%3BentryY%3D0%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2235%22%20target%3D%2268%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22590%22%20y%3D%22250%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22640%22%20y%3D%22200%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22675%22%20y%3D%22190%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%22108%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D0.32%3BexitY%3D0%3BexitPerimeter%3D0%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%223%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22390%22%20y%3D%22530%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22400%22%20y%3D%22340%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22422%22%20y%3D%22510%22%2F%3E%3CmxPoint%20x%3D%22400%22%20y%3D%22510%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%22109%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D1%3BexitY%3D0.5%3BentryX%3D1%3BentryY%3D0.5%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2247%22%20target%3D%2238%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22890%22%20y%3D%22770%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22940%22%20y%3D%22720%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22820%22%20y%3D%22810%22%2F%3E%3CmxPoint%20x%3D%22820%22%20y%3D%22500%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%22110%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0%3BentryY%3D0.5%3BexitX%3D0.75%3BexitY%3D1%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2231%22%20target%3D%2238%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22530%22%20y%3D%22530%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22580%22%20y%3D%22480%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22445%22%20y%3D%22410%22%2F%3E%3CmxPoint%20x%3D%22550%22%20y%3D%22410%22%2F%3E%3CmxPoint%20x%3D%22550%22%20y%3D%22500%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%22111%22%20value%3D%22%22%20style%3D%22edgeStyle%3DentityRelationEdgeStyle%3Bhtml%3D1%3BendArrow%3DERoneToMany%3BstartArrow%3DERmandOne%3B%22%20edge%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20width%3D%22100%22%20height%3D%22100%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22605%22%20y%3D%22960%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22705%22%20y%3D%22860%22%20as%3D%22targetPoint%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E"><defs><linearGradient x1="0%" y1="0%" x2="0%" y2="100%" id="mx-gradient-d5e8d4-1-97d077-1-s-0"><stop offset="0%" style="stop-color:#D5E8D4"/><stop offset="100%" style="stop-color:#97D077"/></linearGradient><linearGradient x1="0%" y1="0%" x2="0%" y2="100%" id="mx-gradient-dae8fc-1-7ea6e0-1-s-0"><stop offset="0%" style="stop-color:#DAE8FC"/><stop offset="100%" style="stop-color:#7EA6E0"/></linearGradient></defs><g transform="translate(0.5,0.5)"><rect x="361" y="476" width="100" height="40" fill="url(#mx-gradient-d5e8d4-1-97d077-1-s-0)" stroke="#82b366" pointer-events="none"/><g transform="translate(386.5,488.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="47" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 47px; white-space: nowrap; word-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">petri_net</div></div></foreignObject><text x="24" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">petri_net</text></switch></g><rect x="271" y="71" width="100" height="40" fill="url(#mx-gradient-d5e8d4-1-97d077-1-s-0)" stroke="#82b366" pointer-events="none"/><g transform="translate(300.5,83.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="39" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 39px; white-space: nowrap; word-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">arc_PT</div></div></foreignObject><text x="20" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">arc_PT</text></switch></g><rect x="111" y="351" width="100" height="40" fill="url(#mx-gradient-d5e8d4-1-97d077-1-s-0)" stroke="#82b366" pointer-events="none"/><g transform="translate(120.5,363.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="79" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 79px; white-space: nowrap; word-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">case_progress</div></div></foreignObject><text x="40" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">case_progress</text></switch></g><rect x="11" y="476" width="100" height="40" fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)" stroke="#6c8ebf" pointer-events="none"/><g transform="translate(45.5,488.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="29" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 31px; white-space: nowrap; word-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">FIRM</div></div></foreignObject><text x="15" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">FIRM</text></switch></g><rect x="621" y="476" width="140" height="40" fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)" stroke="#6c8ebf" pointer-events="none"/><g transform="translate(623.5,488.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="133" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 133px; white-space: nowrap; word-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">ROLES_START_CASES</div></div></foreignObject><text x="67" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">ROLES_START_CASES</text></switch></g><rect x="341" y="231" width="100" height="40" fill="url(#mx-gradient-d5e8d4-1-97d077-1-s-0)" stroke="#82b366" pointer-events="none"/><g transform="translate(365.5,243.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="49" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 49px; white-space: nowrap; word-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">transition</div></div></foreignObject><text x="25" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">transition</text></switch></g><rect x="131" y="51" width="100" height="40" fill="url(#mx-gradient-d5e8d4-1-97d077-1-s-0)" stroke="#82b366" pointer-events="none"/><g transform="translate(160.5,63.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="39" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 39px; white-space: nowrap; word-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">arc_TP</div></div></foreignObject><text x="20" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">arc_TP</text></switch></g><rect x="411" y="101" width="100" height="40" fill="url(#mx-gradient-d5e8d4-1-97d077-1-s-0)" stroke="#82b366" pointer-events="none"/><g transform="translate(427.5,113.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="65" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 67px; white-space: nowrap; word-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">arc_inhibitor</div></div></foreignObject><text x="33" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">arc_inhibitor</text></switch></g><rect x="626" y="411" width="130" height="40" fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)" stroke="#6c8ebf" pointer-events="none"/><g transform="translate(626.5,423.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="126" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 128px; white-space: nowrap; word-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">TRANSITION_X_ROLE</div></div></foreignObject><text x="63" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">TRANSITION_X_ROLE</text></switch></g><rect x="361" y="591" width="100" height="40" fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)" stroke="#6c8ebf" pointer-events="none"/><g transform="translate(389.5,603.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="41" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 43px; white-space: nowrap; word-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">USERS</div></div></foreignObject><text x="21" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">USERS</text></switch></g><rect x="1" y="81" width="100" height="40" fill="url(#mx-gradient-d5e8d4-1-97d077-1-s-0)" stroke="#82b366" pointer-events="none"/><g transform="translate(24.5,93.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="51" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 51px; white-space: nowrap; word-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">arc_reset</div></div></foreignObject><text x="26" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">arc_reset</text></switch></g><rect x="186" y="476" width="100" height="40" fill="url(#mx-gradient-d5e8d4-1-97d077-1-s-0)" stroke="#82b366" pointer-events="none"/><g transform="translate(222.5,488.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="25" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 27px; white-space: nowrap; word-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">case</div></div></foreignObject><text x="13" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">case</text></switch></g><rect x="501" y="231" width="100" height="40" fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)" stroke="#6c8ebf" pointer-events="none"/><g transform="translate(508.5,243.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="83" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 83px; white-space: nowrap; word-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">REFERENCES</div></div></foreignObject><text x="42" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">REFERENCES</text></switch></g><rect x="1" y="211" width="100" height="40" fill="url(#mx-gradient-d5e8d4-1-97d077-1-s-0)" stroke="#82b366" pointer-events="none"/><g transform="translate(4.5,223.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="91" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 93px; white-space: nowrap; word-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">reset_arc_cancel</div></div></foreignObject><text x="46" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">reset_arc_cancel</text></switch></g><rect x="271" y="701" width="100" height="40" fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)" stroke="#6c8ebf" pointer-events="none"/><g transform="translate(273.5,713.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="93" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 93px; white-space: nowrap; word-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">USERS_X_FIRM</div></div></foreignObject><text x="47" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">USERS_X_FIRM</text></switch></g><rect x="471" y="721" width="100" height="40" fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)" stroke="#6c8ebf" pointer-events="none"/><g transform="translate(472.5,733.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="95" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 97px; white-space: nowrap; word-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">USERS_X_ROLE</div></div></foreignObject><text x="48" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">USERS_X_ROLE</text></switch></g><rect x="261" y="351" width="100" height="40" fill="url(#mx-gradient-d5e8d4-1-97d077-1-s-0)" stroke="#82b366" pointer-events="none"/><g transform="translate(272.5,363.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="75" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 75px; white-space: nowrap; word-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">case_marking</div></div></foreignObject><text x="38" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">case_marking</text></switch></g><rect x="641" y="721" width="100" height="40" fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)" stroke="#6c8ebf" pointer-events="none"/><g transform="translate(669.5,733.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="41" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 41px; white-space: nowrap; word-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">ROLES</div></div></foreignObject><text x="21" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">ROLES</text></switch></g><path d="M 411.06 591 L 411.06 515.71" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 321 719 L 321 671 Q 321 661 331 661 L 376 661 Q 386 661 386.12 651 L 386.35 631" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 520.47 721.59 L 520.95 621 Q 521 611 511 611 L 460.47 611" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 571.06 741.59 L 640.47 741.59" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 691.06 721.59 L 691.06 515.71" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 460.47 495.71 L 620.47 495.71" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 286.35 495.71 L 360.47 495.71" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><rect x="621" y="231" width="100" height="40" fill="url(#mx-gradient-d5e8d4-1-97d077-1-s-0)" stroke="#82b366" pointer-events="none"/><g transform="translate(655.5,243.5)"><switch><foreignObject style="overflow:visible;" pointer-events="all" width="29" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 29px; white-space: nowrap; word-wrap: normal; text-align: center;"><div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;">place</div></div></foreignObject><text x="15" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">place</text></switch></g><path d="M 386.35 591 L 386.09 561 Q 386 551 376 551 L 271 551 Q 261 551 260.85 541 L 260.47 515.71" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 186.35 495.71 L 111.06 495.71" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 211.06 475.71 L 211.02 451 Q 211 441 201 441 L 193.5 441 Q 186 441 186.07 431 L 186.35 391" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 260.47 475.71 L 260.85 451 Q 261 441 271 441 L 301 441 Q 311 441 311.01 431 L 311.06 391" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 360.47 611 L 171 611 Q 161 611 160.98 601 L 160.47 391" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 411.06 475.71 L 411.01 381 Q 411 371 421 371 L 541 371 Q 551 371 551.01 361 L 551.06 271" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 435.76 475.71 L 435.97 401 Q 436 391 446 391 L 661 391 Q 671 391 671 381 L 671.06 271" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 271.06 721.59 L 96 721.03 Q 86 721 86.02 711 L 86.35 515.71" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 520.47 761.59 L 520.87 791 Q 521 801 511 801 L 46 801 Q 36 801 35.99 791 L 35.76 515.71" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 186.35 351 L 186.04 271 Q 186 261 196 261.04 L 340.47 261.59" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 51.06 251 L 51 361 Q 51 371 61 371 L 111.06 371" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 51.06 121.59 L 51.06 211" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 440.47 261.59 L 500.47 261.59" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 311.06 351 L 311.01 321 Q 311 311 321 311 L 636 311 Q 646 311 646.09 301 L 646.35 271" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 340.47 241.59 L 161 241.03 Q 151 241 151 231 L 151 111 Q 151 101 141 101.12 L 100.47 101.59" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 180.47 91 L 180.95 181 Q 181 191 191 191 L 356 191 Q 366 191 366.09 201 L 366.35 231" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 391.06 231 L 391.01 161 Q 391 151 381 151 L 331 151 Q 321 151 320.87 141 L 320.47 111" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 415.76 231 L 415.95 191 Q 416 181 426 181 L 445 181 Q 455 181 454.89 171 L 454.59 142.76" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 720.47 251 L 741 251 Q 751 251 751 241 L 751 11 Q 751 1 741 1 L 86 1 Q 76 1 75.97 11 L 75.76 81.59" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 695.76 231 L 695.99 21 Q 696 11 686 11 L 191 11 Q 181 11 180.87 21 L 180.47 51" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 671.06 231 L 671 31 Q 671 21 661 21 L 331 21 Q 321 21 320.89 31 L 320.47 71" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 511.06 121.59 L 636 121.04 Q 646 121 646.03 131 L 646.35 231" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 393.41 475.71 L 393.12 451 Q 393 441 383 441 L 377 441 Q 371 441 371 431 L 371 271" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 740.47 741.59 L 781 741.12 Q 791 741 791 731 L 791 441 Q 791 431 781 431 L 755.76 431" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 415.76 271 L 415.97 331 Q 416 341 426 341 L 511 341 Q 521 341 521 351 L 521 421 Q 521 431 531 431 L 626.35 431" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 576 891 L 596 891 Q 606 891 609.71 881.72 L 642.29 800.28 Q 646 791 656 791 L 676 791" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 580 887 L 580 895 M 584 887 L 584 895" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/><path d="M 668 795 L 668 787 M 676 787 L 668 791 L 676 795" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="none"/></g></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:xhtml="http://www.w3.org/1999/xhtml"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="795px"
+   height="903px"
+   version="1.1"
+   content="%3CmxGraphModel%20dx%3D%221687%22%20dy%3D%22940%22%20grid%3D%221%22%20gridSize%3D%2210%22%20guides%3D%221%22%20tooltips%3D%221%22%20connect%3D%221%22%20arrows%3D%221%22%20fold%3D%221%22%20page%3D%221%22%20pageScale%3D%221%22%20pageWidth%3D%22826%22%20pageHeight%3D%221169%22%20background%3D%22%23ffffff%22%20math%3D%220%22%20shadow%3D%220%22%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%223%22%20value%3D%22petri_net%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-green%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22390%22%20y%3D%22545%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2227%22%20value%3D%22arc_PT%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-green%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22300%22%20y%3D%22140%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2228%22%20value%3D%22case_progress%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-green%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22140%22%20y%3D%22420%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2229%22%20value%3D%22FIRM%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-blue%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%2240%22%20y%3D%22545%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2230%22%20value%3D%22ROLES_START_CASES%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-blue%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22650%22%20y%3D%22545%22%20width%3D%22140%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2231%22%20value%3D%22transition%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-green%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22370%22%20y%3D%22300%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2234%22%20value%3D%22arc_TP%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-green%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22160%22%20y%3D%22120%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2235%22%20value%3D%22arc_inhibitor%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-green%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22440%22%20y%3D%22170%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2238%22%20value%3D%22TRANSITION_X_ROLE%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-blue%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22655%22%20y%3D%22480%22%20width%3D%22130%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2239%22%20value%3D%22USERS%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-blue%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22390%22%20y%3D%22660%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2240%22%20value%3D%22arc_reset%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-green%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%2230%22%20y%3D%22150%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2241%22%20value%3D%22case%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-green%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22215%22%20y%3D%22545%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2242%22%20value%3D%22REFERENCES%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-blue%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22530%22%20y%3D%22300%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2243%22%20value%3D%22reset_arc_cancel%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-green%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%2230%22%20y%3D%22280%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2244%22%20value%3D%22USERS_X_FIRM%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-blue%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22300%22%20y%3D%22770%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2245%22%20value%3D%22USERS_X_ROLE%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-blue%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22500%22%20y%3D%22790%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2246%22%20value%3D%22case_marking%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-green%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22290%22%20y%3D%22420%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2247%22%20value%3D%22ROLES%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-blue%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22670%22%20y%3D%22790%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2256%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0.5%3BentryY%3D1%3BexitX%3D0.5%3BexitY%3D0%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2239%22%20target%3D%223%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22180%22%20y%3D%22670%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22230%22%20y%3D%22620%22%20as%3D%22targetPoint%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2257%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0.25%3BentryY%3D1%3B%22%20edge%3D%221%22%20parent%3D%221%22%20target%3D%2239%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22350%22%20y%3D%22788%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22390%22%20y%3D%22720%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22350%22%20y%3D%22730%22%2F%3E%3CmxPoint%20x%3D%22415%22%20y%3D%22730%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2259%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D1%3BentryY%3D0.5%3BexitX%3D0.5%3BexitY%3D0%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2245%22%20target%3D%2239%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22660%22%20y%3D%22760%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22710%22%20y%3D%22710%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22550%22%20y%3D%22680%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2260%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0%3BentryY%3D0.5%3BexitX%3D1%3BexitY%3D0.5%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2245%22%20target%3D%2247%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%2240%22%20y%3D%22600%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%2290%22%20y%3D%22550%22%20as%3D%22targetPoint%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2261%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D0.5%3BexitY%3D0%3BentryX%3D0.5%3BentryY%3D1%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2247%22%20target%3D%2230%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%221020%22%20y%3D%22700%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%221070%22%20y%3D%22650%22%20as%3D%22targetPoint%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2263%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D1%3BexitY%3D0.5%3BentryX%3D0%3BentryY%3D0.5%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%223%22%20target%3D%2230%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22480%22%20y%3D%22470%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22530%22%20y%3D%22420%22%20as%3D%22targetPoint%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2264%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D1%3BexitY%3D0.5%3BentryX%3D0%3BentryY%3D0.5%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2241%22%20target%3D%223%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22340%22%20y%3D%22500%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22390%22%20y%3D%22450%22%20as%3D%22targetPoint%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2268%22%20value%3D%22place%22%20style%3D%22whiteSpace%3Dwrap%3Bhtml%3D1%3Bplain-green%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22650%22%20y%3D%22300%22%20width%3D%22100%22%20height%3D%2240%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2269%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0.75%3BentryY%3D1%3BexitX%3D0.25%3BexitY%3D0%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2239%22%20target%3D%2241%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%2210%22%20y%3D%22290%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%2260%22%20y%3D%22240%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22415%22%20y%3D%22620%22%2F%3E%3CmxPoint%20x%3D%22290%22%20y%3D%22620%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2270%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D1%3BentryY%3D0.5%3BexitX%3D0%3BexitY%3D0.5%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2241%22%20target%3D%2229%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22180%22%20y%3D%22730%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22230%22%20y%3D%22680%22%20as%3D%22targetPoint%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2271%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0.75%3BentryY%3D1%3BexitX%3D0.25%3BexitY%3D0%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2241%22%20target%3D%2228%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20y%3D%22540%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%2250%22%20y%3D%22490%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22240%22%20y%3D%22510%22%2F%3E%3CmxPoint%20x%3D%22215%22%20y%3D%22510%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2272%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D0.75%3BexitY%3D0%3BentryX%3D0.5%3BentryY%3D1%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2241%22%20target%3D%2246%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22340%22%20y%3D%22540%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22390%22%20y%3D%22490%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22290%22%20y%3D%22510%22%2F%3E%3CmxPoint%20x%3D%22340%22%20y%3D%22510%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2273%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0.5%3BentryY%3D1%3BentryPerimeter%3D0%3BexitX%3D0%3BexitY%3D0.5%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2239%22%20target%3D%2228%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22190%22%20y%3D%22670%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22190%22%20y%3D%22470%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22190%22%20y%3D%22680%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2278%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0.5%3BentryY%3D1%3BexitX%3D0.5%3BexitY%3D0%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%223%22%20target%3D%2242%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22510%22%20y%3D%22520%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22560%22%20y%3D%22470%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22440%22%20y%3D%22440%22%2F%3E%3CmxPoint%20x%3D%22580%22%20y%3D%22440%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2279%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D0.75%3BexitY%3D0%3BentryX%3D0.5%3BentryY%3D1%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%223%22%20target%3D%2268%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22550%22%20y%3D%22530%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22600%22%20y%3D%22480%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22465%22%20y%3D%22460%22%2F%3E%3CmxPoint%20x%3D%22700%22%20y%3D%22460%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2284%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0.75%3BentryY%3D1%3BexitX%3D0%3BexitY%3D0.5%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2244%22%20target%3D%2229%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%2260%22%20y%3D%22780%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22110%22%20y%3D%22730%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22115%22%20y%3D%22790%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2286%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0.25%3BentryY%3D1%3BexitX%3D0.5%3BexitY%3D1%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2245%22%20target%3D%2229%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%2230%22%20y%3D%22740%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%2280%22%20y%3D%22690%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22550%22%20y%3D%22870%22%2F%3E%3CmxPoint%20x%3D%2265%22%20y%3D%22870%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2287%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D0.75%3BexitY%3D0%3BentryX%3D0%3BentryY%3D0.75%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2228%22%20target%3D%2231%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22240%22%20y%3D%22400%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22290%22%20y%3D%22350%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22215%22%20y%3D%22330%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2288%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0%3BentryY%3D0.5%3BexitX%3D0.5%3BexitY%3D1%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2243%22%20target%3D%2228%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%2290%22%20y%3D%22350%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%2240%22%20y%3D%22480%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%2280%22%20y%3D%22440%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2289%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0.5%3BentryY%3D0%3BexitX%3D0.5%3BexitY%3D1%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2240%22%20target%3D%2243%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22-60%22%20y%3D%22410%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22-10%22%20y%3D%22360%22%20as%3D%22targetPoint%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2294%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D1%3BexitY%3D0.75%3BentryX%3D0%3BentryY%3D0.75%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2231%22%20target%3D%2242%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22520%22%20y%3D%22420%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22570%22%20y%3D%22370%22%20as%3D%22targetPoint%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2295%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0.25%3BentryY%3D1%3BexitX%3D0.5%3BexitY%3D0%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2246%22%20target%3D%2268%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22630%22%20y%3D%22450%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22680%22%20y%3D%22400%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22340%22%20y%3D%22380%22%2F%3E%3CmxPoint%20x%3D%22675%22%20y%3D%22380%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2298%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D0%3BexitY%3D0.25%3BentryX%3D1%3BentryY%3D0.5%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2231%22%20target%3D%2240%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22260%22%20y%3D%22270%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22310%22%20y%3D%22220%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22180%22%20y%3D%22310%22%2F%3E%3CmxPoint%20x%3D%22180%22%20y%3D%22170%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%2299%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0.25%3BentryY%3D0%3BexitX%3D0.5%3BexitY%3D1%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2234%22%20target%3D%2231%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22250%22%20y%3D%22270%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22300%22%20y%3D%22220%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22210%22%20y%3D%22260%22%2F%3E%3CmxPoint%20x%3D%22395%22%20y%3D%22260%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%22101%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D0.5%3BexitY%3D0%3BentryX%3D0.5%3BentryY%3D1%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2231%22%20target%3D%2227%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22480%22%20y%3D%22240%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22530%22%20y%3D%22190%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22420%22%20y%3D%22220%22%2F%3E%3CmxPoint%20x%3D%22350%22%20y%3D%22220%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%22103%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D0.75%3BexitY%3D0%3BentryX%3D0.44%3BentryY%3D1.05%3BentryPerimeter%3D0%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2231%22%20target%3D%2235%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22510%22%20y%3D%22300%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22560%22%20y%3D%22250%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22445%22%20y%3D%22250%22%2F%3E%3CmxPoint%20x%3D%22484%22%20y%3D%22250%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%22104%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D1%3BexitY%3D0.5%3BentryX%3D0.75%3BentryY%3D0%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2268%22%20target%3D%2240%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22850%22%20y%3D%22250%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22900%22%20y%3D%22200%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22780%22%20y%3D%22320%22%2F%3E%3CmxPoint%20x%3D%22780%22%20y%3D%2270%22%2F%3E%3CmxPoint%20x%3D%22105%22%20y%3D%2270%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%22105%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D0.75%3BexitY%3D0%3BentryX%3D0.5%3BentryY%3D0%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2268%22%20target%3D%2234%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22950%22%20y%3D%22290%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%221000%22%20y%3D%22240%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22725%22%20y%3D%2280%22%2F%3E%3CmxPoint%20x%3D%22210%22%20y%3D%2280%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%22106%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D0.5%3BexitY%3D0%3BentryX%3D0.5%3BentryY%3D0%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2268%22%20target%3D%2227%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22660%22%20y%3D%22280%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22710%22%20y%3D%22230%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22700%22%20y%3D%2290%22%2F%3E%3CmxPoint%20x%3D%22350%22%20y%3D%2290%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%22107%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D1%3BexitY%3D0.5%3BentryX%3D0.25%3BentryY%3D0%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2235%22%20target%3D%2268%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22590%22%20y%3D%22250%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22640%22%20y%3D%22200%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22675%22%20y%3D%22190%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%22108%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D0.32%3BexitY%3D0%3BexitPerimeter%3D0%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%223%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22390%22%20y%3D%22530%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22400%22%20y%3D%22340%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22422%22%20y%3D%22510%22%2F%3E%3CmxPoint%20x%3D%22400%22%20y%3D%22510%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%22109%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BexitX%3D1%3BexitY%3D0.5%3BentryX%3D1%3BentryY%3D0.5%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2247%22%20target%3D%2238%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22890%22%20y%3D%22770%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22940%22%20y%3D%22720%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22820%22%20y%3D%22810%22%2F%3E%3CmxPoint%20x%3D%22820%22%20y%3D%22500%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%22110%22%20value%3D%22%22%20style%3D%22endArrow%3Dnone%3Bhtml%3D1%3BentryX%3D0%3BentryY%3D0.5%3BexitX%3D0.75%3BexitY%3D1%3B%22%20edge%3D%221%22%20parent%3D%221%22%20source%3D%2231%22%20target%3D%2238%22%3E%3CmxGeometry%20width%3D%2250%22%20height%3D%2250%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22530%22%20y%3D%22530%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22580%22%20y%3D%22480%22%20as%3D%22targetPoint%22%2F%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%22445%22%20y%3D%22410%22%2F%3E%3CmxPoint%20x%3D%22550%22%20y%3D%22410%22%2F%3E%3CmxPoint%20x%3D%22550%22%20y%3D%22500%22%2F%3E%3C%2FArray%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3CmxCell%20id%3D%22111%22%20value%3D%22%22%20style%3D%22edgeStyle%3DentityRelationEdgeStyle%3Bhtml%3D1%3BendArrow%3DERoneToMany%3BstartArrow%3DERmandOne%3B%22%20edge%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20width%3D%22100%22%20height%3D%22100%22%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CmxPoint%20x%3D%22605%22%20y%3D%22960%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%22705%22%20y%3D%22860%22%20as%3D%22targetPoint%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E"
+   id="svg2"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="era.svg">
+  <metadata
+     id="metadata242">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1059"
+     id="namedview240"
+     showgrid="false"
+     inkscape:zoom="7.301495"
+     inkscape:cx="661.50515"
+     inkscape:cy="99.690821"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g16" />
+  <defs
+     id="defs4">
+    <linearGradient
+       x1="0%"
+       y1="0%"
+       x2="0%"
+       y2="100%"
+       id="mx-gradient-d5e8d4-1-97d077-1-s-0">
+      <stop
+         offset="0%"
+         style="stop-color:#D5E8D4"
+         id="stop7" />
+      <stop
+         offset="100%"
+         style="stop-color:#97D077"
+         id="stop9" />
+    </linearGradient>
+    <linearGradient
+       x1="0%"
+       y1="0%"
+       x2="0%"
+       y2="100%"
+       id="mx-gradient-dae8fc-1-7ea6e0-1-s-0">
+      <stop
+         offset="0%"
+         style="stop-color:#DAE8FC"
+         id="stop12" />
+      <stop
+         offset="100%"
+         style="stop-color:#7EA6E0"
+         id="stop14" />
+    </linearGradient>
+  </defs>
+  <g
+     transform="translate(0.5,0.5)"
+     id="g16">
+    <rect
+       x="361"
+       y="476"
+       width="100"
+       height="40"
+       fill="url(#mx-gradient-d5e8d4-1-97d077-1-s-0)"
+       stroke="#82b366"
+       pointer-events="none"
+       id="rect18" />
+    <g
+       transform="translate(386.5,488.5)"
+       id="g20">
+      <switch
+         id="switch22">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="47"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 47px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">petri_net</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="24"
+           y="12"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text24">petri_net</text>
+      </switch>
+    </g>
+    <rect
+       x="271"
+       y="71"
+       width="100"
+       height="40"
+       fill="url(#mx-gradient-d5e8d4-1-97d077-1-s-0)"
+       stroke="#82b366"
+       pointer-events="none"
+       id="rect26" />
+    <g
+       transform="translate(300.5,83.5)"
+       id="g28">
+      <switch
+         id="switch30">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="39"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 39px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">arc_PT</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="20"
+           y="12"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text32">arc_PT</text>
+      </switch>
+    </g>
+    <rect
+       x="111"
+       y="351"
+       width="100"
+       height="40"
+       fill="url(#mx-gradient-d5e8d4-1-97d077-1-s-0)"
+       stroke="#82b366"
+       pointer-events="none"
+       id="rect34" />
+    <g
+       transform="translate(120.5,363.5)"
+       id="g36">
+      <switch
+         id="switch38">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="79"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 79px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">case_progress</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="40"
+           y="12"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text40">case_progress</text>
+      </switch>
+    </g>
+    <rect
+       x="11"
+       y="476"
+       width="100"
+       height="40"
+       fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+       stroke="#6c8ebf"
+       pointer-events="none"
+       id="rect42" />
+    <g
+       transform="translate(45.5,488.5)"
+       id="g44">
+      <switch
+         id="switch46">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="29"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 31px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">FIRM</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="15"
+           y="12"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text48">FIRM</text>
+      </switch>
+    </g>
+    <rect
+       x="621"
+       y="476"
+       width="140"
+       height="40"
+       fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+       stroke="#6c8ebf"
+       pointer-events="none"
+       id="rect50" />
+    <g
+       transform="translate(623.5,488.5)"
+       id="g52">
+      <switch
+         id="switch54">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="133"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 133px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">ROLES_START_CASES</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="67"
+           y="12"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text56">ROLES_START_CASES</text>
+      </switch>
+    </g>
+    <rect
+       x="341"
+       y="231"
+       width="100"
+       height="40"
+       fill="url(#mx-gradient-d5e8d4-1-97d077-1-s-0)"
+       stroke="#82b366"
+       pointer-events="none"
+       id="rect58" />
+    <g
+       transform="translate(365.5,243.5)"
+       id="g60">
+      <switch
+         id="switch62">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="49"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 49px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">transition</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="25"
+           y="12"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text64">transition</text>
+      </switch>
+    </g>
+    <rect
+       x="131"
+       y="51"
+       width="100"
+       height="40"
+       fill="url(#mx-gradient-d5e8d4-1-97d077-1-s-0)"
+       stroke="#82b366"
+       pointer-events="none"
+       id="rect66" />
+    <g
+       transform="translate(160.5,63.5)"
+       id="g68">
+      <switch
+         id="switch70">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="39"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 39px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">arc_TP</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="20"
+           y="12"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text72">arc_TP</text>
+      </switch>
+    </g>
+    <rect
+       x="411"
+       y="101"
+       width="100"
+       height="40"
+       fill="url(#mx-gradient-d5e8d4-1-97d077-1-s-0)"
+       stroke="#82b366"
+       pointer-events="none"
+       id="rect74" />
+    <g
+       transform="translate(427.5,113.5)"
+       id="g76">
+      <switch
+         id="switch78">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="65"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 67px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">arc_inhibitor</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="33"
+           y="12"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text80">arc_inhibitor</text>
+      </switch>
+    </g>
+    <rect
+       x="626"
+       y="411"
+       width="130"
+       height="40"
+       fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+       stroke="#6c8ebf"
+       pointer-events="none"
+       id="rect82" />
+    <g
+       transform="translate(626.5,423.5)"
+       id="g84">
+      <switch
+         id="switch86">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="126"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 128px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">TRANSITION_X_ROLE</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="63"
+           y="12"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text88">TRANSITION_X_ROLE</text>
+      </switch>
+    </g>
+    <rect
+       x="361"
+       y="591"
+       width="100"
+       height="40"
+       fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+       stroke="#6c8ebf"
+       pointer-events="none"
+       id="rect90" />
+    <g
+       transform="translate(389.5,603.5)"
+       id="g92">
+      <switch
+         id="switch94">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="41"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 43px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">USERS</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="21"
+           y="12"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text96">USERS</text>
+      </switch>
+    </g>
+    <rect
+       x="1"
+       y="81"
+       width="100"
+       height="40"
+       fill="url(#mx-gradient-d5e8d4-1-97d077-1-s-0)"
+       stroke="#82b366"
+       pointer-events="none"
+       id="rect98" />
+    <g
+       transform="translate(24.5,93.5)"
+       id="g100">
+      <switch
+         id="switch102">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="51"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 51px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">arc_reset</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="26"
+           y="12"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text104">arc_reset</text>
+      </switch>
+    </g>
+    <rect
+       x="186"
+       y="476"
+       width="100"
+       height="40"
+       fill="url(#mx-gradient-d5e8d4-1-97d077-1-s-0)"
+       stroke="#82b366"
+       pointer-events="none"
+       id="rect106" />
+    <g
+       transform="translate(222.5,488.5)"
+       id="g108">
+      <switch
+         id="switch110">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="25"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 27px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">case</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="13"
+           y="12"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text112">case</text>
+      </switch>
+    </g>
+    <rect
+       x="501"
+       y="231"
+       width="100"
+       height="40"
+       fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+       stroke="#6c8ebf"
+       pointer-events="none"
+       id="rect114" />
+    <g
+       transform="translate(508.5,243.5)"
+       id="g116">
+      <switch
+         id="switch118">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="83"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 83px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">REFERENCES</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="42"
+           y="12"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text120">REFERENCES</text>
+      </switch>
+    </g>
+    <rect
+       x="1"
+       y="211"
+       width="100"
+       height="40"
+       fill="url(#mx-gradient-d5e8d4-1-97d077-1-s-0)"
+       stroke="#82b366"
+       pointer-events="none"
+       id="rect122" />
+    <g
+       transform="translate(4.5,223.5)"
+       id="g124">
+      <switch
+         id="switch126">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="91"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 93px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">reset_arc_cancel</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="46"
+           y="12"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text128">reset_arc_cancel</text>
+      </switch>
+    </g>
+    <rect
+       x="271"
+       y="701"
+       width="100"
+       height="40"
+       fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+       stroke="#6c8ebf"
+       pointer-events="none"
+       id="rect130" />
+    <g
+       transform="translate(273.5,713.5)"
+       id="g132">
+      <switch
+         id="switch134">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="93"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 93px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">USERS_X_FIRM</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="47"
+           y="12"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text136">USERS_X_FIRM</text>
+      </switch>
+    </g>
+    <rect
+       x="471"
+       y="721"
+       width="100"
+       height="40"
+       fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+       stroke="#6c8ebf"
+       pointer-events="none"
+       id="rect138" />
+    <g
+       transform="translate(472.5,733.5)"
+       id="g140">
+      <switch
+         id="switch142">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="95"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 97px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">USERS_X_ROLE</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="48"
+           y="12"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text144">USERS_X_ROLE</text>
+      </switch>
+    </g>
+    <rect
+       x="261"
+       y="351"
+       width="100"
+       height="40"
+       fill="url(#mx-gradient-d5e8d4-1-97d077-1-s-0)"
+       stroke="#82b366"
+       pointer-events="none"
+       id="rect146" />
+    <g
+       transform="translate(272.5,363.5)"
+       id="g148">
+      <switch
+         id="switch150">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="75"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 75px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">case_marking</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="38"
+           y="12"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text152">case_marking</text>
+      </switch>
+    </g>
+    <rect
+       x="641"
+       y="721"
+       width="100"
+       height="40"
+       fill="url(#mx-gradient-dae8fc-1-7ea6e0-1-s-0)"
+       stroke="#6c8ebf"
+       pointer-events="none"
+       id="rect154" />
+    <g
+       transform="translate(669.5,733.5)"
+       id="g156">
+      <switch
+         id="switch158">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="41"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 41px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">ROLES</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="21"
+           y="12"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text160">ROLES</text>
+      </switch>
+    </g>
+    <path
+       d="M 411.06 591 L 411.06 515.71"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path162" />
+    <path
+       d="M 321 719 L 321 671 Q 321 661 331 661 L 376 661 Q 386 661 386.12 651 L 386.35 631"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path164" />
+    <path
+       d="M 520.47 721.59 L 520.95 621 Q 521 611 511 611 L 460.47 611"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path166" />
+    <path
+       d="M 571.06 741.59 L 640.47 741.59"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path168" />
+    <path
+       d="M 691.06 721.59 L 691.06 515.71"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path170" />
+    <path
+       d="M 460.47 495.71 L 620.47 495.71"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path172" />
+    <path
+       d="M 286.35 495.71 L 360.47 495.71"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path174" />
+    <rect
+       x="621"
+       y="231"
+       width="100"
+       height="40"
+       fill="url(#mx-gradient-d5e8d4-1-97d077-1-s-0)"
+       stroke="#82b366"
+       pointer-events="none"
+       id="rect176" />
+    <g
+       transform="translate(655.5,243.5)"
+       id="g178">
+      <switch
+         id="switch180">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="29"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 29px; white-space: nowrap; word-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">place</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="15"
+           y="12"
+           fill="#000000"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           id="text182">place</text>
+      </switch>
+    </g>
+    <path
+       d="M 386.35 591 L 386.09 561 Q 386 551 376 551 L 271 551 Q 261 551 260.85 541 L 260.47 515.71"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path184" />
+    <path
+       d="M 186.35 495.71 L 111.06 495.71"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path186" />
+    <path
+       d="M 211.06 475.71 L 211.02 451 Q 211 441 201 441 L 193.5 441 Q 186 441 186.07 431 L 186.35 391"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path188" />
+    <path
+       d="M 260.47 475.71 L 260.85 451 Q 261 441 271 441 L 301 441 Q 311 441 311.01 431 L 311.06 391"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path190" />
+    <path
+       d="M 360.47 611 L 171 611 Q 161 611 160.98 601 L 160.47 391"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path192" />
+    <path
+       d="M 411.06 475.71 L 411.01 381 Q 411 371 421 371 L 541 371 Q 551 371 551.01 361 L 551.06 271"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path194" />
+    <path
+       d="M 435.76 475.71 L 435.97 401 Q 436 391 446 391 L 661 391 Q 671 391 671 381 L 671.06 271"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path196" />
+    <path
+       d="M 271.06 721.59 L 96 721.03 Q 86 721 86.02 711 L 86.35 515.71"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path198" />
+    <path
+       d="M 520.47 761.59 L 520.87 791 Q 521 801 511 801 L 46 801 Q 36 801 35.99 791 L 35.76 515.71"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path200" />
+    <path
+       d="M 186.35 351 L 186.04 271 Q 186 261 196 261.04 L 340.47 261.59"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path202" />
+    <path
+       d="M 51.06 251 L 51 361 Q 51 371 61 371 L 111.06 371"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path204" />
+    <path
+       d="M 51.06 121.59 L 51.06 211"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path206" />
+    <path
+       d="M 440.47 261.59 L 500.47 261.59"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path208" />
+    <path
+       d="M 311.06 351 L 311.01 321 Q 311 311 321 311 L 636 311 Q 646 311 646.09 301 L 646.35 271"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path210" />
+    <path
+       d="M 340.47 241.59 L 161 241.03 Q 151 241 151 231 L 151 111 Q 151 101 141 101.12 L 100.47 101.59"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path212" />
+    <path
+       d="M 180.47 91 L 180.95 181 Q 181 191 191 191 L 356 191 Q 366 191 366.09 201 L 366.35 231"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path214" />
+    <path
+       d="M 391.06 231 L 391.01 161 Q 391 151 381 151 L 331 151 Q 321 151 320.87 141 L 320.47 111"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path216" />
+    <path
+       d="M 415.76 231 L 415.95 191 Q 416 181 426 181 L 445 181 Q 455 181 454.89 171 L 454.59 142.76"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path218" />
+    <path
+       d="M 720.47 251 L 741 251 Q 751 251 751 241 L 751 11 Q 751 1 741 1 L 86 1 Q 76 1 75.97 11 L 75.76 81.59"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path220" />
+    <path
+       d="M 695.76 231 L 695.99 21 Q 696 11 686 11 L 191 11 Q 181 11 180.87 21 L 180.47 51"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path222" />
+    <path
+       d="M 671.06 231 L 671 31 Q 671 21 661 21 L 331 21 Q 321 21 320.89 31 L 320.47 71"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path224" />
+    <path
+       d="M 511.06 121.59 L 636 121.04 Q 646 121 646.03 131 L 646.35 231"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path226" />
+    <path
+       d="M 393.41 475.71 L 393.12 451 Q 393 441 383 441 L 377 441 Q 371 441 371 431 L 371 271"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path228" />
+    <path
+       d="M 740.47 741.59 L 781 741.12 Q 791 741 791 731 L 791 441 Q 791 431 781 431 L 755.76 431"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path230" />
+    <path
+       d="M 415.76 271 L 415.97 331 Q 416 341 426 341 L 511 341 Q 521 341 521 351 L 521 421 Q 521 431 531 431 L 626.35 431"
+       fill="none"
+       stroke="#000000"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path232" />
+    <path
+       d="m 687.9231,820.57525 0,8 m 4,-8 0,8"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path236"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    <path
+       d="m 704.56785,802.25879 0,-8 m 8,0 -8,4 8,4"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path238"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    <path
+       id="path4370"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       d="m 704.56785,802.25879 0,-8 m 8,0 -8,4 8,4"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    <path
+       d="m 704.56785,802.25879 0,-8 m 8,0 -8,4 8,4"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path4372"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-miterlimit:10"
+       d="m 721.82595,802.41173 0,-8 m 8,0 -8,4 8,4"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path4372-9" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-miterlimit:10"
+       d="m 723.78961,819.47508 0,8 m 4,-8 0,8"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path236-2" />
+    <path
+       id="path4404"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       d="m 704.76897,819.61654 0,8 m 4,-8 0,8"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    <path
+       style="fill:none;stroke:#000000;stroke-miterlimit:10"
+       inkscape:connector-curvature="0"
+       id="path4406"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       d="m 708.95052,816.50245 0,-8 m 8,0 -8,4 8,4" />
+    <path
+       style="fill:none;stroke:#000000;stroke-miterlimit:10"
+       inkscape:connector-curvature="0"
+       d="m 708.95052,816.50245 0,-8 m 8,0 -8,4 8,4"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path4408" />
+    <path
+       style="fill:none;stroke:#000000;stroke-miterlimit:10"
+       inkscape:connector-curvature="0"
+       id="path4410"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       d="m 708.95052,816.50245 0,-8 m 8,0 -8,4 8,4" />
+    <path
+       id="path4412"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       d="m 726.20862,816.65539 0,-8 m 8,0 -8,4 8,4"
+       style="fill:none;stroke:#000000;stroke-miterlimit:10"
+       inkscape:connector-curvature="0" />
+    <path
+       d="m 708.95052,816.50245 0,-8 m 8,0 -8,4 8,4"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path4414"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    <path
+       id="path4416"
+       pointer-events="none"
+       stroke-miterlimit="10"
+       d="m 708.95052,816.50245 0,-8 m 8,0 -8,4 8,4"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    <path
+       d="m 708.95052,816.50245 0,-8 m 8,0 -8,4 8,4"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path4418"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    <path
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-miterlimit:10"
+       d="m 726.20862,816.65539 0,-8 m 8,0 -8,4 8,4"
+       stroke-miterlimit="10"
+       pointer-events="none"
+       id="path4420" />
+  </g>
+</svg>
