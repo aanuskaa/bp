@@ -64,6 +64,9 @@ input{
     text-align: center ;
     
 }
+.popup .saveDBImputs{
+    
+}
 
 .popup .popup-input{
     position: relative;
@@ -110,12 +113,28 @@ input{
 }
 
 .blur{
-    filter: blur(5px) grayscale(20%);
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
+    filter: blur(2px) grayscale(10%);
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
 }
+
+.popup .saveDBImputs .question{
+    position: relative;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    height: 30px;
+    line-height: 20px;
+    font-size: 28px;
+    text-align: center ;
+    
+}
+
+
+
 /*---------------*/
 
 .container-fluid ul li input:hover{

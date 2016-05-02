@@ -184,7 +184,7 @@ class CaseController extends AbstractController{
         $str = $xml->asXML();
         /*XML odoslat do editora - ziskat zafarbene SVG*/
         $str = str_replace('<?xml version="1.0"?>', '<?xml version="1.0" encoding="UTF-8"?>', $str);
-        $str = str_replace(['\n', '\n\r', '\r\n', PHP_EOL], '', $str);
+        $str = str_replace(['\n', '\n\r', '\r\n', PHP_EOL], "'" . PHP_EOL . " + '", $str);
         
                 
         $query = 'SELECT 

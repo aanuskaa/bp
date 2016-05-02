@@ -53,7 +53,9 @@ class TaskController extends AbstractController{
                     `transition`.`name` AS transition_name,
                     TRANSITIONS_X_ROLE.id_role,
                     ROLES.role_name,
-                    `REFERENCES`.referenced_transition_id
+                    `REFERENCES`.referenced_transition_id,
+                    `REFERENCES`.value
+
                 FROM
                     USERS_X_FIRM
                                 LEFT JOIN 
@@ -68,15 +70,23 @@ class TaskController extends AbstractController{
                     ROLES ON ROLES.role_id = TRANSITIONS_X_ROLE.id_role
                         LEFT JOIN
                     `REFERENCES` ON `REFERENCES`.transition_id = transition.id
-                WHERE
-                    EXISTS( SELECT * FROM
-                            USERS_X_ROLE
-                        WHERE user_id = ' . Flow::app()->auth->getUserId() . '
-                            AND USERS_X_FIRM.firm_id = USERS_X_ROLE.firm_id
-                            AND TRANSITIONS_X_ROLE.id_role = USERS_X_ROLE.role_id) AND `case`.timestamp_stop IS NULL 
-                            OR referenced_transition_id IS NOT NULL AND `case`.timestamp_stop IS NULL 
-                            OR id_role IS NULL AND `case`.timestamp_stop IS NULL' ;
-        Flow::app()->pdo->query($query);
+                    WHERE 
+                        `case`.timestamp_stop IS NULL
+                    AND (
+                                EXISTS( 
+                                        SELECT 
+                                                *
+                                        FROM
+                                                USERS_X_ROLE
+                                        WHERE
+                                                user_id = ' . Flow::app()->auth->getUserId() . '
+                                                        AND USERS_X_FIRM.firm_id = USERS_X_ROLE.firm_id
+                                                        AND TRANSITIONS_X_ROLE.id_role = USERS_X_ROLE.role_id
+                                        )        
+                        OR referenced_transition_id IS NOT NULL        
+                        OR id_role IS NULL
+                        );' ;
+        $result = Flow::app()->pdo->query($query)->fetchAll(PDO::FETCH_OBJ);
         $data = $this->sanitizeTasksData($result);
         
         foreach ($data as $firm_id=>$firm){
@@ -85,8 +95,8 @@ class TaskController extends AbstractController{
                     if(!TransitionModel::model()->isEnabled($case_id, $task_id)){
                         unset($data[$firm_id]['cases'][$case_id]['tasks'][$task_id]);
                     }
-                    elseif($task['reference'] != NULL){
-                        $ref = $this->resolveReferences($firm_id, $case_id, $task_id, $task['reference']);
+                    elseif($task['reference'] != NULL || $task['referencevalue']){
+                        $ref = $this->resolveReferences($firm_id, $case_id, $task_id, $task['reference'], $task['referencevalue'], $task['id_role'], $case['id_pn']);
                         switch ($ref){
                             case [FALSE, FALSE]:
                                 unset($data[$firm_id]['cases'][$case_id]['tasks'][$task_id]);
@@ -95,6 +105,7 @@ class TaskController extends AbstractController{
                                 $data[$firm_id]['cases'][$case_id]['tasks'][$task_id]['reference'] = NULL;
                                 break;
                             case [TRUE, TRUE]:
+                                $data[$firm_id]['cases'][$case_id]['tasks'][$task_id]['reference'] = 1;
                                 break;
                         }
                     }
@@ -147,9 +158,8 @@ class TaskController extends AbstractController{
             $caseProgress->save(TRUE);
             if(!empty($reset)){
                 foreach ($reset as $r){
-                    $query = 'INSERT INTO `reset_arc_cancel` (`case_progress_id`,`consumed_tokens`, `arc_id`) VALUES (' . $caseProgress->id . ',' . $r->tokens . ', ' . $r->id . ');'; 
-                    $result = Flow::app()->pdo->query($query)->fetchAll(PDO::FETCH_OBJ);
-                    //var_dump($result);
+                    $query = 'INSERT INTO `reset_arc_cancel` (`case_progress_id`,`consumed_tokens`, `arc_id`) VALUES (' . $caseProgress->id . ', ' . $r->tokens . ', ' . $r->id . ');'; 
+                    Flow::app()->pdo->query($query);
                 }
             }
             
@@ -219,6 +229,7 @@ class TaskController extends AbstractController{
                 $arr[$r->firm_id]['cases'][$r->case_id]['tasks'][$r->transition_id]['id_role'] = $r->id_role ;
                 $arr[$r->firm_id]['cases'][$r->case_id]['tasks'][$r->transition_id]['role_name'] = $r->role_name ;
                 $arr[$r->firm_id]['cases'][$r->case_id]['tasks'][$r->transition_id]['reference'] = $r->referenced_transition_id;
+                $arr[$r->firm_id]['cases'][$r->case_id]['tasks'][$r->transition_id]['referencevalue'] = $r->value;
             }
         }
         return $arr;
@@ -235,10 +246,36 @@ class TaskController extends AbstractController{
      * @return array [boolean, boolean]  prva hodnota urcuje, ci pouzivatel moze spustit dany prechod
      *                                   druha ci ho spusta na zaklade platnej referencie na neho
      */
-    private function resolveReferences($firm_id, $case_id, $transition_id, $referencedtransition_id){
+    private function resolveReferences($firm_id, $case_id, $transition_id, $referencedtransition_id, $value, $role_id, $pn_id){
         $user_id = Flow::app()->auth->getUserId();
-        $referencedTask = Case_ProgressModel::model()->findOne('id_case=' . $case_id .
-                ' AND id_transition=' . $referencedtransition_id);
+        /*Referencia na prveho pouzivatela*/
+        if($value == 1){
+            $query = 'SELECT 
+                            *
+                        FROM
+                            TRANSITIONS_X_ROLE
+                                LEFT JOIN
+                            `transition` ON `transition`.id = TRANSITIONS_X_ROLE.id_prechod
+                                LEFT JOIN
+                            `case_progress` ON `transition`.id = `case_progress`.id_transition
+                        WHERE
+                            `case_progress`.id_case = ' . $case_id . '
+                                AND `transition`.id_pn = ' . $pn_id . '
+                                AND id_role = ' . $role_id . ' 
+                        ORDER by timestamp_start;';
+            $result = Flow::app()->pdo->query($query)->fetchAll(PDO::FETCH_OBJ);
+            if(empty($result)){
+                return[TRUE, FALSE];
+            }
+            elseif($result[0]->started_by == $user_id){
+                return[TRUE, TRUE];
+            }
+            else{
+                return[FALSE,FALSE];
+            }
+        }
+        
+        $referencedTask = Case_ProgressModel::model()->findOne('id_case=' . $case_id . ' AND id_transition=' . $referencedtransition_id);
         /*Referencovany prechod nebol spusteny*/
         if(empty($referencedTask)){
             $query = 'SELECT * FROM TRANSITIONS_X_ROLE WHERE id_prechod = ' . $transition_id;

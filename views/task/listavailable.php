@@ -13,7 +13,7 @@ $arr = (array) $data->firm_cases;
 $arr = json_encode($arr);
 ?>
 <select id="firms" name="firm" class="mt">
-    <option name="firm" value="all">Všetky firmy</option>
+    <option name="firm" value="all">All firms</option>
     <?php foreach($data->firms as $firm){
         echo '<option name="firm" value="' . $firm->firm_id . '">' . $firm->firm_name . '</option>';
     }?>
@@ -43,10 +43,10 @@ $arr = json_encode($arr);
                         role = '<td>' + t['role_name'] + '</td>';
                     }
                     else{
-                        role = '<td>Bez naväzujúcej role</td>';
+                        role = '<td>No role assigned</td>';
                     }
                     var form = '<td><form action="<?php echo ENTRY_SCRIPT_URL?>task/take" method="POST">\n\
-                        <button type="submit" class="button-blue button-blue-full">Vezmi task</button>\n\
+                        <button type="submit" class="button-blue button-blue-full">Take this task</button>\n\
                         <input type="hidden" name="task" value="'  + case_id + ',' + t_key +  '"/></form></td></tr>';
                         html += ref + firm_name + case_name + '<td>' + t['name'] + '</td>' + role + form;
                 });                

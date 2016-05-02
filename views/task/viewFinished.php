@@ -12,11 +12,11 @@
 <table>
     <thead>
         <tr>
-            <th>Úloha</th>
-            <th>Začatá</th>
-            <th>Ukončená</th>
+            <th>Task</th>
+            <th>Started</th>
+            <th>Finished</th>
             <th>Case</th>
-            <th>Firma</th>
+            <th>Firm</th>
         </tr>
     </thead>
     <tbody>

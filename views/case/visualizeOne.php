@@ -12,8 +12,6 @@
  include APP_PATH . 'editor/tomas/visualize.php';
 
 ?>
-<div id="visiblesvg">
-</div>
   
 <script>
     function addProgress(idTransition, username){
@@ -21,7 +19,7 @@
         var y = $("#" + (idTransition)).attr("y");
         var width = $("#" + (idTransition)).attr("width") -10;
         var height = $("#" + (idTransition)).attr("height") -10;
-        var svg = $("#visiblesvg").find('svg')[0];
+        var svg = $('svg')[0];
         var link = 'http://www.w3.org/2000/svg';
         
         var text_id = 'transition-name' + (idTransition);
@@ -50,14 +48,14 @@
         
         icon.appendChild(title);
         
-        $("#visiblesvg").find('svg').html($("#visiblesvg").find('svg').html());
+        $('svg').html($('svg').html());
     }
     
 </script>
     
 <?php
 
-echo '<script>$("#visiblesvg").html(svg);</script>';
+//echo '<script>$("#visiblesvg").html(svg);</script>';
 
 foreach ($data->progress as $p){
     $user_name = $p->last_name . ' ' . $p->first_name;

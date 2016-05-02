@@ -31,7 +31,7 @@ class ApiController extends AbstractController{
             'logged_in' => [],
         ];
     }
-    
+      
     /**
      * Ulozenie PN do db pre potreby wf enginu
      */
@@ -50,15 +50,11 @@ class ApiController extends AbstractController{
         $petri_net->xml_file =  $_POST['xml'];
         $petri_net->description = $json_pn->description;
         
-        if(isset($_POST['svg'])){
-            $petri_net->svg_file =  $_POST['svg'];
-        }
+        $petri_net->svg_file =  $_POST['svg'];
         
         if(!($petri_net->save(TRUE))){
             return FALSE;
         }
-        
-        var_dump($petri_net->id);
         
         $place_model = new PlaceModel();
         foreach ($json_pn->places as $k => $place){
@@ -105,16 +101,16 @@ class ApiController extends AbstractController{
                         $r->setAttributes($arc);
                         $r->from = $places[$arc['sourceId']];
                         $r->to = $transitions[$arc['destinationId']];
-                        var_dump($r->save(TRUE));
-                        var_dump($r->getValidationErrors());
+                        $r->save(TRUE);
+                        //var_dump($r->getValidationErrors());
                     }
                     else{
                         $r = clone $tp;
                         $r->setAttributes($arc);
                         $r->from = $transitions[$arc['sourceId']];
                         $r->to = $places[$arc['destinationId']];
-                        var_dump($r->save(TRUE));
-                        var_dump($r->getValidationErrors());
+                        $r->save(TRUE);
+                        //var_dump($r->getValidationErrors());
                     }
                     break;
                 case 'reset':
@@ -122,16 +118,16 @@ class ApiController extends AbstractController{
                     $r->setAttributes($arc);
                     $r->from = $places[$arc['sourceId']];
                     $r->to = $transitions[$arc['destinationId']];
-                    var_dump($r->save(TRUE));
-                    $r->getValidationErrors();
+                    $r->save(TRUE);
+                    //$r->getValidationErrors();
                     break;
                 case 'inhibitor':
                     $i = clone $inhibitor;
                     $i->setAttributes($arc);
                     $i->from = $places[$arc['sourceId']];
                     $i->to = $transitions[$arc['destinationId']];
-                    var_dump($i->save(TRUE));
-                    $i->getValidationErrors();
+                    $i->save(TRUE);
+                    //$i->getValidationErrors();
                     break;
                 default:
                     break;

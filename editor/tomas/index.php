@@ -9,8 +9,9 @@
         <link rel="stylesheet" type="text/css" href="sheet.css">
        
         
-	<script src="jquery-1.11.3.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<!--<script src="jquery-1.11.3.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 	<script src="script.js"></script>
         
 	<title>Petri net modeler</title>
@@ -202,7 +203,7 @@
     <div class="popupInfo">
                     <div class="head">
                         <div class="infoHead">Basic usage information</div>
-                        <div class="close"><i class="icon-deleteAll"></i></div>
+                        <div class="close"><i class="icon icon-cross"></i></div>
                     </div>
                     <div class="body">
                         <p><i class="icon icon-place"></i><span>Activates place drawing mode</span></p>
@@ -235,6 +236,7 @@
                         <p><i class="icon icon-svg upper"></i><span>Saves SVG file of Petri net to the local file system</span></p>
                         <p><i class="icon icon-upload-database upper"></i><span>Uploads Petri net to the database</span></p>
                         <p><i class="icon icon-download-database upper"></i><span>Loads Petri net from the database</span></p>
+                        <p><i class="icon icon-edit upper"></i><span>Describe your Petri net</span></p>
                         <p><i class="icon icon-upload upper"></i><span>Loads xml of Petri net from the local file system</span></p>
                     </div>
                     <div class="infoF">

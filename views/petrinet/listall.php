@@ -8,7 +8,6 @@
  * @link       http://workflow.com/
  * @version    1.0.0
  */
-
 ?>
 
 <form method="POST" action="<?php echo ENTRY_SCRIPT_URL . 'case/create' ?>"><?php 
@@ -31,7 +30,7 @@
             <label>Name of the case: <input type="text" name="name" class="input-full"></label>
         </div>
         <div class="col-lg-8 col-lg-offset-2">
-            <button type="submit"  class="button-blue button-blue-full">Create case</button>
+            <button type="submit"  class="button-blue button-blue-full" id="createbtn">Create case</button>
         </div>
     </div>
 </form>
@@ -41,9 +40,16 @@
         var nets = firms[$(this).val()].nets;
         var html="<option value=\"\">Select a process</option>";
         for(var key in nets) {
-            html += "<option value=\"" + key  + "\">" + nets[key] + "</option>";
+            html += "<option value=\"" + key  + "\">" + nets[key]['name'] + "</option>";
         }
         $("#nets").html(html);
+    });
+    $(document).on("change", "#nets", function(){
+        var id = $(this).val();
+        if(id !== ""){
+            var role = firms[$('#firms').val()].nets[id]['role'];
+            $("#createbtn").html('Create case as ' + role);
+        }
     });
 </script>
 

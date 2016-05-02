@@ -14,10 +14,10 @@ use flow\Flow;
 ?><!DOCTYPE html><html>
     <head>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-        <link rel="stylesheet" href="<?php echo ROOT_URL . 'style/main.css'?>"/>
-        <link rel="stylesheet" href="<?php echo ROOT_URL . 'style/normalize.css'?>"/>
+        <link rel="stylesheet" href="<?php echo ROOT_URL . 'style/main.min.css'?>"/>
+        <link rel="stylesheet" href="<?php echo ROOT_URL . 'style/normalize.min.css'?>"/>
         <link rel="stylesheet" href="<?php echo ROOT_URL . 'style/custom.css'?>"/>
-        <script type="text/javascript" src="<?php echo ROOT_URL . 'js/jquery-1.11.3.min.js'?>"></script>
+        <script type="text/javascript" src="<?php echo ROOT_URL . 'js/jquery-2.2.3.min.js'?>"></script>
     </head>
     <body>
         <?php
@@ -28,12 +28,12 @@ use flow\Flow;
                 <div class="col-lg-2">
                     <nav>
                         <ul class="menu-h">
-                            <li><a href="<?php echo ENTRY_SCRIPT_URL . 'petrinet/filter'?>">Vytvor case</a></li>
-                            <li><a href="<?php echo ENTRY_SCRIPT_URL . 'task/listAvailable'?>">Vezmi úlohu</a></li>
-                            <li><a href="<?php echo ENTRY_SCRIPT_URL . 'task/listAll'?>">Moje úlohy</a></li>
-                            <li><a href="<?php echo ENTRY_SCRIPT_URL . 'task/finished'?>">História úloh</a></li>
-                            <li><a href="<?php echo ENTRY_SCRIPT_URL . 'case/viewFinished'?>">História case-ov</a></li>
-                            <li><a href="<?php echo ENTRY_SCRIPT_URL . 'case/viewActive'?>">Aktuálne case-y</a></li>
+                            <li><a href="<?php echo ENTRY_SCRIPT_URL . 'petrinet/filter'?>">Create Case</a></li>
+                            <li><a href="<?php echo ENTRY_SCRIPT_URL . 'task/listAvailable'?>">Take Tasks</a></li>
+                            <li><a href="<?php echo ENTRY_SCRIPT_URL . 'task/listAll'?>">My Tasks</a></li>
+                            <li><a href="<?php echo ENTRY_SCRIPT_URL . 'task/finished'?>">Tasks history</a></li>
+                            <li><a href="<?php echo ENTRY_SCRIPT_URL . 'case/viewFinished'?>">Cases history</a></li>
+                            <li><a href="<?php echo ENTRY_SCRIPT_URL . 'case/viewActive'?>">Current Cases</a></li>
                         </ul>
                     </nav>
                 </div>

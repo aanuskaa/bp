@@ -29,15 +29,31 @@ class PetrinetController extends AbstractController{
     * Vyfiltrovanie vsetkych procesov v zavislosti na firme a pouzivatelovi, z ktorych pouzivatel moze vytvorit case
     */     
     public function filter(){
-        $query = 'SELECT t.firm_id, t.firm_name, PN_X_FIRM.pn_id, petri_net.`name` FROM 
-                    (SELECT FIRM.firm_id, FIRM.firm_name 
-                        FROM FIRM 
-                        LEFT JOIN USERS_X_FIRM 
-                        ON FIRM.firm_id = USERS_X_FIRM.firm_id 
-                        WHERE USERS_X_FIRM.user_id = ' . Flow::app()->auth->getUserId() . ') AS t
-                    LEFT JOIN PN_X_FIRM on t.firm_id = PN_X_FIRM.firm_id
-                    LEFT JOIN petri_net on PN_X_FIRM.pn_id = petri_net.id
-                    WHERE PN_X_FIRM.pn_id IS NOT NULL;';
+        $query = 'SELECT
+                    USERS_X_FIRM.firm_id,
+                    USERS_X_FIRM.user_id,
+                    USERS_X_ROLE.role_id,
+                    FIRM.firm_name,
+                    petri_net.`name`,
+                    ROLES.role_name,
+                        ROLES_START_CASES.pn_id
+                FROM 
+                        USERS_X_FIRM 
+                LEFT JOIN 
+                        USERS_X_ROLE ON USERS_X_FIRM.user_id = USERS_X_ROLE.user_id AND USERS_X_FIRM.firm_id = USERS_X_ROLE.firm_id
+                LEFT JOIN
+                        ROLES_START_CASES ON USERS_X_ROLE.role_id = ROLES_START_CASES.role_id
+                LEFT JOIN
+                        FIRM ON USERS_X_FIRM.firm_id = FIRM.firm_id
+                LEFT JOIN
+                        petri_net ON ROLES_START_CASES.pn_id = petri_net.id
+                LEFT JOIN
+                        ROLES ON ROLES.role_id = USERS_X_ROLE.role_id
+                WHERE 
+                        USERS_X_FIRM.user_id = ' . Flow::app()->auth->getUserId() . '
+                        AND EXISTS (
+                                SELECT id FROM PN_X_FIRM WHERE PN_X_FIRM.firm_id = USERS_X_FIRM.firm_id AND PN_X_FIRM.pn_id = ROLES_START_CASES.pn_id
+                    );';
         $result = Flow::app()->pdo->query($query)->fetchAll(PDO::FETCH_OBJ);
         $arr = [];
         foreach ($result as $r){
@@ -46,7 +62,8 @@ class PetrinetController extends AbstractController{
                 $arr[$r->firm_id]['nets'] = [];
                 $arr[$r->firm_id]['name'] = $r->firm_name;
             }
-            $arr[$r->firm_id]['nets'][$r->pn_id] = $r->name; 
+            $arr[$r->firm_id]['nets'][$r->pn_id]['name'] = $r->name; 
+            $arr[$r->firm_id]['nets'][$r->pn_id]['role'] = $r->role_name;
         }
         $this->render('listall', ['nets' => $arr]);
     }

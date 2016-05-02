@@ -47,6 +47,7 @@ var saveXMLText = "Please enter XML file name";
 var saveSVGText = "Please enter SVG file name";
 var clearNetText = "Are you sure to clear? Any unsaved changes will be lost!";
 var nescribeNetText = "Please Describe your net";
+var okMessageSaveDB = "Net successfully saved";
 
 /*
  * 
@@ -572,7 +573,8 @@ function newSvgTransition(elem, x, y) {
                 arcIsDrawing = 1;
                 nowDrawedArc = SvgTmpArc(elem);
             }else{
-                if(elem.type !== sourceOfArc.type){
+                var arc = isArcCreated(sourceOfArc, elem);
+                if(elem.type !== sourceOfArc.type && arc === null){
                     arcs.push(new Arc(sourceOfArc, elem, "regular"));
                     topElemsLabels();
                 }
@@ -936,9 +938,7 @@ function placeChangeColor(color, place, markingTextSVG, svgTokensArr){
 }
 
 function placeClick(elem, event, place, markingSVG, markingNode, svgLabelRect, svgName, labelNode){
-    
-    
-    
+
     if($('#labelRadio').is(':checked')){
 
         popUpTask(labelText);
@@ -1014,8 +1014,10 @@ function placeClick(elem, event, place, markingSVG, markingNode, svgLabelRect, s
             arcIsDrawing = 1;
             nowDrawedArc = SvgTmpArc(elem);
         }else{
+            //ak hrana s takym zdrojom existuje, tak sa vrati jej referencia ... inak null
+            var arc = isArcCreated(sourceOfArc, elem);
             if(elem.type !== sourceOfArc.type){
-                if($('#arcRadio').is(':checked')){
+                if($('#arcRadio').is(':checked') && arc === null){
                     arcs.push(new Arc(sourceOfArc, elem, "regular"));
                 }else if($("#resetArcRadio").is(":checked")){
                     arcs.push(new Arc(sourceOfArc, elem, "reset"));
@@ -1067,6 +1069,16 @@ function PlaceObjects(svgPlace, svgMarking, markingNode, svgLabelRect, svgName, 
     this.svgLabelRect = svgLabelRect;
     this.svgName = svgName;
     this.nameNode = labelNode;
+}
+
+function isArcCreated(source, target){
+    for(var i = 0; i < arcs.length; i++){
+        if(arcs[i].source === source && arcs[i].target === target){
+            return arcs[i];
+        }
+    }
+    
+    return null;
 }
 
 function Arc(source, target, type){
@@ -1349,6 +1361,7 @@ function newSvgArc(elem){
                                                                                               
     var arcWeightNode = document.createTextNode(elem.weightLabel);
     $arcWeightSVG.append(arcWeightNode);
+
     $arcWeightSVG.appendTo($("#netDrawArea"));
     
     var textWidth = $arcWeightSVG.get(0).getBBox().width;
@@ -1506,7 +1519,7 @@ function arcClick(event, elem, whiteLineOfArc, lineOfAcr , arrow, circle,  arcWe
     
                 elem.weight = weightInt;
                 arcWeightNode.nodeValue = elem.weightLabel;
-    
+                
                 var textWidth = arcWeightSVG.get(0).getBBox().width;
                 var textHeight = arcWeightSVG.get(0).getBBox().height;
                 if(textHeight === 0) textHeight = 2;
@@ -1533,7 +1546,7 @@ function svgArcObjects(whiteLineOfArc, lineOfArc, arrow, circle, arcWeight, arcW
     this.arrow = arrow;
     this.circle = circle;
     this.arcWeight = arcWeight;
-    this.arcWeightNode = arcWeightNode;
+    this.arcWeightNode = arcWeightNode;// undefined
     this.arcWeightRect = arcWeightRect;
 }
 
@@ -1855,6 +1868,23 @@ function saveAsSVG(){
     });
 }
 
+function createSVGSource(){
+    var svg = document.getElementById("netDrawArea");
+    var serializer = new XMLSerializer();
+    var source = serializer.serializeToString(svg);
+    var maxXY = getMaxXY();
+    if(!source.match(/^<svg[^>]+xmlns="http\:\/\/www\.w3\.org\/2000\/svg"/)){
+        source = source.replace(/^<svg/, '<svg viewBox="0 0 {' + (maxXY.xPos + size + 2) + '}{' + (maxXY.yPos + size  + 2) +'}" xmlns="http://www.w3.org/2000/svg"');
+    }
+    if(!source.match(/^<svg[^>]+"http\:\/\/www\.w3\.org\/1999\/xlink"/)){
+        source = source.replace(/^<svg/, '<svg width="' + (maxXY.xPos + size + 2) + '" height="' + (maxXY.yPos + size  + 2) +'" xmlns:xlink="http://www.w3.org/1999/xlink"');
+    }
+    /*viewBox='0 0 {X} {Y}'*/
+    source = '<?xml version="1.0" standalone="no"?>\r\n' + source;
+    
+    return source;
+}
+
 function createXML(){
     var xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<document>\n";
     for(var i = 0; i < placesArray.length; i++){
@@ -1928,7 +1958,7 @@ function importNet(xml){
     
     var offsetX = 0;
     var offsetY = 0;
- 
+    
     $(xml).find('x').each(function(){
         var x = parseInt($(this).text());
         if(x < offsetX)
@@ -1967,6 +1997,8 @@ function importNet(xml){
             });
         }
         newTran.id = parseInt($(this).find('id').text());
+        //novy prechod sa vytvori na zaciatku a prideli sa mu id
+        //ja vsak potrebujem id z XMLka tak ho prepisem
         newTran.svgObjects.svgTransition.attr('id', newTran.id);
         if(IDOfElementCount < newTran.id)
             IDOfElementCount = newTran.id;
@@ -2091,8 +2123,11 @@ function importNet(xml){
         arcs[i].updateArc();
     
     description = $(xml).find('description').text();
-    
+    //nacitali sa hrany ... tak treba dat labels on top
     topElemsLabels();
+    //ak niekot nacita siet a fire button bude aktitovaný
+    if($('#fireRadio').is(':checked'))
+        setFireModeTransitionColors();
     
 }
 
@@ -2125,6 +2160,33 @@ function popUpTask(mesg){
     var popHtml = '<div class="popup">'+
                         '<div class="question">' + mesg + '</div> ' + 
                         '<input type="text" class="popup-input" id="popupInputID">' +
+                        '<div class="close"><i class="icon icon-cross"></i></div>' +
+                        '<div class="button-group">' +
+                            '<div class="cancel">CANCEL</div>' +
+                            '<div class="save">SAVE</div>' +
+                        '</div>' +
+                   '</div>';
+           
+    popUpWindow(popHtml);
+}
+
+function popUpSuccess(mesg){
+    var popHtml = '<div class="popup">'+
+                        '<div class="question">' + mesg + '</div> ' + 
+                        '<div class="close"><i class="icon icon-cross"></i></div>' +
+                   '</div>';
+           
+    popUpWindow(popHtml);
+}
+
+function popUpSaveDB(mesg){
+    var popHtml = '<div class="popup">'+
+                    '<div class="saveDBImputs">' +
+                        '<div class="question">' + mesg + '</div> ' + 
+                        '<input type="text" class="popup-input" id="popupInputID">' +
+                        '<div class="question">Please describe your net</div> ' + 
+                        '<input type="text" class="popup-input" id="popupDescribeID">' +
+                     '</div>' +
                         '<div class="close"><i class="icon icon-cross"></i></div>' +
                         '<div class="button-group">' +
                             '<div class="cancel">CANCEL</div>' +
@@ -2244,23 +2306,6 @@ function postJSonData(nazovSuboru){
     
 }
 
-function createSVGSource(){
-    var svg = document.getElementById("netDrawArea");
-    var serializer = new XMLSerializer();
-    var source = serializer.serializeToString(svg);
-    var maxXY = getMaxXY();
-    if(!source.match(/^<svg[^>]+xmlns="http\:\/\/www\.w3\.org\/2000\/svg"/)){
-        source = source.replace(/^<svg/, '<svg viewBox="0 0 {' + (maxXY.xPos + size + 2) + '}{' + (maxXY.yPos + size  + 2) +'}" xmlns="http://www.w3.org/2000/svg"');
-    }
-    if(!source.match(/^<svg[^>]+"http\:\/\/www\.w3\.org\/1999\/xlink"/)){
-        source = source.replace(/^<svg/, '<svg width="' + (maxXY.xPos + size + 2) + '" height="' + (maxXY.yPos + size  + 2) +'" xmlns:xlink="http://www.w3.org/1999/xlink"');
-    }
-    /*viewBox='0 0 {X} {Y}'*/
-    source = '<?xml version="1.0" standalone="no"?>\r\n' + source;
-    
-    return source;
-}
-
 function getMaxXY(){
     var point = new Point(0, 0);
     for(var i = 0; i < placesArray.length; i++){
@@ -2300,14 +2345,15 @@ function getMaxXY(){
 }
 
 function postDataToDB(){
-    popUpTask(saveToDBText);
-
+    popUpSaveDB(saveToDBText);
+//describeID
     var mypop = $('.popup');
-
+    mypop.find('#popupDescribeID').val(description);
     mypop.find('.save').click(function(){
         var task = mypop.find('#popupInputID').val().trim();
-
-        if(task === '' || task === undefined || description === ""){
+        description = mypop.find('#popupDescribeID').val().trim();
+        
+        if(task === '' || task === undefined || description === '' || description === undefined){
             console.log("nic na vstupe post to db");
             return;
         }
@@ -2331,6 +2377,7 @@ function postDataToDB(){
                     dataType: 'text',
                     success: function(data){
                            console.log(data + " test");
+                           
                     },
                     error: function(jqXHR, textStatus, errorThrown){
                             console.log('jqXHR:');

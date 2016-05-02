@@ -62,9 +62,6 @@
 
 .icon-edit:before {
   content: "\f10f"; }
-  
-.icon-magnifier:before {
-  content: "\f123"; }
 
 .icon-ellipses:before {
   content: "\f110"; }
@@ -1846,8 +1843,8 @@ table {
     margin-left: 100%; } }
 @font-face {
   font-family: "font-icon";
-  src: url("../global/content/fonts/font-icon.eot?a63f8ecf8714019d66b6a686a2c01fca");
-  src: url("../global/content/fonts/font-icon.eot?#iefix") format("embedded-opentype"), url("../global/content/fonts/font-icon.woff?a63f8ecf8714019d66b6a686a2c01fca") format("woff"), url("../global/content/fonts/font-icon.ttf?a63f8ecf8714019d66b6a686a2c01fca") format("truetype");
+  src: url("../content/fonts/font-icon.eot?a63f8ecf8714019d66b6a686a2c01fca");
+  src: url("../content/fonts/font-icon.eot?#iefix") format("embedded-opentype"), url("../global/content/fonts/font-icon.woff?a63f8ecf8714019d66b6a686a2c01fca") format("woff"), url("../global/content/fonts/font-icon.ttf?a63f8ecf8714019d66b6a686a2c01fca") format("truetype");
   font-weight: normal;
   font-style: normal; }
 

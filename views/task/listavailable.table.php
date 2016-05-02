@@ -1,12 +1,12 @@
 <table class="mt">
     <thead>
         <tr>
-            <th>Referencia</th>
-            <th>Firma</th>
+            <th>Reference</th>
+            <th>Firm</th>
             <th>Case</th>
             <th>Task</th>
-            <th>Rola</th>
-            <th>Vezmi</th>
+            <th>Role</th>
+            <th>Take task</th>
         </tr>
     </thead>
     <tbody id="tasks">
@@ -26,11 +26,11 @@
                         $all_firms .= '<td>' . $task['role_name'] . '</td>';
                     }
                     else{
-                        $all_firms .=  '<td>Bez naväzujúcej role</td>';
+                        $all_firms .=  '<td>No role assigned</td>';
                     }
                     $all_firms .=  '<td>'
                     . '<form action="' . ENTRY_SCRIPT_URL. 'task/take" method="POST">'
-                    . '<button type="submit" class="button-blue button-blue-full">Vezmi task</button>'
+                    . '<button type="submit" class="button-blue button-blue-full">Take this task</button>'
                     . '<input type="hidden" name="task" value="'  .$id_case . ',' . $id_task . '"/>'
                     . '</form>'
                     . '</td></tr>';
